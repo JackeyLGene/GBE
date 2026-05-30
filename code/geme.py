@@ -141,6 +141,12 @@ class Frame:
         self.vec=vec; self.weight=weight; self.sig=sig[:SIG_LEN]; self.sig_full=sig
         self.src=src[:SRC_LEN] if src else sig[:SIG_LEN]; self.age=0; self.merged=0; self.layer=layer
 
+def reset_frame_id_counter(seed=0):
+    """Reset the global frame id counter for deterministic runs.
+    Call before each independent experiment to prevent order-dependence.
+    This is the short-term fix; long-term solution localizes fid to GeruonMemory."""
+    _FRAME_ID_COUNTER[0] = seed
+
 # ──────────────────────────────────────────────────────────────────
 # Memory
 # ──────────────────────────────────────────────────────────────────

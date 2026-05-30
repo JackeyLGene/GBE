@@ -44,7 +44,7 @@ from copy import deepcopy
 # ── GEME core — only what Geruon needs (no _ALPHABET, no _VEC_DIM) ──
 from geme import (
     Term, Formula, const, fn, eq, structural_signature,
-    symbol_vector, vec_dist, Frame,
+    symbol_vector, vec_dist, Frame, reset_frame_id_counter,
     ASSOC_SEP, CHAIN_SEP, SIG_LEN, SRC_LEN,
     DELTA, GAMMA,
 )
@@ -166,35 +166,35 @@ _MAX_REFS = 2 * int(GI)  # 2×GI=8 — max recursive refs in a structural signat
 
 
 class StructuralSig:
-    """Gödel-encoded structural signature of a frame.
+    """Collision-resistant structural signature of a frame.
 
     A signature IS the frame's structural fingerprint — not a human-given
     name. Two frames with identical structure produce identical signatures.
 
-    The Gödel number (gid) encodes (vec_hash, weight_log2, layer_int, ref_gids)
-    via prime factorization, following Gödel's original scheme. This makes
-    the encoding injective: different structures → different gids.
+    Identity is determined by struct_key — a collision-resistant tuple of
+    (vec_hash, weight_bin, layer, tau_bin, ref_keys). The gid is a compact
+    display id derived from struct_key; it is NOT injective and must not
+    be used for equality.
 
     Self-reference closure: a StructuralSig can contain references to other
     StructuralSig objects (including itself, directly or transitively).
     Circular reference chains are detectable and tracked.
     """
 
-    __slots__ = ('gid', 'vec_hash', 'weight_bin', 'layer', 'tau_bin', 'refs', '_ref_gids')
+    __slots__ = ('struct_key', 'gid', 'vec_hash', 'weight_bin', 'layer', 'tau_bin', 'refs')
 
     def __init__(self, vec, weight, layer, refs=(), tau=TAU_0):
         self.vec_hash = self._hash_vec(vec)
         self.weight_bin = _log2_bin(weight)
         self.layer = layer
-        # τ_bin: 0=absorbing, 1=normal, 2=elevated, 3=boundary
-        # uses the frame economy's own phase thresholds
         if tau < PHASE_RESTING_CEIL:       self.tau_bin = 0
         elif tau < PHASE_TENSING_CEIL:     self.tau_bin = 1
         elif tau < PHASE_LOCKED_FLOOR:     self.tau_bin = 2
         else:                              self.tau_bin = 3
         self.refs = tuple(refs) if refs else ()
-        self._ref_gids = tuple(r.gid for r in self.refs)
-        self.gid = self._compute_gid()
+        # ref_keys: use struct_key for stable identity, fallback to gid for legacy
+        self.struct_key = self._compute_key()
+        self.gid = self._compute_display_id()
 
     @staticmethod
     def _hash_vec(vec) -> int:
@@ -204,49 +204,46 @@ class StructuralSig:
             h = ((h << 5) + h) ^ int(round(v, 4) * 10000)
         return h & 0x7FFFFFFF
 
-    def _compute_gid(self) -> int:
-        """Gödel number encoding (vec_hash, weight_bin, layer, tau_bin, refs).
+    def _ref_keys(self):
+        """Stable identity keys of referenced signatures."""
+        return tuple(r.struct_key if hasattr(r, 'struct_key') else r.gid for r in self.refs)
 
-        τ is part of the structural signature: frames created at different τ
-        have different gids. Time is intrinsic to frame identity.
+    def _compute_key(self):
+        """Collision-resistant structural identity tuple.
+
+        Includes full vec_hash, weight_bin, layer, tau_bin, and ref identity keys.
+        This is the authoritative identity — two frames are structurally equal
+        iff their struct_key tuples are equal.
         """
-        p = _GODEL_PRIMES
-        g = 1
-        h = abs(self.vec_hash)
-        for i in range(min(int(GI) + 1, len(p))):  # GI+1=5 — Gödel prime encoding depth
-            g *= p[i] ** ((h & 0x7) + 1)
-            h >>= 3
-        g *= p[5] ** (self.weight_bin + 1)
-        g *= p[6] ** (_layer_int(self.layer) + 1)
-        g *= p[7] ** (self.tau_bin + 1)     # τ encoded as structural component
-        for i, rg in enumerate(self._ref_gids[: _MAX_REFS]):
-            pi = i + 8
-            if pi < len(p):
-                g *= p[pi] ** (abs(rg) % 100 + 1)
-        return g
+        return (self.vec_hash, self.weight_bin, self.layer, self.tau_bin, self._ref_keys())
+
+    def _compute_display_id(self) -> int:
+        """Compact display id derived from struct_key. NOT injective — display only."""
+        return hash(self.struct_key) & 0x7FFFFFFF
 
     def __eq__(self, other):
         if not isinstance(other, StructuralSig):
             return False
-        return self.gid == other.gid
+        return self.struct_key == other.struct_key
 
     def __hash__(self):
-        return self.gid
+        return hash(self.struct_key)
 
     def add_ref(self, other):
-        """Append a reference to another StructuralSig. Recomputes gid.
+        """Append a reference to another StructuralSig. Recomputes identity.
 
         This is the operational form of diagonalization: a frame's
         signature can be extended to reference another frame after
         creation, enabling true self-referential cycles.
         """
         self.refs = self.refs + (other,)
-        self._ref_gids = self._ref_gids + (other.gid,)
-        self.gid = self._compute_gid()
+        self.struct_key = self._compute_key()
+        self.gid = self._compute_display_id()
 
     def __repr__(self):
-        r = ','.join(str(rg)[:8] for rg in self._ref_gids[:3])
-        if len(self._ref_gids) > 3:
+        ref_keys = self._ref_keys()
+        r = ','.join(str(rk)[:8] for rk in ref_keys[:3])
+        if len(ref_keys) > 3:
             r += '…'
         return f"Σ({self.gid % 1000000:06d}|L{_layer_int(self.layer)}|→{r or '-'})"
 
@@ -268,16 +265,17 @@ def detect_circularity(sig: StructuralSig, visited=None, depth=0) -> tuple:
     Returns (is_circular, chain) where chain is the list of gids
     from entry point to the repeated node, empty if acyclic.
     Depth limited to prevent infinite recursion on malformed refs.
+    Uses struct_key for stable identity tracking.
     """
     if visited is None:
-        visited = {}
+        visited = set()
     if depth > 20:
         return False, ()
-    if sig.gid in visited:
+    if sig.struct_key in visited:
         return True, (sig.gid,)
-    visited[sig.gid] = depth
+    visited.add(sig.struct_key)
     for ref in sig.refs:
-        is_circ, chain = detect_circularity(ref, dict(visited), depth + 1)
+        is_circ, chain = detect_circularity(ref, visited, depth + 1)
         if is_circ:
             return True, (sig.gid,) + chain
     return False, ()
@@ -305,6 +303,7 @@ class Codex:
         self._table = {}       # symbol → vector tuple
         self._generation = 0   # how many generations this codex has passed through
         self._history = []     # [(gen, event, detail), ...]
+        self._entry_weight = {}  # symbol → accumulated weight (for merge tracking)
 
     # ── Builders ──
 
@@ -359,11 +358,93 @@ class Codex:
     def symbols(self) -> list:
         return list(self._table.keys())
 
+    def nearest(self, vec):
+        """Find closest Codex entry to query vector. Returns (symbol, vector, distance)."""
+        if not self._table:
+            return None, None, float('inf')
+        best_sym = None; best_vec = None; best_dist = float('inf')
+        for sym, cv in self._table.items():
+            d = math.sqrt(sum((a-b)**2 for a,b in zip(vec, cv)))
+            if d < best_dist:
+                best_dist = d; best_sym = sym; best_vec = cv
+        return best_sym, best_vec, best_dist
+
+    def blend_in(self, vec, dist, weight=GAMMA):
+        """Blend a Codex entry into an input vector. Weight decays with distance."""
+        if dist >= 2.0:
+            return list(vec)
+        w = weight * (1.0 - dist/2.0)  # far = less influence
+        best_sym, best_vec, _ = self.nearest(vec)
+        if best_vec is None:
+            return list(vec)
+        return [(1.0 - w) * vec[i] + w * best_vec[i]
+                for i in range(min(len(vec), len(best_vec)))]
+
     # ── Enrichment (generation writes back) ──
 
     def add(self, symbol: str, vec: tuple, source="manual"):
         """Add or update a symbol mapping. Called when a generation
-        enriches the codex with its own stable frames."""
+        enriches the codex with its own stable frames.
+
+        Two merge strategies:
+        1. Cosine > 0.95: near-identical entries merged (all types)
+        2. Coverage merge (ABS_* only): new abstraction covers all active dims
+           of existing abstraction → merge as more complete evidence.
+        """
+        MERGE_SIMILARITY = 0.95
+        ACTIVE_THRESH = 0.1  # dimension is "active" if |value| > this
+
+        nv = math.sqrt(sum(x*x for x in vec))
+        if nv > 0:
+            vec_norm = tuple(x/nv for x in vec)
+
+            # Strategy 1 (reordered): coverage merge first (ABS_* only)
+            # More complete evidence should extend incomplete abstractions
+            # before being merged as near-identical to complete ones.
+            if 'ABS' in symbol or 'ABS' in str(source):
+                vec_active = {j for j in range(len(vec)) if abs(vec_norm[j]) > ACTIVE_THRESH}
+                best_target = None; best_active_count = 999
+                for existing_sym, existing_vec in self._table.items():
+                    if 'ABS' not in str(existing_sym) and 'ABS' not in str(existing_sym):
+                        continue
+                    ev = math.sqrt(sum(x*x for x in existing_vec))
+                    if ev <= 0: continue
+                    ev_norm = [x/ev for x in existing_vec]
+                    old_active = {j for j in range(len(existing_vec)) if abs(ev_norm[j]) > ACTIVE_THRESH}
+                    if old_active and old_active.issubset(vec_active):
+                        if len(old_active) < best_active_count:
+                            best_active_count = len(old_active)
+                            best_target = (existing_sym, existing_vec, old_active)
+
+                if best_target is not None:
+                    existing_sym, existing_vec, old_active = best_target
+                    old_w = self._entry_weight.get(existing_sym, 1.0)
+                    blended = list(existing_vec)
+                    for j in vec_active:
+                        blended[j] = (existing_vec[j]*old_w + vec[j])/(old_w+1.0)
+                    self._table[existing_sym] = tuple(blended)
+                    self._entry_weight[existing_sym] = old_w + 1.0
+                    self._history.append(
+                        (self._generation, "coverage",
+                         f"{symbol} ⊃ {existing_sym} (w={old_w+1:.0f} n_active={len(old_active)}→{len(vec_active)})"))
+                    return
+
+            # Strategy 2: near-identical merge (all entry types)
+            for existing_sym, existing_vec in self._table.items():
+                ev = math.sqrt(sum(x*x for x in existing_vec))
+                if ev <= 0: continue
+                dot = sum(a*b for a,b in zip(vec_norm, [x/ev for x in existing_vec]))
+                if dot > MERGE_SIMILARITY:
+                    old_w = self._entry_weight.get(existing_sym, 1.0)
+                    blended = tuple((existing_vec[j]*old_w + vec[j])/(old_w+1.0)
+                                   for j in range(min(len(existing_vec), len(vec))))
+                    self._table[existing_sym] = blended
+                    self._entry_weight[existing_sym] = old_w + 1.0
+                    self._history.append(
+                        (self._generation, "merge",
+                         f"{symbol} → {existing_sym} (w={old_w+1:.0f})"))
+                    return
+
         is_new = symbol not in self._table
         self._table[symbol] = tuple(vec)
         self._history.append(
@@ -384,6 +465,7 @@ class Codex:
             'generation': self._generation,
             'table': {s: list(v) for s, v in self._table.items()},
             'history': self._history,
+            'entry_weight': self._entry_weight,
         }
         with open(path, 'w') as f:
             json.dump(state, f, indent=2)
@@ -397,6 +479,7 @@ class Codex:
         c._generation = state.get('generation', 0)
         c._table = {s: tuple(v) for s, v in state.get('table', {}).items()}
         c._history = state.get('history', [])
+        c._entry_weight = {s: float(w) for s, w in state.get('entry_weight', {}).items()}
         return c
 
     def __repr__(self):
@@ -529,7 +612,7 @@ class GeruonFrame(Frame):
     cycles, is activated in prediction paths, and is structurally
     stable — it becomes an externalized trace (Codex/Ledger entry).
     """
-    __slots__ = ('struct_sig', 'survival_cycles', 'activations', 'precipitated', 'tau')
+    __slots__ = ('struct_sig', 'survival_cycles', 'activations', 'precipitated', '_externalized', 'tau')
 
     def __init__(self, vec, weight=1.0, sig="", src="", layer="L1",
                  struct_sig=None, ref_sigs=(), tau=TAU_0):
@@ -546,7 +629,8 @@ class GeruonFrame(Frame):
         # ── Precipitation tracking ──
         self.survival_cycles = 0   # induction_clean survivals
         self.activations = 0       # times in prediction path
-        self.precipitated = False  # already externalized
+        self.precipitated = False
+        self._externalized = False  # idempotent enrichment guard
 
 
 def make_frame_sig(vec, weight, layer, ref_sigs=()) -> StructuralSig:
@@ -621,8 +705,12 @@ class GeruonMemory:
 
         # ── StructuralSig: circularity tracking ──
         self._circular_refs = {}        # gid → (step_first_seen, chain)
-        self._sig_index = {}            # gid → frame (for ref lookup)
-        self._sig_to_gid = {}           # string sig → gid (for prediction path)
+        self._sig_index = {}            # struct_key → frame (collision-resistant)
+        # Reset global fid counter for deterministic runs (short-term fix;
+        # long-term: localize fid to GeruonMemory)
+        reset_frame_id_counter()
+        self._sig_to_gid = {}           # string sig → gid (display)
+        self._sig_to_key = {}           # string sig → struct_key (identity)
         self._sys_fids = {}             # 'pred_err'/'sys_doubt' → fid (O(1) lookup)
 
         # ── 碰数 (pengshu) detection ──
@@ -897,7 +985,8 @@ class GeruonMemory:
             self.process_prediction(sig)
         thresh = self._adaptive_thresh()
         self._merge_thresh_val = thresh or 0.0
-        self._win_max = self._adaptive_window()
+        # _win_max is set at init to configured window; adaptive behavior
+        # must be explicitly enabled via _adaptive_window_enabled flag.
         bi, bd = -1, float('inf')
         candidates = []
         for i, f in enumerate(self.frames):
@@ -1005,18 +1094,19 @@ class GeruonMemory:
         self._fid_to_frame[f.fid] = f
         if ss is None:
             return
-        self._sig_index[ss.gid] = f
+        self._sig_index[ss.struct_key] = f
         # Populate sig→gid mapping for prediction path tracking
         for s in (f.sig, getattr(f, 'sig_full', None) or ''):
             if s:
                 self._sig_to_gid[s] = ss.gid
+                self._sig_to_key[s] = ss.struct_key
                 # ── M11: sig_cache — erasure buffer for O(1) sig lookup ──
                 if s not in self._sig_cache:
                     self._sig_cache[s] = f.fid
         is_circ, chain = detect_circularity(ss)
         if is_circ:
-            if ss.gid not in self._circular_refs:
-                self._circular_refs[ss.gid] = (self._step_counter, chain)
+            if ss.struct_key not in self._circular_refs:
+                self._circular_refs[ss.struct_key] = (self._step_counter, chain)
 
     # ── M11: Erasure buffer lookup ──
     def _find_frames_by_sig(self, sig):
@@ -1419,21 +1509,19 @@ class GeruonMemory:
 
     def _sig_matches(self, f, sig):
         """Check if a frame matches a signature string.
-        M11: LOCKED brake REMOVED — cache (_find_frames_by_sig) handles energy conservation.
-        Removing unconditionally prevents the O(N) fallback from finding existing frames
-        during LOCKED, causing duplicate creation and locking the system in a feedback loop."""
+        M11: LOCKED brake REMOVED — cache (_find_frames_by_sig) handles energy conservation."""
         if f.sig == sig or getattr(f, 'sig_full', '') == sig:
             return True
-        gid = self._sig_to_gid.get(sig)
+        key = self._sig_to_key.get(sig)
         ss = getattr(f, 'struct_sig', None)
-        if gid is not None and ss is not None and gid == ss.gid:
+        if key is not None and ss is not None and key == ss.struct_key:
             return True
         return False
 
     def _sig_layer(self, sig):
-        gid = self._sig_to_gid.get(sig)
-        if gid and gid in self._sig_index:
-            return getattr(self._sig_index[gid], 'layer', 'L1')
+        key = self._sig_to_key.get(sig)
+        if key and key in self._sig_index:
+            return getattr(self._sig_index[key], 'layer', 'L1')
         frames = self._find_frames_by_sig(sig)
         if frames:
             return getattr(frames[0], 'layer', 'L1')
@@ -1650,11 +1738,11 @@ class GeruonMemory:
             "tau": round(self.tau, 4),
             "dtaudt": round(self.dtaudt, 6),
             "phase": self.phase.value,
-            "phase_steps": dict(self._phase_steps),
+            "phase_steps": {k.value: v for k, v in self._phase_steps.items()},
             "phase_transitions": len(self._phase_transitions),
             # ── StructuralSig: circularity ──
             "circular_refs": len(self._circular_refs),
-            "circular_gids": [gid % 1000000 for gid in self._circular_refs],
+            "circular_gids": [hash(key) % 1000000 for key in self._circular_refs],
             # ── M11: Landauer bill ──
             "codex_hits": self._codex_hits,
             "codex_misses": self._codex_misses,
@@ -1818,6 +1906,12 @@ class Geruon:
 
     def process_vec(self, vec, sig, src=""):
         vec = list(vec)  # defensive copy — prevents mutation of caller's data
+        # ── Dimension guard: reject or pad mismatched vectors ──
+        if len(vec) != self.vec_dim:
+            if len(vec) < self.vec_dim:
+                vec.extend([0.0] * (self.vec_dim - len(vec)))
+            else:
+                vec = vec[:self.vec_dim]
         # ── Dual-field continuous modulation ──
         # Self-boundary (BGM cliff): phase-gated bias_weight
         # When cliff snaps shut, the Self stops listening to the shared field.
@@ -1827,6 +1921,13 @@ class Geruon:
             vec = self.bias_field.blend_into(vec, weight=effective_bw)
         if self.time_field is not None and not self.time_field.is_empty():
             vec = self.time_field.blend_into(vec, weight=effective_bw * TAU_0 * 0.5)  # τ₀/2=0.30 — time-field blend decay
+
+        # ── Self-level Codex query: inherited vocabulary ──
+        # Cavity carries Codex from previous generation. Query when novel.
+        if self.codex is not None and len(self.codex) > 0:
+            best_sym, best_vec, best_dist = self.codex.nearest(vec)
+            if best_vec is not None and best_dist < 1.0:
+                vec = self.codex.blend_in(vec, best_dist, weight=GAMMA)
 
         self.frame_count += 1
         self._input_count += 1
@@ -1985,8 +2086,9 @@ class Geruon:
         newly = self.memory.precipitate()
         count = 0
         for f in self.memory.frames:
-            if not f.precipitated:
+            if not f.precipitated or f._externalized:
                 continue
+            f._externalized = True
             # Route: time_obs frames → time_field, others → bias_field
             is_time = 'time_' in (getattr(f, 'sig_full', '') or f.sig)
             if is_time and self.time_field is not None:
@@ -2123,9 +2225,9 @@ if __name__ == "__main__":
     s2 = StructuralSig(v2, 3.0, "L1")
     s3 = StructuralSig(v3, 3.0, "L1")
     s4 = StructuralSig(v1, 1.0, "L1")  # different weight
-    print(f"  Same structure:  gid(s1)==gid(s2): {s1.gid == s2.gid} (expect True)")
-    print(f"  Different vec:   gid(s1)==gid(s3): {s1.gid == s3.gid} (expect False)")
-    print(f"  Different weight: gid(s1)==gid(s4): {s1.gid == s4.gid} (expect False)")
+    print(f"  Same structure:  s1==s2: {s1 == s2} (expect True)  key_eq:{s1.struct_key == s2.struct_key}")
+    print(f"  Different vec:   s1==s3: {s1 == s3} (expect False) key_eq:{s1.struct_key == s3.struct_key}")
+    print(f"  Different weight: s1==s4: {s1 == s4} (expect False) key_eq:{s1.struct_key == s4.struct_key}")
     print(f"  s1={s1}  s3={s3}")
 
     # ── Test S2: Self-referential signature → circularity ──
