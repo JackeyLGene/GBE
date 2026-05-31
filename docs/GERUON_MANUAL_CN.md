@@ -1,3 +1,9 @@
+---
+title: Geruon Manual (CN)
+nav_order: 5
+parent: Manuals
+---
+
 # Geruon 使用说明书
 
 > 仪器手册。先教你用，再解释原理。阅读时间：实用篇 15 分钟，原理篇 30 分钟。

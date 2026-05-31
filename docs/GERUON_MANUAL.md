@@ -1,3 +1,9 @@
+---
+title: Geruon Manual
+nav_order: 1
+parent: Manuals
+---
+
 # Geruon Manual
 
 > Instrument handbook. Usage first, principles second. Reading time: ~20 min practical, ~30 min principles.

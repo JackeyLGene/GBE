@@ -1,3 +1,9 @@
+---
+title: Shepard Paradox
+nav_order: 4
+parent: Manuals
+---
+
 # Shepard 音阶悖论 — Geruon 帧经济中的结构矛盾
 
 日期: 2026-06-01

@@ -13,6 +13,5 @@ nav_order: 4
 
 - [Paper I: GEME](gEME.pdf) — DOI: 10.5281/zenodo.20344974
 - [Paper II: BGM](bGM.pdf) — DOI: 10.5281/zenodo.20238099
-- [Paper III: EE v1.6](ee.pdf)
-- [EE v1.6 Source](ee_paper_v1.6.md)
-- [EE Supplement v1.6](ee_supplement_v1.6.md)
+- [Paper III: EE](ee.pdf)
+- [EE — Supplementary Material](ee_supplement.pdf)

@@ -1,3 +1,9 @@
+---
+title: EE Manual (CN)
+nav_order: 6
+parent: Manuals
+---
+
 # EE 使用说明书
 
 > 架构与实验手册。Self/We/Codex 的组装、配置、使用方式，以及四个实验域的完整方法。先读 [GERUON_MANUAL.md](GERUON_MANUAL.md)（英文）/ [GERUON_MANUAL_CN.md](GERUON_MANUAL_CN.md)（中文）了解仪器基元。

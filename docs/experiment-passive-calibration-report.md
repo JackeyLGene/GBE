@@ -1,3 +1,9 @@
+---
+title: Calibration Report
+nav_order: 3
+parent: Manuals
+---
+
 # EE 被动仪器标定报告 v2.1
 
 日期: 2026-05-31（修订 2026-06-01）

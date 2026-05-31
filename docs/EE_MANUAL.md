@@ -1,3 +1,9 @@
+---
+title: EE Manual
+nav_order: 2
+parent: Manuals
+---
+
 # EE Manual
 
 > Architecture and experiment handbook. Self/We/Codex assembly, configuration, and the four experiment domains. Read [GERUON_MANUAL.md](GERUON_MANUAL.md) first for instrument primitives.
