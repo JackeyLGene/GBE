@@ -30,13 +30,29 @@ After the quickstarts, read the manuals in order:
 | 2 | [docs/EE_MANUAL.md](docs/EE_MANUAL.md) | Self / We / Codex assembly and the four experiment architectures |
 | 3 | [docs/experiment-passive-calibration-report.md](docs/experiment-passive-calibration-report.md) | Passive instrument calibration and frozen readout policy |
 
-For a slightly larger bridge experiment before the full paper tracks, run:
+## Demos
+
+Two zero-dependency demo videos generated from the same instrument. Each runs in under a minute.
+
+### 1. Sine Boundary Detection — 3-Cavity Self
+
+[`demo/demo_self_sine.mp4`](demo/demo_self_sine.mp4) · [`demo/demo_self_sine.py`](demo/demo_self_sine.py)
+
+A synthetic stream with three known structural boundaries (frequency doubling, phase inversion, return to baseline). A 3-cavity Self processes the stream blind. Cross-harm peaks at all three boundary positions. The video explains what cross-harm and τ measure — and why they are orthogonal readings. Good for understanding the instrument's principle.
+
+### 2. Bach C Major Prelude — Solo Geruon
+
+[`demo/demo_geruon_bach.mp4`](demo/demo_geruon_bach.mp4) · [`demo/demo_geruon_bach.py`](demo/demo_geruon_bach.py)
+
+Bach's BWV 846 encoded as 12-dim chroma vectors. A solo Geruon processes the stream with zero music theory knowledge. F (field curvature) responds to harmonic density, wit density tracks structural novelty across four musical sections, and their divergence in the final section shows the two readings are orthogonal. With piano audio synthesized from the MIDI.
+
+To regenerate both videos:
 
 ```powershell
-python experiments\shepard\_shepard.py
+python demo\make_video.py
 ```
 
-Interpretation: [docs/experiment-shepard-paradox.md](docs/experiment-shepard-paradox.md).
+Requires `matplotlib`, `numpy`, `soundfile`, and `ffmpeg`.
 
 ---
 
@@ -90,9 +106,12 @@ GBE/
 │   ├── experiment-passive-calibration-report.md
 │   └── experiment-shepard-paradox.md
 ├── demo/
-│   ├── demo_self_sine.py
-│   ├── demo_geruon_bach.py
-│   └── bwv846.mid
+│   ├── demo_self_sine.mp4          # sine boundary detection (3-cavity Self)
+│   ├── demo_geruon_bach.mp4        # Bach prelude (solo Geruon, with audio)
+│   ├── demo_self_sine.py           # text-mode demo (runnable)
+│   ├── demo_geruon_bach.py         # text-mode demo (runnable)
+│   ├── make_video.py               # regenerates both MP4s
+│   └── bwv846.mid                  # Bach C major prelude
 ├── code/
 │   ├── geme.py
 │   ├── geruon.py
