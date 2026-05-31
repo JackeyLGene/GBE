@@ -42,3 +42,10 @@ python _wtc_phase2_evo.py       # Phase 2: five-stage Codex loop
 - C major Codex: 38 entries, tonic anchor at chroma dim 0 (>45%)
 - Eb major Codex: 48 entries, tonic triad skeleton spanning dims 2,4,6,9
 - Cross-key: non-matching entries freeze, never decay. Selection layer decouples from frame economy.
+
+## What Didn't Work
+
+- **Solo Geruon on WTC**: blind — no signal (< 1 L3 bridge across 48 pieces). Required Self amplifier to detect structure.
+- **BiasField inheritance**: zero effect at all α (0.05-5.0). Normalization flattens inherited gradient. Transmission must go through Codex.
+- **Group classification**: r(L3, PVC%) = 0; r(F, PVC%) ≤ 0.5. Instrument measures organization, not pathology labels.
+- **Codex operation**: still scaffolded. Formation and selection are native; active query under noise remains manual.

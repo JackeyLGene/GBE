@@ -42,3 +42,9 @@ python _dna_validate.py      # multi-seed + ablation confirmation
 - AHSG fork column: d=+1.51 (single-gene, n=1). AHSG identified under positive selection (Sabeti 2007, Nielsen 2005). Per-gene pooled did NOT generalize (mean d=0.13±0.22).
 - Dinucleotide shuffle preserves base composition but destroys 3-nt periodicity → signal drops.
 - κ ablation confirms multi-lens Self is load-bearing.
+
+## What Didn't Work
+
+- **Per-gene generalization**: AHSG fork column (d=+1.51, single gene) did not generalize when pooled across genes (mean d=0.13±0.22). Fork signal is gene-specific, not a universal conservation metric.
+- **Solo Geruon on DNA**: signal much weaker without multi-lens Self. Required amplifier for exon/intron separation.
+- **3-mer alone**: dinucleotide shuffle destroys 3-nt periodicity → signal drops to d=-0.10. Signal depends on codon-scale sequential structure, not base composition.

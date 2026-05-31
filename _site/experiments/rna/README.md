@@ -39,3 +39,9 @@ python _rna_close.py               # RPF ablation (optional, needs bigWig)
 - **AUG control**: 98% discrimination (3-cavity extreme κ spread 0.005/10/5000). Transition-magnitude detection, not motif detection.
 - **Asymmetry is biological**: CDS→3'UTR is a structural cliff. 5'UTR→CDS is a ramp. The instrument reads what biology built.
 - RPF coupling: negative. Fork d=−0.93, RPF-only d=−0.91, process-permuted d=−0.99. Occupancy-driven.
+
+## What Didn't Work
+
+- **CDS start**: 66% within ±3 windows — worse than stop (98-100%). The 5'UTR→CDS transition is structurally gradual; the instrument reads what biology built.
+- **AUG motif detection**: the instrument does NOT scan for AUG. The start signal (such as it is) comes from transition magnitude, not motif recognition.
+- **RPF as independent signal**: ribosome profiling does not add information beyond the transcript sequence itself. Process-permuted RPF produces nearly identical results (d=−0.99).

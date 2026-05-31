@@ -6,7 +6,9 @@ permalink: /
 
 # GBE — Generative Being Externalized
 
-A trilogy in three papers, one runnable cognitive instrument, and four frozen experiment tracks.
+**Can a small, zero-training detector find structure in streams without knowing what it's looking at?**
+
+This is a runnable test of that question. No neural network. No labels. No domain-specific rules. Just merge, prune, and read the survivors.
 
 ## Start in 5 Minutes
 
@@ -48,12 +50,12 @@ A third bridge experiment — [Shepard Paradox](experiments/shepard/) — is an 
 
 GBE is a centroid detector with memory pressure. Two operations — merge similar frames, prune unreinforced frames — converge streams into structural centroids under finite memory.
 
-| Domain | Core result |
-|--------|-------------|
-| UN diplomatic voting | 2025 displacement rank 1/79; falsifiable 2026-2028 |
-| Bach WTC | Transposition equivariance 100%; five-stage Codex loop |
-| DNA alignments | Exon/intron d=-0.97; AHSG fork-column d=+1.51 |
-| RNA transcripts | CDS stop boundary 98-100% within three windows |
+| Domain | Core result | Limitations |
+|--------|-------------|-------------|
+| UN diplomatic voting | 2025 displacement rank 1/79; falsifiable 2026-2028 | 79 data points; forward prediction unverified |
+| Bach WTC | Transposition equivariance 100%; Codex selection loop | Codex operation scaffolded |
+| DNA alignments | Exon/intron d=-0.97; AHSG fork d=+1.51 | AHSG: single-gene calibration |
+| RNA transcripts | CDS stop 98-100% within three windows | CDS start 66%; passive detection only |
 
 ## The Trilogy
 

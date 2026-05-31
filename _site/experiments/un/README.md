@@ -36,3 +36,9 @@ python _un_fred_only.py     # economic negative control
 - P5 ablation: signal concentrated in great-power layer (No-USA = 0.550, P5-only = 0.448)
 - FRED negative control: 2025 economic displacement rank 24/33 — structurally normal
 - Falsifiable prediction: 2026-2028 structural collapse of US-led P5 alignment. Three verification criteria.
+
+## What Didn't Work
+
+- **Resolution-level pipeline**: matched 3/4 historical events (Soviet collapse 1991, financial crisis 2008, Ukraine 2022; Crimea 2014 missed). Not used for the forward signal.
+- **Non-P5 signal**: global-only encoding yields displacement 0.101 (rank 12/78) — elevated but not extreme. Signal concentrated in great-power layer.
+- **Expression-type data**: same pipeline on FRED economic indicators — 2025 structurally normal (rank 24/33). Instrument needs relational structure.
