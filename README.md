@@ -36,8 +36,6 @@ Two zero-dependency demo videos generated from the same instrument. Each runs in
 
 ### 1. Sine Boundary Detection — 3-Cavity Self
 
-### 1. Sine Boundary Detection — 3-Cavity Self
-
 ▶ **[Watch on Substack](https://ljieqi.substack.com/p/sine-boundary-detection-3-cavity)**
 
 A synthetic stream with three known structural boundaries. A 3-cavity Self processes the stream blind — cross-harm peaks at all three boundary positions. The video explains what cross-harm and τ measure, and why they are orthogonal readings.
