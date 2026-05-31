@@ -34,7 +34,6 @@ defaults:
 # Exclude from build
 exclude:
   - code/
-  - demo/
   - .git/
   - README.md
   - LICENSE
