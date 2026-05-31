@@ -32,6 +32,14 @@ Two runnable demos from the same instrument.
 | Sine Boundary Detection | 3-Cavity Self | [demo_self_sine.py](demo/demo_self_sine.py) | [Substack](https://ljieqi.substack.com/p/sine-boundary-detection-3-cavity) |
 | Bach C Major Prelude | Solo Geruon | [demo_geruon_bach.py](demo/demo_geruon_bach.py) | [Substack](https://ljieqi.substack.com/p/bach-c-major-prelude-solo-geruon) |
 
+<video controls preload="metadata" style="width:100%;max-width:900px">
+  <source src="/GBE/demo/demo_self_sine.mp4" type="video/mp4">
+</video>
+
+<video controls preload="metadata" style="width:100%;max-width:900px">
+  <source src="/GBE/demo/demo_geruon_bach.mp4" type="video/mp4">
+</video>
+
 A third bridge experiment — [Shepard Paradox](experiments/shepard/) — is an honest negative: the instrument is immune to perceptual illusions that lack physical structure.
 
 ## What This Is
