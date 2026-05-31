@@ -4,6 +4,8 @@ Mixed Codex (true + wrong entries), run on true piece.
 Measure: correct entries gain weight, wrong entries are eliminated.
 """
 import pickle, math, random, sys, io, os
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+sys.path.insert(0, os.path.join(ROOT, 'code'))
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 import geruon, we_core
 from geruon import BiasField, Codex

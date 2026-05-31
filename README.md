@@ -1,90 +1,113 @@
 # GBE — Generative Being Externalized
 
-A trilogy in three papers. One cognitive architecture. Zero training, zero learned weights, zero domain labels.
+A trilogy in three papers, one runnable cognitive instrument, and four frozen experiment tracks.
+
+The public entry point is deliberately small: no model weights, no training pipeline, and no domain labels inside the instrument. The quickstarts below run with Python stdlib only.
 
 ---
 
-## New Here? Start in 5 Minutes
+## Start in 5 Minutes
 
 ```powershell
-cd G:\GBE\GBE
-python docs\quickstart_geruon.py       # solo Geruon — F, wit, τ breathing
-python docs\quickstart_ee_self.py      # 3-cavity Self — cross-harm across time lenses
+git clone https://github.com/JackeyLGene/GBE.git
+cd GBE
+
+python docs\quickstart_geruon.py
+python docs\quickstart_ee_self.py
 ```
 
-Both scripts run with zero dependencies. Python 3.8+ stdlib only. You'll see τ converge to ~0.74, F fluctuate with stream structure, and cross-harm spike at block boundaries.
+Expected first checks:
 
-**After the quickstarts, read the manuals in order:**
+- `quickstart_geruon.py` runs a solo Geruon and prints `tau`, `F`, `wit_rate`, and `arrow norm`.
+- `quickstart_ee_self.py` runs a 3-cavity Self and prints a cross-harm time series.
+- No `pip install` is required for these two scripts. They are tested with Python 3.8+.
 
-| # | Manual | What you'll learn |
-|---|--------|------------------|
-| 1 | [GERUON_MANUAL.md](docs/GERUON_MANUAL.md) | The instrument: API, calibration (fair coin / structon / κ sweep), Faraday readings (F/wit/Δwit), τ/phase/pengshu |
-| 2 | [EE_MANUAL.md](docs/EE_MANUAL.md) | The architecture: Self (multi-cavity amplifiers), We (cross-Self harm), Codex (five-stage externalization loop), four experiment domains |
-| 3 | [Calibration Report](docs/experiment-passive-calibration-report.md) | Instrument factory calibration: κ/δ/cap/γ/GI quantitative curves, readout policy |
+After the quickstarts, read the manuals in order:
+
+| # | File | Purpose |
+|---|------|---------|
+| 1 | [docs/GERUON_MANUAL.md](docs/GERUON_MANUAL.md) | Instrument API, Faraday readings, calibration vocabulary, and minimal usage |
+| 2 | [docs/EE_MANUAL.md](docs/EE_MANUAL.md) | Self / We / Codex assembly and the four experiment architectures |
+| 3 | [docs/experiment-passive-calibration-report.md](docs/experiment-passive-calibration-report.md) | Passive instrument calibration and frozen readout policy |
 
 ---
 
 ## What This Is
 
-A centroid detector. Two operations — merge what is similar, prune what is not reinforced — converge any vector-encoded stream to its statistical attractors under limited memory. The attractors are centroids. Multiple detectors coupled through a shared field produce cross-harm — a scalar of structural divergence. Centroids that survive the memory cycle precipitate into an externalized Codex, outlasting the cavity that produced them.
+GBE is a centroid detector with memory pressure.
 
-The same core instrument detects structure across four domains that share no physical dimensions:
+The instrument repeatedly applies two operations:
 
-| Domain | What it proves | Core result |
-|--------|---------------|-------------|
-| UN diplomatic voting | Civilizational structure is detectable | 2025 disp=0.448, rank 1/79 (falsifiable 2026-2028) |
-| Bach WTC | Externalized cognition converges without priors | Transposition equivariance 100%; five-stage Codex loop |
-| DNA alignments | Evolutionary archive is structurally readable | Exon/intron d=−0.97 (n=200); AHSG d=+1.51 |
-| RNA transcripts | Operation boundary is blind-detectable | CDS stop 98-100% ≤3 windows (parameter-invariant) |
+- merge similar frames
+- prune frames that are not reinforced
+
+Under finite memory, those operations converge streams into structural centroids. Multiple Geruon cavities coupled through shared fields produce cross-harm: a scalar readout of structural divergence across time lenses. Centroids that survive the cycle can be externalized into a Codex, outlasting the cavity that produced them.
+
+The same core instrument is used across four domains:
+
+| Domain | Experiment role | Core reported result |
+|--------|-----------------|----------------------|
+| UN diplomatic voting | Civilizational structure / forward prediction | 2025 displacement rank 1/79; falsifiable 2026-2028 trajectory |
+| Bach WTC | Externalized cognition and Codex convergence | Transposition equivariance 100%; five-stage Codex loop |
+| DNA alignments | Evolutionary archive readability | Exon/intron `d≈-0.97`; AHSG fork-column `d=+1.51` |
+| RNA transcripts | Molecular operation boundary | Blind CDS stop boundary 98-100% within three windows; start boundary weaker but positive |
 
 ---
 
 ## The Trilogy
 
-| Paper | Metaphor | Core contribution | Key constant |
-|-------|----------|-------------------|--------------|
-| **I: GEME** | The static prism | Self-reference is possible. The Shannon-Gödel bridge costs 0.026 bits. | τ₀ = 0.60 |
-| **II: BGM** | Time enters | The bridge breathes. Temporal decoupling enhances differentiation by 49%. | GI = 4 |
-| **III: EE** | Information builds its own time | Externalization. Four-domain evidence. | GI^N |
+| Paper | Role | Main object |
+|-------|------|-------------|
+| **I: GEME** | Static self-reference | Shannon-Gödel bridge |
+| **II: BGM** | Time enters the bridge | Temporal decoupling and differentiation |
+| **III: EE** | Externalized cognition | Geruon / Self / We / Codex and four-domain evidence |
 
 - [Paper I: GEME](paper/gEME.pdf) — DOI: 10.5281/zenodo.20344974
 - [Paper II: BGM](paper/bGM.pdf) — DOI: 10.5281/zenodo.20238099
-- [Paper III: EE](paper/ee.pdf) — v1.5, May 2026 — [Source](paper/ee_paper_v1.5.md)
+- [Paper III: EE v1.6 PDF](paper/ee.pdf)
+- [Paper III: EE v1.6 source](paper/ee_paper_v1.6.md)
+- [EE Supplement v1.6](paper/ee_supplement_v1.6.md)
 
 ---
 
 ## Repository Map
 
-```
+```text
 GBE/
-├── docs/                        ← START HERE: manuals + quickstarts
-│   ├── quickstart_geruon.py     # solo Geruon demo (F, wit, τ)
-│   ├── quickstart_ee_self.py    # 3-cavity Self demo (cross-harm)
-│   ├── GERUON_MANUAL.md         # instrument manual
-│   ├── EE_MANUAL.md             # architecture & experiments manual
+├── docs/
+│   ├── quickstart_geruon.py
+│   ├── quickstart_ee_self.py
+│   ├── GERUON_MANUAL.md
+│   ├── EE_MANUAL.md
 │   └── experiment-passive-calibration-report.md
-│
-├── code/                        # instrument core (zero dependencies)
-│   ├── geme.py                  # GEME kernel (~800 lines)
-│   ├── geruon.py                # Geruon engine (~2500 lines)
-│   ├── we_core.py               # We multi-Self tool (~550 lines)
-│   ├── bgm_core.py              # BGM GEMENet
-│   ├── bgm_bacteria.py          # BGM spatial grid
-│   └── midi_encoder.py          # MIDI → chroma
-│
-├── experiments/                 # frozen experiment scripts
-│   ├── un/                      # §4.1 UN prediction
-│   ├── wtc/                     # §4.2 Bach WTC
-│   ├── dna/                     # §4.3 DNA archive
-│   └── rna/                     # §4.4 RNA boundary
-│
-└── paper/                       # trilogy PDFs + EE source
+├── code/
+│   ├── geme.py
+│   ├── geruon.py
+│   ├── we_core.py
+│   ├── bgm_core.py
+│   ├── bgm_bacteria.py
+│   ├── midi_encoder.py
+│   └── _calibrate_*.py
+├── experiments/
+│   ├── un/
+│   ├── wtc/
+│   ├── dna/
+│   └── rna/
+└── paper/
     ├── gEME.pdf
     ├── bGM.pdf
-    ├── ee.pdf                   # EE v1.5
-    └── ee_paper_v1.5.md
+    ├── ee.pdf
+    ├── ee_paper_v1.6.md
+    └── ee_supplement_v1.6.md
 ```
 
 ---
 
-*Not a model of cognition. A system for detecting structure and precipitating centroids across time.*
+## Reproducibility Notes
+
+- The two quickstarts are zero-dependency checks for the public instrument.
+- The frozen experiment scripts are included under `experiments/`.
+- Large raw datasets are not committed; data sources and expected inputs are documented in each experiment track.
+- Domain experiments may require packages such as `numpy`, `pandas`, `pyarrow`, or `pybigtools`, depending on the script.
+
+The fastest review path is: run both quickstarts, skim the Geruon manual, then inspect one experiment track.

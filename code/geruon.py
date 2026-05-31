@@ -732,6 +732,36 @@ class GeruonMemory:
         # ── Self-boundary (BGM cliff) ──
         self._gate_open = True           # cliff gate latch — snaps shut at dτ/dt cliff
 
+        # ── Faraday readings: centroid tracking ──
+        self._prev_centroid = None        # previous step centroid (for wit)
+        self._centroid_displacement = 0.0 # last displacement |c_t − c_{t-1}|
+        self._wit_hits = 0                # count: |c_t − c_{t-1}| > structon
+
+    def centroid(self):
+        """Weighted centroid of all current frames. None if no frames."""
+        if not self.frames or self.total_weight <= 0:
+            return None
+        D = self.vec_dim
+        c = [0.0] * D
+        for f in self.frames:
+            w = f.weight
+            for j in range(D):
+                c[j] += f.vec[j] * w
+        tw = self.total_weight
+        return tuple(c[j] / tw for j in range(D))
+
+    def _update_centroid_tracking(self, structon):
+        """Call after each step to update centroid displacement and wit count."""
+        c = self.centroid()
+        if c is not None and self._prev_centroid is not None:
+            d2 = sum((c[j] - self._prev_centroid[j]) ** 2 for j in range(self.vec_dim))
+            self._centroid_displacement = math.sqrt(d2)
+            if structon is not None and self._centroid_displacement > structon:
+                self._wit_hits += 1
+        else:
+            self._centroid_displacement = 0.0
+        self._prev_centroid = c
+
     def _zero_vec(self):
         return (0.0,) * self.vec_dim
 
@@ -1755,7 +1785,18 @@ class GeruonMemory:
             # ── Precipitation ──
             "precipitated": sum(1 for f in self.frames if f.precipitated),
             "precipitate_candidates": len(self.precipitate_candidates()),
+            # ── Faraday readings ──
+            "F": self._compute_F(),
+            "centroid_displacement": round(self._centroid_displacement, 6),
+            "wit_hits": self._wit_hits,
         }
+
+    def _compute_F(self):
+        """Field curvature: 1 − H(w)/Hmax. 0 = flat, 1 = fully concentrated."""
+        H = self.structural_entropy()
+        n = max(len(self.frames), 1)
+        H_max = math.log2(n)
+        return round(1.0 - H / H_max, 6) if H_max > 0 else 0.0
 
 
 # ──────────────────────────────────────────────────────────────────
@@ -1774,7 +1815,7 @@ class Geruon:
     def __init__(self, vec_dim=VEC_DIM_DEFAULT, memory_cap=10, cooccur_window=None,
                  cooccur_thresh=0.25, max_chains=5, time_window_size=0,
                  codex=None, bias_field=None, bias_weight=None,
-                 kappa_tau=None, gamma_tau=None):
+                 kappa_tau=None, gamma_tau=None, structon=None):
         if bias_weight is None:
             bias_weight = GAMMA          # default blend = γ
         if kappa_tau is None:
@@ -1782,6 +1823,7 @@ class Geruon:
         if gamma_tau is None:
             gamma_tau = kappa_tau * GAMMA   # derived from κ_τ: time pruning = coupling × decay
         self.vec_dim = vec_dim
+        self.structon = structon          # minimum detectable centroid displacement (Faraday)
         self.codex = codex
         self.bias_field = bias_field        # content-layer gradient field
         self.time_field = None               # time-layer gradient field (set separately)
@@ -1968,6 +2010,8 @@ class Geruon:
 
         stress = self.memory.stress
         ind = self._induction_step(stress)
+        # ── Faraday: centroid displacement tracking ──
+        self.memory._update_centroid_tracking(self.structon)
         return {"frame": self.frame_count, "mem": len(self.memory.frames),
                 "eff": round(self.memory.efficiency, 4),
                 "stress": round(stress, 4),
@@ -2068,6 +2112,11 @@ class Geruon:
         m["codex_hits"] = self.memory._codex_hits
         m["codex_misses"] = self.memory._codex_misses
         m["codex_hit_rate"] = self.memory._codex_bill()['rate']
+        # Faraday: wit rate
+        if self._input_count > 0:
+            m["wit_rate"] = round(self.memory._wit_hits / self._input_count, 4)
+        else:
+            m["wit_rate"] = 0.0
         return m
 
     def enrich(self):

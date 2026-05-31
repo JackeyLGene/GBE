@@ -1,6 +1,7 @@
 """DNA: 4-species fork columns, Self cross-harm, exon/intron + shuffle."""
 import sys, os, math, random, statistics as st
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+sys.path.insert(0, os.path.join(ROOT, 'code'))
 sys.stdout.reconfigure(line_buffering=True)
 import geruon, numpy
 

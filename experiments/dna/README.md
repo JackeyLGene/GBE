@@ -1,0 +1,39 @@
+# DNA Evolutionary Archive — §4.3
+
+Evidence that evolutionary constraint leaves a detectable structural signature in DNA. Exon/intron separation and fork-column calibration. Instrument has no genetic code knowledge.
+
+## Scripts
+
+| Script | Purpose | Runtime |
+|--------|---------|---------|
+| `_dna_genomic.py` | Exon/intron 3-cavity Self. 3-mer encoding, 256-nt genomic-order windows. N=200 transcripts. | ~3min |
+| `_dna_fork2.py` | 4-species fork column (Pongo/Gorilla/Pan/Homo). AHSG single-gene calibration. | ~1min |
+| `_dna_validate.py` | Multi-seed validation, κ ablation, window sweep, dinucleotide shuffle control. | ~5min |
+
+## Data
+
+- **Human TE atlas**: transcript sequences + CDS masks (parquet)
+- **4-species hominid alignments**: Pongo, Gorilla, Pan, Homo (per-gene FASTA)
+- **GENCODE v49 GTF**: primary assembly annotation
+
+Expected location: `data/dna/`. Raw parquet and FASTA files must be obtained from GENCODE and TE atlas.
+
+## Run Order
+
+```powershell
+cd experiments\dna
+python _dna_genomic.py      # exon/intron baseline (population evidence)
+python _dna_fork2.py         # AHSG fork column (single-gene calibration)
+python _dna_validate.py      # multi-seed + ablation confirmation
+```
+
+## Dependencies
+
+`numpy`, `pandas`, `pyarrow` (parquet). Core instrument: `code/geruon.py`, `code/geme.py` (stdlib only).
+
+## Key Results
+
+- Exon/intron: d=−0.97 (n=200 transcripts, 10,606 windows). Shuffle collapses to d=−0.10. Δd=+0.87.
+- AHSG fork column: d=+1.51 (single-gene, n=1). AHSG identified under positive selection (Sabeti 2007, Nielsen 2005). Per-gene pooled did NOT generalize (mean d=0.13±0.22).
+- Dinucleotide shuffle preserves base composition but destroys 3-nt periodicity → signal drops.
+- κ ablation confirms multi-lens Self is load-bearing.

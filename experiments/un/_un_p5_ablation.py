@@ -1,5 +1,7 @@
 """UN P5 Ablation — No-P5, P5-only, Random-5, No-USA. Matches calibrate encode()."""
 import csv, math, collections, sys, os, random
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+sys.path.insert(0, os.path.join(ROOT, 'code'))
 sys.stdout.reconfigure(encoding='utf-8')
 from geruon import Geruon
 

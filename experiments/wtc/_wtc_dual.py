@@ -4,7 +4,9 @@
 Gen2/Gen3 的 harm-Geruon 继承上一代 Codex.
 """
 
-import pickle, math, sys, io, importlib
+import pickle, math, sys, io, importlib, os
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+sys.path.insert(0, os.path.join(ROOT, 'code'))
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 import geruon, we_core
 from geruon import Geruon, BiasField, Codex

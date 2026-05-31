@@ -11,7 +11,8 @@
 Geruon 是一个零依赖的 Python 库。不需要安装。仓库内置一个可直接运行的 quickstart：
 
 ```powershell
-cd G:\GEME\EE
+git clone https://github.com/JackeyLGene/GBE.git
+cd GBE
 python docs\quickstart_geruon.py
 ```
 
@@ -174,7 +175,7 @@ g.bias_field   # BiasField or None
 
 **Δwit — 三阶：结构脆弱度。** 不是 `metrics()` 直接输出——它是两次运行的差分。跑一遍纯目标流得 baseline wit，跑一遍公平硬币注入得 probe wit。Δwit = wit_probe − wit_baseline。负值 = 硬币让目标更稳定（结构刚化），正值 = 硬币干扰了目标（结构脆弱）。
 
-**补充 — 原生读数 R1-R8。** metrics() 提供 8 项帧经济原生读数（详见[被动标定报告](experiment-passive-calibration-report.md)）：τ (R1)、dτ/dt (R2)、centroid 幅度 (R3)、F (R4)、L2/L3 帧数 (R5)、pred_err (R6)、n_frames (R7)、total_w (R8)。F/wit 是 Faraday 封装的高层读数，R1-R8 是帧经济的原生仪表盘。两者互补。
+**补充 — 原生读数 R1-R8。** metrics() 提供 8 项帧经济原生读数（详见[被动标定报告](experiment-passive-calibration-report.md)）：τ (R1)、dτ/dt (R2)、centroid 幅度 (R3)、F (R4)、L2/L3 帧数 (R5)、frame_disp (R6)、n_frames (R7)、total_w (R8)。F/wit 是 Faraday 封装的高层读数，R1-R8 是帧经济的原生仪表盘。两者互补。
 
 标定和对照方法见下一章。
 

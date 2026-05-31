@@ -5,7 +5,9 @@ Dim1: (close-open)/(high-low) — who won (buyers=+1, sellers=-1)
 Dim2: volume * |close-open|/(high-low) / max_vol — committed action ($ behind the move)
 """
 
-import csv, math, sys, io, collections
+import csv, math, sys, io, collections, os
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+sys.path.insert(0, os.path.join(ROOT, 'code'))
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 from geruon import Geruon
 

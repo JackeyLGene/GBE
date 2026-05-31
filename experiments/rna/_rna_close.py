@@ -1,6 +1,7 @@
 """RNA closure: save results, process-permutation, RPF/Seq/fork ablation."""
 import sys, os, math, random, statistics as st, gzip, collections, json
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+sys.path.insert(0, os.path.join(ROOT, 'code'))
 sys.stdout.reconfigure(line_buffering=True)
 import geruon, numpy, pandas as pd, pybigtools
 
