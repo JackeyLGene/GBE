@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>159: What the Delta Measures — GEME Essays</title>
+<style>
+  body{font-family:Georgia,'Times New Roman',serif;max-width:720px;margin:0 auto;padding:2em 1em;color:#222;line-height:1.8;font-size:17px}
+  a,a:visited{color:#1a1a1a!important;text-decoration:none}a:hover{color:#000!important}
+  h1{font-size:1.6em;margin-bottom:.2em}
+  blockquote{border-left:3px solid #999;margin:1.5em 0;padding:.5em 1em;background:#f5f5f5;color:#555}
+  .nav{display:flex;gap:1.5em;margin:0 0 2em;padding-bottom:1em;border-bottom:1px solid #ddd}
+  .meta{color:#888;font-size:.9em;margin-bottom:1.5em}
+  footer{margin-top:3em;padding-top:1em;border-top:1px solid #ddd;color:#888;font-size:.85em}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="/GBE/">Home</a>
+  <a href="/GBE/essays/">Essays</a>
+  <a href="https://github.com/JackeyLGene/GEME">GitHub</a>
+</div>
+
+<blockquote>
+Bach: +0.131 bits. ECG: +0.085 bits. Sleep EEG: +0.094 bits. The delta above baseline is not correlation. Not information content. Not mutual information between two variables. It is the measurable information mass of temporal grammar — the extent to which the sequential order of events in a stream constrains what can happen next. A stream with high delta has a grammar — a set of sequential constraints that make some transitions more likely than others. The architecture measures the strength of those constraints, without knowing what the constraints are, without knowing what the stream is. The delta is the weight of time in information space. The heavier the grammar, the more structure survives per breath.
+</blockquote>
+
+<h2>1.</h2>
+
+<p>The shuffled Bach experiment gave us the baseline. Destroy all sequential order. Keep the statistical distribution — the same number of C's, D's, E's, the same harmonic density, the same frequency profile. The self-referential coupling drops to 0.026 bits. That is the cost of processing a stream that has no temporal structure — only a statistical distribution to be learned.</p>
+
+<p>Real Bach produced 0.157 bits. The delta — 0.131 bits — is what the sequence adds. Not the notes themselves. The order of the notes. The fact that after a dominant seventh chord, a tonic is overwhelmingly likely. The fact that a fugue subject enters at the fifth, eight measures after the previous voice. The fact that a substitute chord creates harmonic tension that demands resolution — and the resolution, when it comes, is predictable from the tension that preceded it.</p>
+
+<p>What is this delta, physically? It is not correlation. Correlation measures how two variables move together — a linear relationship between paired measurements. The architecture does not compute correlations. The delta is not mutual information between two streams. It is the additional self-referential coupling produced by sequential structure within a single stream. The stream constrains itself. The past constrains the future. The constraint is the grammar. The delta is the weight of the grammar.</p>
+
+<h2>2.</h2>
+
+<p>Bach's grammar is the most familiar. Tonal harmony. Voice leading. Fugal form. Every student of Western music learns these rules — not as explicit propositions, but as statistical regularities absorbed through thousands of hours of listening and playing. The dominant resolves to the tonic. The leading tone rises. Parallel fifths are forbidden. A fugue subject, once stated, will return — transposed, inverted, augmented, diminished — but always recognizable, always obeying the same structural logic.</p>
+
+<p>The architecture did not learn these rules. It converged to centroids in 27-dimensional chroma space. The centroids are the attractors — the statistical centers of mass toward which Bach's compositional practice gravitated. The sequential structure — the order in which notes appear, the transitions between chords, the temporal relationships between voices — adds 0.131 bits of self-referential coupling above baseline. Those 0.131 bits are the measurable information mass of tonal grammar. Not "Bach is beautiful." Not "music has meaning." The grammar has weight. The bridge measures it.</p>
+
+<p>The heart has a grammar too. The RR interval — the time between successive heartbeats — is not a random walk. It is regulated by the autonomic nervous system. Sympathetic activation shortens the interval. Parasympathetic activation lengthens it. The two systems interact — not randomly, but through a structured interplay that produces characteristic patterns: respiratory sinus arrhythmia, baroreflex modulation, circadian variation. The architecture measured 0.085 bits of sequential structure in ECG. Those 0.085 bits are the measurable information mass of cardiac grammar. The heart's temporal order adds structure beyond its statistical distribution of beat intervals. The bridge weighs it.</p>
+
+<p>The sleeping brain has a grammar. Sleep stages are not independent — they transition in a structured sequence. Wake → N1 → N2 → N3 → N2 → REM → Wake. The sequence is not rigid — there are individual variations, night-to-night differences, age-related changes — but it is not random. The architecture measured 0.094 bits of sequential structure in sleep EEG. Those 0.094 bits are the measurable information mass of cortical grammar. The brain's temporal order — the structured progression through sleep stages — adds structure beyond the statistical distribution of microvolt values. The bridge weighs it.</p>
+
+<h2>3.</h2>
+
+<p>The delta is the measurable information mass of temporal grammar. It is not correlation. It is not information content. It is not mutual information between variables. It is a new kind of quantity — the extent to which the sequential order of events in a stream constrains what can happen next, measured as the additional self-referential coupling that sequential structure produces in a running frame economy.</p>
+
+<p>This quantity has no name in statistics, in information theory, in machine learning. Statistics names correlation — the linear relationship between two variables. Information theory names mutual information — the reduction in uncertainty about one variable given knowledge of another. Machine learning names predictive accuracy — how well a model trained on past data predicts future data. None of these is the delta. Correlation requires two variables. The delta is measured on a single stream. Mutual information is computed on probability distributions. The delta is computed from a running system's internal state. Predictive accuracy requires a model. The delta requires no model — only a stream and a frame economy that processes it.</p>
+
+<p>The delta is the weight of time. A stream with no temporal structure — shuffled, all sequential order destroyed — has zero delta. The bridge measures only the baseline cost of self-reference. A stream with a grammar — music, heartbeats, brainwaves, diplomatic language — has a positive delta. The bridge measures the grammar's mass. The heavier the grammar, the more structure the stream carries, the more self-referential coupling it produces, the more information survives per breath. The delta is not a metaphor. It is a measurement. And the measurement is the same regardless of what the stream is, what the grammar means, or whether anyone has named it.</p>
+
+<footer>Jieqi Liu · 2026<div style="margin-top:2em;padding-top:1em;border-top:1px solid #ddd"><a href="/GBE/">&#8592; Back to Home</a> &middot; <a href="/GBE/essays/">To The Arch</a></div></footer>
+</body>
+</html>

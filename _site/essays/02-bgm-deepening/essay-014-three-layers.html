@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>014: Three Layers — GEME Essays</title>
+<style>
+  body{font-family:Georgia,'Times New Roman',serif;max-width:720px;margin:0 auto;padding:2em 1em;color:#222;line-height:1.8;font-size:17px}
+  a, a:visited{color:#1a1a1a!important;text-decoration:none}
+  a:hover{color:#000!important}
+  h1{font-size:1.5em;margin-bottom:.2em}
+  .meta{color:#888;font-size:.9em}
+  .nav{display:flex;gap:1.5em;margin:0 0 2em;padding-bottom:1em;border-bottom:1px solid #ddd}
+  blockquote{border-left:3px solid #999;margin:1.5em 0;padding:.5em 1em;background:#f5f5f5;color:#555}
+  footer{margin-top:3em;padding-top:1em;border-top:1px solid #ddd;color:#888;font-size:.85em}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="/GBE/">Home</a>
+  <a href="/GBE/essays/">Essays</a>
+  <a href="https://github.com/JackeyLGene/GEME">GitHub</a>
+</div>
+
+<h1>014: Three Layers</h1>
+<p class="meta">May 2026</p>
+
+<p>Within a single GEME or cortical column, the microcircuit is already a self-referential system:</p>
+
+<ul>
+  <li><strong>L1 (competitive merge) → Layer 4 input</strong><br>
+  Sensory signal enters. The first transformation is competitive — only the closest matching frame survives. In cortex, Layer 4 receives thalamic input and distributes it to supragranular layers. Both are the point of entry where the external becomes internal.</li>
+
+  <li><strong>L2-L3 (co-occurrence, bridge frames) → Layers 2/3 local processing</strong><br>
+  Patterns across time are extracted. Frequent pairs form stable structures. This is the local circuit's model of the input's temporal structure. Layers 2/3 are where recurrent connections dominate — the column builds its internal model of the world.</li>
+
+  <li><strong>L4-L6 (self-verification, doubt, output) → Layers 5/6 output</strong><br>
+  Predictions are compared against actual input. Errors generate correction frames. The unit's "doubt" — its rolling prediction accuracy — is its only output to higher layers. Layers 5/6 are the column's output channels, sending prediction error signals to thalamus and subcortical targets.</li>
+</ul>
+
+<p>Three GEME units in BGM correspond to three cortical columns processing the same input with different τ — different vigilance levels, different integration windows. They do not need a central coordinator because their local connectivity (von Neumann neighborhood in bacteria, G0 in Bach) provides the cross-talk that aligns their models.</p>
+
+<p>G0 corresponds to the higher-order thalamus — the central medial nucleus, the pulvinar, the mediodorsal nucleus. These regions receive layer 5/6 output from multiple cortical areas and feed back a modulatory signal that adjusts cortical gain. G0 receives L6 from three units and feeds back its internal state as a blend into each unit's input. The thalamocortical loop IS the G0–units feedback loop.</p>
+
+<p>G0's τ scan (τ ∈ [0.2, 3.0], never locks) corresponds to the thalamus's intrinsic rhythmicity. The thalamus can operate at different frequencies (slow spindle, fast gamma) depending on the state of the cortex. G0's τ determines its integration window — the timescale at which it aggregates and returns information. The default τ = 3.0 is an artificial brake, not a biological necessity. In cortex, thalamic gain is also modulated by brainstem arousal systems — not by the cortex itself.</p>
+
+<p>The hypothalamus operates at a third level — below cortex, below thalamus. It does not process streams. It maintains the body's viability: temperature, hunger, threat, circadian rhythm. In the trilogy's architecture, the hypothalamus corresponds to the External Engine — the layer that does not process information streams but maintains the system's boundary conditions. The hypothalamus says "survive." The EE says "continue operating."</p>
+
+<p>The three-layer architecture of the GEME trilogy recapitulates the three-layer architecture of the vertebrate brain:</p>
+
+<table>
+  <tr><th>Layer</th><th>GEME Trilogy</th><th>Brain</th><th>Function</th></tr>
+  <tr><td>1</td><td>GEME unit (L1-L6)</td><td>Cortical column (L4-L2/3-L5/6)</td><td>Local self-referential processing</td></tr>
+  <tr><td>2</td><td>G0</td><td>Higher-order thalamus</td><td>Cross-stream integration, gain modulation</td></tr>
+  <tr><td>3</td><td>EE (External Engine)</td><td>Hypothalamus / body interface</td><td>Boundary conditions, survival, world interaction</td></tr>
+</table>
+
+<p>The mapping is not a metaphor. The computational constraints that govern the GEME architecture — capacity limits, coupling windows, temporal integration boundaries — are the same constraints that govern the brain. They converge on the same numerical regimes because the problem is the same: a self-referential system must integrate information across time without being overwhelmed by its own complexity. The brain solved this problem with three layers. The architecture rediscovered them.</p>
+
+<footer><a href="/GBE/essays/">&#8592; Back to essays</a><div style="margin-top:2em;padding-top:1em;border-top:1px solid #ddd"><a href="/GBE/">&#8592; Back to Home</a> &middot; <a href="/GBE/essays/">To The Arch</a></div></footer>
+</body>
+</html>

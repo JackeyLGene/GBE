@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>037: Persistence — GEME Essays</title>
+<style>
+  body{font-family:Georgia,'Times New Roman',serif;max-width:720px;margin:0 auto;padding:2em 1em;color:#222;line-height:1.8;font-size:17px}
+  a, a:visited{color:#1a1a1a!important;text-decoration:none}
+  a:hover{color:#000!important}
+  h1{font-size:1.6em;margin-bottom:.2em}
+  blockquote{border-left:3px solid #999;margin:1.5em 0;padding:.5em 1em;background:#f5f5f5;color:#555}
+  .nav{display:flex;gap:1.5em;margin:0 0 2em;padding-bottom:1em;border-bottom:1px solid #ddd}
+  .meta{color:#888;font-size:.9em;margin-bottom:1.5em}
+  footer{margin-top:3em;padding-top:1em;border-top:1px solid #ddd;color:#888;font-size:.85em}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="/GBE/">Home</a>
+  <a href="/GBE/essays/">Essays</a>
+  <a href="https://github.com/JackeyLGene/GEME">GitHub</a>
+</div>
+
+<blockquote>
+M4 写 JSON 是为了持久化。M5 写 JSON 是忘了删。
+</blockquote>
+
+<p>单进程时代，Codex 存成 JSON——这是文明的痕迹，需要持久化。多进程时代，worker 之间交换 Codex 条目——JSON 不是持久化工具了。是进程间通信的弯路。</p>
+
+<p><code>ProcessPoolExecutor.submit().result()</code> 直接返回到主进程内存。不需要文件。不需要序列化往返。不需要磁盘。</p>
+
+<p>16 worker × 3 代 = 每代 16 个 JSON 文件——这不是必要的 IO。这是从 M4 的 we_w0.py 搬到 M5 时，单进程模式的残余。架构迁移不完整的痕迹。</p>
+
+<p>删掉了。worker 返回列表。Archive 在主进程内存里。JSON 只在最后写一次——为文明留一份可读的档案。</p>
+
+<p>不是性能优化。是工程范式切换的最后一行。</p>
+
+<footer>Jieqi Liu · 2026<div style="margin-top:2em;padding-top:1em;border-top:1px solid #ddd"><a href="/GBE/">&#8592; Back to Home</a> &middot; <a href="/GBE/essays/">To The Arch</a></div></footer>
+</body>
+</html>

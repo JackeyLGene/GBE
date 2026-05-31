@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>121: Bird Gun Replaced by Cannon — GEME Essays</title>
+<style>
+  body{font-family:Georgia,'Times New Roman',serif;max-width:720px;margin:0 auto;padding:2em 1em;color:#222;line-height:1.8;font-size:17px}
+  a,a:visited{color:#1a1a1a!important;text-decoration:none}a:hover{color:#000!important}
+  h1{font-size:1.6em;margin-bottom:.2em}
+  blockquote{border-left:3px solid #999;margin:1.5em 0;padding:.5em 1em;background:#f5f5f5;color:#555}
+  .nav{display:flex;gap:1.5em;margin:0 0 2em;padding-bottom:1em;border-bottom:1px solid #ddd}
+  .meta{color:#888;font-size:.9em;margin-bottom:1.5em}
+  footer{margin-top:3em;padding-top:1em;border-top:1px solid #ddd;color:#888;font-size:.85em}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="/GBE/">Home</a>
+  <a href="/GBE/essays/">Essays</a>
+  <a href="https://github.com/JackeyLGene/GEME">GitHub</a>
+</div>
+
+<blockquote>
+The UN experiment used to take an entire day. Forty-nine million sig_matches calls. O(N) scan for every frame comparison. L4 centroid computation at every induction cycle. The old architecture strained under its own weight. Now it breathes. Not because we optimized. Because we removed what was never architecture in the first place.
+</blockquote>
+
+<h2>1.</h2>
+
+<p>There is a particular feeling — the first time you run something that used to take all day and it finishes in minutes. It is not relief. It is not satisfaction. It is the feeling of having been right about what was wrong.</p>
+
+<p>The old UN pipeline ran on the pre-M11 architecture. No _sig_cache — every sig lookup was an O(N) scan through the frame list. Forty-nine million calls. The L4 scaffold was still in place — a weighted centroid computation at every induction cycle, meta-frame injection, dw/dt analysis. The multiverse branches deep-copied the entire frame economy. The architecture was doing work it did not need to do, paying a bill it could not yet name, and taking an entire day to process what should have taken minutes.</p>
+
+<p>We did not optimize it. We did not add threads. We did not rewrite in C. We removed the things that were never architecture — the G0 as privileged observer, the depth recursion as vertical layers, the collective as competitive filter, the G sentences as injected probes, the self_observe as explicit step. Five scaffolds. Each one removed not by engineering instinct but by the scaffold method — build it, see what it reveals, tear it down, keep the relation.</p>
+
+<p>What remained was leaner. And faster. Not because we made it fast. Because what was left was what the architecture actually is.</p>
+
+<h2>2.</h2>
+
+<p>The M11 _sig_cache is the clearest case. Before the cache, every time the frame economy needed to check whether a signature already existed, it walked the entire frame list. O(N) per lookup. For 49 million lookups on a frame economy that could hold hundreds of frames — the product is days. The cache is trivial: a dictionary mapping sig to fid. O(1) lookup. The Landauer bill dropped from 49M scans to a handful of misses.</p>
+
+<p>But the cache is not an optimization. The cache is the architecture recognizing that verification is P and finding is NP, and that a running system converts NP to P by writing down what it has already found. The Landauer-Gödel bill (§2.3) is the cost of that conversion. The cache pays the bill once, then reads for free. The speedup is not a performance gain. It is the thermodynamic difference between searching and remembering.</p>
+
+<p>M10 and M11 produce identical harm, identical consensus, identical τ trajectories. The ablation proved it. M10=M11 is zero signal difference. The cache changes nothing about what the architecture detects. It only changes what it costs. A pure optimization, in the strictest sense — same behavior, lower bill. Twenty-four times faster on ECG. A full day compressed to minutes on UN. Not because we made the architecture smarter. Because we let it remember what it had already found.</p>
+
+<h2>3.</h2>
+
+<p>The L4 scaffold removal — M13 — is the same story from a different angle. GEME's self_observe() was a separate function call: compute centroid of active frames, compute dw/dt for all frames, inject meta-frames, track fid co-occurrence. It was heavy. It was called at every induction cycle. It was load-bearing for GEME's claim that self-reference is emergent — because without it, GEME had no way to look at itself.</p>
+
+<p>Geruon does not need it. τ is endogenous. Every merge rewrites a structural signature. Every co-occurrence carries temporal weight. Every induction cycle breathes with τ. The frame economy observes itself through every operation — not through a separate step, but through the continuous breath. Removing the explicit self_observe() call eliminated 108 self-observation events from a 2093-beat ECG run. The signal quality did not drop. The architecture did not lose self-reference. It lost the scaffold that was standing in for self-reference — and found that self-reference was already everywhere.</p>
+
+<p>Twenty-four times faster. Not because we made self-observation efficient. Because we stopped doing it as a separate thing.</p>
+
+<h2>4.</h2>
+
+<p>There is a temptation, after this, to call it optimization and move on. To file M11 under "performance improvements" and M13 under "code cleanup." That would miss the point entirely.</p>
+
+<p>Every scaffold removal made the architecture faster. But speed was never the goal. The goal was to remove what was not the architecture. The speed was a diagnostic — a signal that what we removed had been dead weight. If removing something makes the system faster without changing what it detects, the thing you removed was never part of the structure. It was scaffolding. It was there to help you see. It was never meant to stay.</p>
+
+<p>The UN experiment used to take a day. Now it takes minutes. The difference is not engineering. The difference is five scaffolds that came down. Each one revealed a relation. Each relation replaced a mechanism. The mechanism was heavy. The relation is light. The architecture at the end weighs less than the architecture at the beginning — not in lines of code, but in operations per breath — because what remains is only what the architecture could not do without.</p>
+
+<p>This is the scaffold method's final proof. Not that it produces correct results — the experiments prove that. But that it produces lean results. A method that only adds would produce bloat. A method that builds and removes produces what is left when everything that can be removed has been. What is left is the architecture.</p>
+
+<footer>Jieqi Liu · 2026<div style="margin-top:2em;padding-top:1em;border-top:1px solid #ddd"><a href="/GBE/">&#8592; Back to Home</a> &middot; <a href="/GBE/essays/">To The Arch</a></div></footer>
+</body>
+</html>

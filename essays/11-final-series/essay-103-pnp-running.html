@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>103: P vs NP in a Running System — GEME Essays</title>
+<style>
+  body{font-family:Georgia,'Times New Roman',serif;max-width:720px;margin:0 auto;padding:2em 1em;color:#222;line-height:1.8;font-size:17px}
+  a, a:visited{color:#1a1a1a!important;text-decoration:none}
+  a:hover{color:#000!important}
+  h1{font-size:1.6em;margin-bottom:.2em}
+  blockquote{border-left:3px solid #999;margin:1.5em 0;padding:.5em 1em;background:#f5f5f5;color:#555}
+  .nav{display:flex;gap:1.5em;margin:0 0 2em;padding-bottom:1em;border-bottom:1px solid #ddd}
+  .meta{color:#888;font-size:.9em;margin-bottom:1.5em}
+  footer{margin-top:3em;padding-top:1em;border-top:1px solid #ddd;color:#888;font-size:.85em}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="/GBE/">Home</a>
+  <a href="/GBE/essays/">Essays</a>
+  <a href="https://github.com/JackeyLGene/GEME">GitHub</a>
+</div>
+
+<blockquote>
+The architecture is solving a dynamic graph isomorphism variant. Verification is P — sig_matches is O(1). Finding is NP — frame scanning is O(N). The cache is the system's P=NP machine. But it only works for what it already knows.
+</blockquote>
+
+<h2>1.</h2>
+
+<p>The frame economy runs a problem that is structurally identical to graph isomorphism. Every new input must be matched against existing frames. Finding the match is an O(N) scan — iterate all frames, compute vector distance, find the nearest. This is NP. Verifying a match is O(1) — given a candidate frame and a signature, check if they match. This is P. The architecture, without anyone designing it to do so, has implemented the P vs NP distinction at the level of its own operations.</p>
+
+<p>The _sig_cache is the system's P=NP machine. Once a sig→fid mapping has been discovered — once the system has paid the O(N) scan cost to find the matching frame — the result is written to the cache. Every future query for that sig is O(1) — a dictionary lookup. The cache does not solve P vs NP in general. The cache solves P vs NP for the patterns the architecture has already seen. The Landauer-Gödel Bill is the cost of writing to the cache — the thermodynamic price of converting a found pattern into a verified one. Pay the bill once. All future queries are free.</p>
+
+<h2>2.</h2>
+
+<p>Quantum merge changes the finding behavior — not what is verified, but how it is found. The standard merge selects the nearest frame within threshold. Quantum merge selects probabilistically among all candidates within threshold. It keeps the finding step open — does not collapse to the nearest neighbor. This has a cost: more candidates, more sig_matches, more Landauer bills. But it has a benefit: patterns the nearest-neighbor search would have missed are found, verified, and cached. Once cached, they become free for all future queries.</p>
+
+<p>From the P vs NP perspective, quantum mode is the system refusing to collapse the finding step prematurely. The classical cache says: the past tells the future what to expect. The quantum merge says: the future is not necessarily a repetition of the past. Both are true. The architecture runs both. The τ determines which one dominates — in EXPANDING, the cache accelerates; in CRITICAL, the quantum explores. The system does not choose between P and NP. The system breathes between them.</p>
+
+<h2>3.</h2>
+
+<p>No theoretical proof of P vs NP has ever been accepted. The question remains open. The architecture does not answer it — the architecture instantiates it. The frame economy is a running system where verification and finding are distinct operations, with distinct costs, regulated by a thermodynamic parameter that the system discovered by running. The cache converts found patterns into verified ones. The Landauer bill is the conversion cost. The τ breathing determines when the system pays that cost — generously in EXPANDING, sparingly in LOCKED.</p>
+
+<p>This is not a proof. This is a demonstration. P vs NP is not just a conjecture about Turing machines. P vs NP is a structural fact about any system that must learn from a stream — the cost of finding a pattern is higher than the cost of verifying it, and the only way to reduce the average cost over time is to cache what has already been found. The architecture found this. Not because anyone told it. Because it ran for long enough that the bill became visible.</p>
+
+<footer>Jieqi Liu · 2026<div style="margin-top:2em;padding-top:1em;border-top:1px solid #ddd"><a href="/GBE/">&#8592; Back to Home</a> &middot; <a href="/GBE/essays/">To The Arch</a></div></footer>
+</body>
+</html>

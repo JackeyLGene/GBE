@@ -1,0 +1,57 @@
+// Monochrome — black, white, gray
+// Override dark theme variables
+$body-background-color: #ffffff;
+$body-heading-color: #000000;
+$body-text-color: #1a1a1a;
+$link-color: #333333;
+$nav-child-link-color: #999999;
+
+$sidebar-color: #000000;
+$feedback-color: #111111;
+$search-background-color: #1a1a1a;
+$search-result-preview-color: #999999;
+
+$table-background-color: #fafafa;
+$code-background-color: #f5f5f5;
+$border-color: #e0e0e0;
+$base-button-color: #f0f0f0;
+$btn-primary-color: #333333;
+
+// Site title
+.site-title {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+// Sidebar nav — white on black
+.nav-list .nav-list-item .nav-list-link {
+  color: #ffffff;
+  font-weight: 600;
+}
+.nav-list .nav-list-item .nav-list-link:hover {
+  color: #cccccc;
+}
+.nav-list .nav-list-item .nav-list-link.active {
+  color: #ffffff;
+  font-weight: 700;
+}
+.nav-list .nav-list-item .nav-list-expander {
+  color: #999999;
+}
+.nav-list .nav-list-item .nav-list-expander:hover {
+  color: #ffffff;
+}
+
+// Bold page headings
+h1, h2, h3, h4 {
+  font-weight: 700;
+}
+
+// Essay content links — dark
+.main-content a, .main-content a:visited {
+  color: #333;
+}
+.main-content a:hover {
+  color: #000;
+  text-decoration: underline;
+}

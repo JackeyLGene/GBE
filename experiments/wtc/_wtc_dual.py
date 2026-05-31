@@ -98,7 +98,7 @@ def run_piece_with_harm_geruon(cv, iv, hg, codex, field):
 pieces_data=[]
 TEST_PIECE = 0  # C major
 for i in [TEST_PIECE]:
-    with open('data/wtc_pieces/wtc_%02d.pkl'%i,'rb') as f:
+    with open(os.path.join(ROOT, 'data', 'wtc_pieces', 'wtc_%02d.pkl'%i),'rb') as f:
         events,_=pickle.load(f)
     cv,iv=encode(events)
     ptype='Prelude' if i%2==0 else 'Fugue'

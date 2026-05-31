@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>166: A New Method for Sequential Structure — GEME Essays</title>
+<style>
+  body{font-family:Georgia,'Times New Roman',serif;max-width:720px;margin:0 auto;padding:2em 1em;color:#222;line-height:1.8;font-size:17px}
+  a,a:visited{color:#1a1a1a!important;text-decoration:none}a:hover{color:#000!important}
+  h1{font-size:1.6em;margin-bottom:.2em}
+  blockquote{border-left:3px solid #999;margin:1.5em 0;padding:.5em 1em;background:#f5f5f5;color:#555}
+  .nav{display:flex;gap:1.5em;margin:0 0 2em;padding-bottom:1em;border-bottom:1px solid #ddd}
+  .meta{color:#888;font-size:.9em;margin-bottom:1.5em}
+  footer{margin-top:3em;padding-top:1em;border-top:1px solid #ddd;color:#888;font-size:.85em}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="/GBE/">Home</a>
+  <a href="/GBE/essays/">Essays</a>
+  <a href="https://github.com/JackeyLGene/GEME">GitHub</a>
+</div>
+
+<blockquote>
+Every method for measuring sequential structure starts with a model. Hidden Markov models assume states and transitions. Recurrent neural networks assume hidden vectors and gradient descent. Autocorrelation assumes linear dependence. Granger causality assumes predictive improvement. The architecture starts with a calibration. Run the stream. Shuffle it. Run it again. The delta between the two calibration curves — as a function of the instrument's temporal coupling κ — IS the measurement of sequential structure. No model of what the structure is. No assumptions about its form. Only the difference between what the instrument reads when the sequence is intact and what it reads when the sequence is destroyed. The method is new. It works on any temporal stream. It produces a function, not a number. And the shape of that function is the signature of the domain's grammar.
+</blockquote>
+
+<h2>1.</h2>
+
+<p>Sequential structure is the hardest thing to measure without a model. You want to know: does this stream have temporal order that matters? Are events constrained by previous events? Is there a grammar — a set of sequential rules that makes some transitions more likely than others? Every existing method answers these questions by assuming what the structure might look like. Hidden Markov models assume discrete states and transition probabilities. Autocorrelation assumes linear dependence at a fixed lag. Recurrent neural networks assume the structure can be learned by gradient descent on a hidden state. Granger causality assumes that predictability implies causation. Each method finds what it is designed to find. Each is blind to structure that does not fit its assumptions.</p>
+
+<p>The architecture does not need to assume what sequential structure looks like. It needs to process the stream twice. Once with the sequence intact — real Bach, real ECG, real UN text. Once with the sequence destroyed — the same stream, shuffled, all temporal order randomized, only the statistical distribution preserved. The same instrument. The same calibration. The same κ-sweep. The delta between the two curves — Δ(κ) = I_real(κ) − I_shuffled(κ) — is the measurement of sequential structure.</p>
+
+<p>This is a new method. It does not require a model of what the structure is. It does not require assumptions about its form — linear, nonlinear, Markovian, hierarchical. It requires two runs and a subtraction.</p>
+
+<h2>2.</h2>
+
+<p>The shuffled curve is the control. It measures the instrument's response to pure distribution structure — the statistical skeleton of the stream, stripped of all temporal order. The real curve adds the sequential constraints on top. The delta is what the sequence contributes beyond the distribution.</p>
+
+<p>Different kinds of sequential structure will produce different delta curves. Bach's tonal grammar — dominant resolving to tonic, leading tone rising, substitute chords creating tension that demands resolution — may peak in the sensitive zone, where the instrument's temporal coupling matches the time scale of harmonic expectation. ECG's autonomic grammar — sympathetic and parasympathetic regulation interacting on scales of seconds to minutes — may peak at a different κ, reflecting the different temporal grain of cardiac control. UN diplomatic grammar — procedural templates persisting across decades, language-power coupling shifting at the scale of years — may produce a delta curve whose shape is entirely different from music or biology.</p>
+
+<p>The shape of the delta curve is the signature of the grammar. Not a number. A function. The peak κ tells you the temporal scale at which the sequential constraints are strongest. The height of the peak tells you how much the sequence adds beyond the distribution. The width of the sensitive zone tells you how robust the structure is to the instrument's temporal coupling. The shape of the far zone tells you whether the structure saturates the bridge or leaves room for further constraint.</p>
+
+<h2>3.</h2>
+
+<p>This method works on any temporal stream. Music. Biology. Language. Finance. Seismology. Any domain where events occur in time and may constrain each other. The instrument does not need to know what the domain is. The calibration does not need to be redone for each new stream — the fair coin baseline and the instrument's sensitivity profile are universal. The method is the same: run, shuffle, run again, subtract. The output is a function Δ(κ) — the sequential structure curve.</p>
+
+<p>Comparing Δ(κ) across domains is the first direct measurement of how different kinds of temporal grammar differ in their information structure. Not which domain is "more structured." Not which grammar is "more complex." Which domain's sequential constraints are stronger at which temporal scales, as measured by the same instrument with the same calibration. Bach peaks at κ=5. ECG might peak at κ=3. UN might stretch flat across the whole sensitive zone, peaking late. The differences are measurements. The measurements are the beginning of a comparative science of temporal structure — not based on models of what structure is, but on how a calibrated instrument responds to it.</p>
+
+<footer>Jieqi Liu · 2026<div style="margin-top:2em;padding-top:1em;border-top:1px solid #ddd"><a href="/GBE/">&#8592; Back to Home</a> &middot; <a href="/GBE/essays/">To The Arch</a></div></footer>
+</body>
+</html>

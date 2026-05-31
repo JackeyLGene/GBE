@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>067: The Wearable — GEME Essays</title>
+<style>
+  body{font-family:Georgia,'Times New Roman',serif;max-width:720px;margin:0 auto;padding:2em 1em;color:#222;line-height:1.8;font-size:17px}
+  a, a:visited{color:#1a1a1a!important;text-decoration:none}
+  a:hover{color:#000!important}
+  h1{font-size:1.6em;margin-bottom:.2em}
+  blockquote{border-left:3px solid #999;margin:1.5em 0;padding:.5em 1em;background:#f5f5f5;color:#555}
+  .nav{display:flex;gap:1.5em;margin:0 0 2em;padding-bottom:1em;border-bottom:1px solid #ddd}
+  .meta{color:#888;font-size:.9em;margin-bottom:1.5em}
+  footer{margin-top:3em;padding-top:1em;border-top:1px solid #ddd;color:#888;font-size:.85em}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="/GBE/">Home</a>
+  <a href="/GBE/essays/">Essays</a>
+  <a href="https://github.com/JackeyLGene/GEME">GitHub</a>
+</div>
+
+<blockquote>
+The architecture runs on a heartbeat sensor. It learns one person. No cloud. No population data. No labels. Just you.
+</blockquote>
+
+<h2>1.</h2>
+
+<p>Every wearable today compares you to a population. Your heart rate variability is benchmarked against tens of thousands of other people. Your anomaly is defined by their distribution. You are normal because you are like them. You are abnormal because you are not.</p>
+
+<p>This architecture compares you to yourself.</p>
+
+<p>It runs on the device — the same Raspberry Pi, the same single core, the same 2000 lines. It receives your heartbeats as a stream. It builds your anchors from your own data — your resting heart rate, your sinus rhythm pattern, your HRV baseline. It marks as harm what deviates from your anchors. Not from the population's anchors. From yours.</p>
+
+<p>You become your own baseline.</p>
+
+<h2>2.</h2>
+
+<p>Five minutes. Sitting still. The fast lens finds the resting heart rate. Sixty beats per minute, give or take two. The RR intervals are self-similar. The anchor forms: your sinus rhythm at rest.</p>
+
+<p>An hour. The slow lens finds the transition patterns — standing up, walking, sitting down. The heart rate rises, plateaus, returns. These transitions are anchors too — your autonomic response signature.</p>
+
+<p>A week. The reader lens finds the deep patterns — sleep onset, morning rise, exercise recovery. These anchors need more data because the events are rarer. But the architecture does not need a week to be useful. It needs five minutes for the first anchor. Different dimensions converge at different speeds. The architecture already knows this — κ=0.5, κ=10, κ=100. The three cavities are watching three different clocks.</p>
+
+<p>The third month, the Archive has accumulated your harm history. The Archive's L4 can compare today's harm to all your previous harms. It can say: "This pattern appeared once, three months ago, during a similar stress event. It resolved. It is not new." Or it can say: "This pattern has never appeared before in your record." The comparison is to yourself — not to a population.</p>
+
+<h2>3.</h2>
+
+<p>No data leaves the device. The stream stays where it is born. The anchors are yours. The harm is yours. The Archive is yours. The architecture does not need the cloud because it does not need others' data to know what is normal for you. Your normal is in your own stream.</p>
+
+<p>This is not a privacy feature. This is a consequence of the architecture. The architecture does not train on populations. It detects anchors in whatever stream it receives. Give it one person's stream, it finds one person's anchors. Give it a million, it finds a million anchors — each personal, each private, each on-device. The architecture scales sideways. Not up.</p>
+
+<footer>Jieqi Liu · 2026<div style="margin-top:2em;padding-top:1em;border-top:1px solid #ddd"><a href="/GBE/">&#8592; Back to Home</a> &middot; <a href="/GBE/essays/">To The Arch</a></div></footer>
+</body>
+</html>

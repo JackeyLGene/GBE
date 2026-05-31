@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>139: A Conjecture, Not a Claim — GEME Essays</title>
+<style>
+  body{font-family:Georgia,'Times New Roman',serif;max-width:720px;margin:0 auto;padding:2em 1em;color:#222;line-height:1.8;font-size:17px}
+  a,a:visited{color:#1a1a1a!important;text-decoration:none}a:hover{color:#000!important}
+  h1{font-size:1.6em;margin-bottom:.2em}
+  blockquote{border-left:3px solid #999;margin:1.5em 0;padding:.5em 1em;background:#f5f5f5;color:#555}
+  .nav{display:flex;gap:1.5em;margin:0 0 2em;padding-bottom:1em;border-bottom:1px solid #ddd}
+  .meta{color:#888;font-size:.9em;margin-bottom:1.5em}
+  footer{margin-top:3em;padding-top:1em;border-top:1px solid #ddd;color:#888;font-size:.85em}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="/GBE/">Home</a>
+  <a href="/GBE/essays/">Essays</a>
+  <a href="https://github.com/JackeyLGene/GEME">GitHub</a>
+</div>
+
+<blockquote>
+Language cognition is a three-layer frame economy. Characters become words. Words become phrases. Phrases reveal the grammatical structures that persist regardless of topic. The three layers are not sequential stages of processing. They are three time scales of the same operation, running simultaneously, coupled through a shared field. The evidence for the first two layers is strong. The evidence for the third is a bug that failed to produce signal. This is not a retreat. It is the honest form of a radical conjecture: stated clearly enough to be wrong, and therefore capable of being right. Most theories of language are unfalsifiable. This one can be killed by a single experiment. That is not weakness. That is what a scientific theory looks like before it is proven.
+</blockquote>
+
+<h2>1.</h2>
+
+<p>Most theories of language cannot be wrong. They are too flexible. They describe everything, so they predict nothing. A grammar that generates all sentences generates none. A learning mechanism that can acquire any rule acquires no rule in particular. The great theories of the twentieth century — Chomsky's Universal Grammar, Goldberg's construction grammar, the statistical models of computational linguistics — all have this property. They are frameworks for describing language, not hypotheses about how language works at the cognitive level. You cannot kill them with a single experiment. You can only decide whether to use them.</p>
+
+<p>The conjecture stated here is different. Language cognition operates on three layers of Codex, corresponding to three time scales of structural detection: character-level patterns become word anchors, word-level patterns become phrase anchors, phrase-level patterns become grammatical anchors. The three layers are coupled through a shared BiasField. Cross-layer harm measures the structural tension between what one layer detects and what another layer expects. Grammar is the set of patterns with zero cross-harm across all three layers, filtered across three generations of Codex.</p>
+
+<p>This conjecture can be wrong. It can be falsified by a single experiment. If the three-layer coupling produces no more grammatical patterns than a single-layer control, the multi-scale hypothesis is false. If the Gen3 Codex does not filter noise better than a random filter, the cross-generational hypothesis is false. If the patterns that survive are not recognized as grammatical by linguists who study the same text corpus, the whole framework is measuring something other than grammar. These are not rhetorical risks. They are experimental outcomes that could occur. A conjecture that cannot be killed by an experiment is not a scientific conjecture. It is a way of speaking.</p>
+
+<h2>2.</h2>
+
+<p>The first two layers have evidence. The five-word sliding window, with character-level hashing into 27-dimensional sparse vectors, produces phrase-level anchors that linguists recognize as meaningful: "nuclear weapons nuclear weapon free," "israeli practices affecting palestinian people," "to adopt paragraphs and of." These are not cherry-picked. They are the highest-weight frames in the Layer 2 Codex. The scaffold translation method — run with all words, extract the anchors, remove them, run again — independently separates structural vocabulary from content vocabulary without any linguistic knowledge. The three-generation Codex filter preserves 89 VALUE anchors with 100% retention across all three generations, with zero noise filtered from Generation 1 — every anchor was structurally real.</p>
+
+<p>The third layer is a conjecture. The three-window simultaneous coupling — character, word, and sentence streams running in the same BiasField — should reveal grammatical structures that no single layer can detect. The logic is sound. The encoding has a bug. The conjecture has not been tested. It may fail. If it fails — if simultaneous coupling produces no grammatical patterns beyond what sequential Codex inheritance already revealed — then grammar is not a cross-layer phenomenon. It is a single-layer statistical regularity, and Chomsky was wrong about its special status, but right that it requires something beyond mere pattern detection. That would be a result. A negative result, clearly stated, is worth more than a vague positive claim that cannot be evaluated.</p>
+
+<h2>3.</h2>
+
+<p>The conjecture is radical. That does not make it true. It makes it worth testing. The architecture is the first system that can test it — not because the architecture is smart, but because the architecture does not know what language is. It has no grammar rules, no parsing trees, no part-of-speech tags, no linguistic theory of any kind. It has only the frame economy, τ breathing, the BiasField, and the Codex. If grammar emerges from this substrate — if cross-layer zero-harm patterns correspond to what linguists call grammatical rules — then the conjecture is supported. Not proven. Supported. And if it fails, the architecture has still done something no linguistic theory has done: it has made a clear, falsifiable claim about how language works at the cognitive level, and it has provided the tool to test it.</p>
+
+<p>Most theories of language are never proven wrong because they are never stated in a form that can be wrong. This conjecture is. That is its strength, not its weakness. Whether it survives the experiment is not yet known. What is known is that the experiment can now be run.</p>
+
+<footer>Jieqi Liu · 2026<div style="margin-top:2em;padding-top:1em;border-top:1px solid #ddd"><a href="/GBE/">&#8592; Back to Home</a> &middot; <a href="/GBE/essays/">To The Arch</a></div></footer>
+</body>
+</html>

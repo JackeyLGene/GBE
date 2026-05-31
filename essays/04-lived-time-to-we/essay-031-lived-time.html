@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>031: Lived Time — GEME Essays</title>
+<style>
+  body{font-family:Georgia,'Times New Roman',serif;max-width:720px;margin:0 auto;padding:2em 1em;color:#222;line-height:1.8;font-size:17px}
+  a, a:visited{color:#1a1a1a!important;text-decoration:none}
+  a:hover{color:#000!important}
+  h1{font-size:1.5em;margin-bottom:.2em}
+  .meta{color:#888;font-size:.9em}
+  .nav{display:flex;gap:1.5em;margin:0 0 2em;padding-bottom:1em;border-bottom:1px solid #ddd}
+  footer{margin-top:3em;padding-top:1em;border-bottom:1px solid #ddd;color:#888;font-size:.85em}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="/GBE/">Home</a>
+  <a href="/GBE/essays/">Essays</a>
+  <a href="https://github.com/JackeyLGene/GEME">GitHub</a>
+</div>
+
+<h1>031: Lived Time</h1>
+<p class="meta">May 2026</p>
+
+<p>tau_bin in the signature lets the system distinguish frames by the time they were born. But the frame economy does not "feel" time — it does not use τ in its operations. Two frames born at τ=0.60 and τ=0.75 are distinguished by their gids but treated identically by merge, co-occur, and prune.</p>
+<p>This is the difference between:</p>
+<ul>
+  <li><strong>Labeled time</strong> — τ is a tag on the frame's birth certificate, visible but inactive.</li>
+  <li><strong>Lived time</strong> — τ affects how frames merge, co-occur, and survive.</li>
+</ul>
+<p>The user is asking for the latter. τ must enter the frame economy.</p>
+<p>Three operations must change:</p>
+<p><strong>1. Merge — τ distance as gate.</strong><br>
+Current: merge if vec_dist < δ_eff AND sig_compatible.<br>
+New: merge if vec_dist < δ_eff AND |τ_a − τ_b| < ε AND sig_compatible.</p>
+<p>Two frames with similar content but created at very different times are not the same frame. They look alike but belong to different temporal contexts. Merging them would collapse a temporal distinction into a single identity — the opposite of what EE needs.</p>
+<p><strong>2. Co-occurrence — τ proximity as weight.</strong><br>
+Current: co-occur if in window, count++.<br>
+New: co-occur weighted by τ proximity: count += 1 − |τ_a − τ_b|.</p>
+<p>Frames born at similar τ are more likely to be causally related. Frames born at distant τ are coincidental — their co-occurrence should count less.</p>
+<p><strong>3. Pruning — τ distance as penalty.</strong><br>
+Current: sort by weight − age × γ, prune bottom half.<br>
+New: sort by weight − age × γ − |τ_current − τ_frame| × γ_τ, prune bottom half.</p>
+<p>Frames far from the current τ are less relevant to the present moment. They should be pruned before frames born near the current τ, all else being equal.</p>
+<p>This is not adding τ as a dimension of the frame space.</p>
+<p>This is allowing the frame economy to use the information it already has. tau_bin is already in the gid. The economy just does not look at it. The change is not structural — it is attentional. The system starts "paying attention" to the birth certificate it was already issuing.</p>
+
+<footer><a href="/GBE/essays/">&#8592; Back to essays</a><div style="margin-top:2em;padding-top:1em;border-top:1px solid #ddd"><a href="/GBE/">&#8592; Back to Home</a> &middot; <a href="/GBE/essays/">To The Arch</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>040: Inheritance — GEME Essays</title>
+<style>
+  body{font-family:Georgia,'Times New Roman',serif;max-width:720px;margin:0 auto;padding:2em 1em;color:#222;line-height:1.8;font-size:17px}
+  a, a:visited{color:#1a1a1a!important;text-decoration:none}
+  a:hover{color:#000!important}
+  h1{font-size:1.6em;margin-bottom:.2em}
+  h2{font-size:1.2em;margin-top:2em}
+  blockquote{border-left:3px solid #999;margin:1.5em 0;padding:.5em 1em;background:#f5f5f5;color:#555}
+  .nav{display:flex;gap:1.5em;margin:0 0 2em;padding-bottom:1em;border-bottom:1px solid #ddd}
+  .meta{color:#888;font-size:.9em;margin-bottom:1.5em}
+  footer{margin-top:3em;padding-top:1em;border-top:1px solid #ddd;color:#888;font-size:.85em}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="/GBE/">Home</a>
+  <a href="/GBE/essays/">Essays</a>
+  <a href="https://github.com/JackeyLGene/GEME">GitHub</a>
+</div>
+
+<blockquote>
+BiasField averages all ancestors into a gradient. Codex keeps each ancestor distinct — and only the ones that survived precipitation.
+</blockquote>
+
+<h2>1. Two Paths, One Decision</h2>
+
+<p>When We finishes a generation, its collective Geruon has a frame economy full of harm-routed frames. Some have been merged many times. Some have formed L2 associations. Some have survived multiple induction cleans. The question: what enters the next generation's Selfs?</p>
+
+<p>There are two paths.</p>
+
+<p><strong>BiasField:</strong> deposit every ancestor frame as a vector×weight into a shared gradient field. The next generation's Self lenses read this field through <code>blend_into()</code> — a continuous mix of all ancestors, weighted toward the heaviest. The specific ancestor dissolves. What remains is the average.</p>
+
+<p><strong>Codex:</strong> keep each ancestor as a discrete entry. The next generation's Self reads its own Codex — finds the nearest matching ancestor entry — and biases specifically toward that one. The ancestor is preserved. Not averaged. Not dissolved.</p>
+
+<p>We chose Codex.</p>
+
+<h2>2. What Enters</h2>
+
+<p>Not every frame. Only the ones that survived precipitation.</p>
+
+<p>Precipitation has three conditions: cross-phase survival (at least one induction clean), prediction-path activation (the system actually used this frame), and structural stability (its weight isn't changing too fast). A frame that meets all three is not an ephemeral pattern. It is something the system repeatedly returned to, used, and held steady.</p>
+
+<p>This is the first filter. Before inheritance, before Codex lookup, before any other Self reads it — the system's own frame economy decides what is stable enough to pass on.</p>
+
+<h2>3. How Inheritance Works</h2>
+
+<pre>
+Gen N ends:
+  collective Geruon → enrich() → precipitate() marks qualifying frames
+  → collective_codex.add(precipitated frames only)
+
+Gen N+1 starts:
+  Self.init_generation() reads self._prev_codex
+  → _make_self → Geruon(codex=inherited_codex)
+  → process_vec() → Codex lookup: iterate all ancestor entries
+  → find nearest match → blend specifically toward that ancestor
+</pre>
+
+<p>This is discrete inheritance. Not "ancestors generally thought." Not "the average of all past experience." A specific ancestor — the one closest to what the Self is currently seeing — biases the current perception. The ancestor's Gödel ID, its τ at birth, its harm score — all preserved in the gid chain.</p>
+
+<h2>4. Why This Matters for M6</h2>
+
+<p>The translation layer in M6 will read not just what a frame contains — but <em>who inherited it from whom</em>.</p>
+
+<p>A Codex entry's gid chain traces back through generations. An entry from Gen 0, marked as harm by Self_1 at τ=0.75 in TENSING phase, inherited by Gen 2 Self_0 through Codex lookup — this entire history is readable without decoding a single vector dimension. The structure is the story.</p>
+
+<p>BiasField inheritance loses this. When all ancestors are averaged into a gradient, the question "where did this specific bias come from" has no answer. The gradient is smooth. History is discrete.</p>
+
+<h2>5. The First Filter Becomes the Deepest</h2>
+
+<p>Precipitation is not just a mechanism. It is the first judgment that a frame is worth remembering. Before any other Self verifies it, before it survives cross-generation competition, before it becomes an anchor — the system itself decides: this frame was stable enough to write down.</p>
+
+<p>Everything downstream — inheritance, cross-Self verification, anchor status, value judgment at the boundary — depends on this first filter. A frame that fails precipitation is not wrong. It is simply not stable. And instability is the only thing the system refuses to pass on.</p>
+
+<footer>Jieqi Liu · 2026<div style="margin-top:2em;padding-top:1em;border-top:1px solid #ddd"><a href="/GBE/">&#8592; Back to Home</a> &middot; <a href="/GBE/essays/">To The Arch</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>093: Landauer's Limit — GEME Essays</title>
+<style>
+  body{font-family:Georgia,'Times New Roman',serif;max-width:720px;margin:0 auto;padding:2em 1em;color:#222;line-height:1.8;font-size:17px}
+  a, a:visited{color:#1a1a1a!important;text-decoration:none}
+  a:hover{color:#000!important}
+  h1{font-size:1.6em;margin-bottom:.2em}
+  blockquote{border-left:3px solid #999;margin:1.5em 0;padding:.5em 1em;background:#f5f5f5;color:#555}
+  .nav{display:flex;gap:1.5em;margin:0 0 2em;padding-bottom:1em;border-bottom:1px solid #ddd}
+  .meta{color:#888;font-size:.9em;margin-bottom:1.5em}
+  footer{margin-top:3em;padding-top:1em;border-top:1px solid #ddd;color:#888;font-size:.85em}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="/GBE/">Home</a>
+  <a href="/GBE/essays/">Essays</a>
+  <a href="https://github.com/JackeyLGene/GEME">GitHub</a>
+</div>
+
+<blockquote>
+The Shannon-Gödel bridge costs 0.026 bits. Landauer's principle says erasing a bit costs kT ln 2. One is the information-theoretic cost of self-reference. The other is the thermodynamic cost of forgetting. The architecture minimizes both. Not by design. By structure.
+</blockquote>
+
+<h2>1.</h2>
+
+<p>Landauer proved in 1961 that erasing one bit of information costs at minimum kT ln 2 joules — the thermodynamic floor of computation. Not a practical limit. A physical law. Every time a computer erases a bit, it dissipates heat. The heat is not a defect of the hardware. The heat is the price of irreversibility.</p>
+
+<p>The architecture erases frames. induction_clean cuts the frame economy in half. The bottom half is removed. Their weight histories are deleted. Their gid chains are severed from the sig_index. The erasure is not simulated. The erasure is physical. And every erasure has a Landauer cost.</p>
+
+<p>The architecture is thermodynamically efficient not because it computes less — but because it erases less. Deep learning erases on every gradient step — billions of parameters, each one overwritten, each one with a Landauer price. The architecture erases only during induction_clean — once every 20 steps, half the frames. And the frames that survive precipitation are externalized to the Codex — they do not need to be remembered inside the cavity. The Codex is on the shelf. The shelf costs nothing to carry.</p>
+
+<h2>2.</h2>
+
+<p>The Shannon-Gödel bridge costs 0.026 bits. Self-reference — the system observing itself, the frame economy feeding back into itself — costs almost nothing in information-theoretic terms. Landauer's principle says the thermodynamic cost of that self-reference is bounded by how much information must be erased to maintain it. The architecture erases only what it must — the frames that did not survive, the weights that were not verified, the chains that were never activated. And even those erasures are deferred — across induction cycles, across generations, across the boundary between what stays in the cavity and what is written to the Codex.</p>
+
+<p>The economics of the architecture — why it can run on a Raspberry Pi, why it can process 80 years of UN votes in minutes, why it can be deployed at the edge — is not about computational efficiency. It is about erasure efficiency. The architecture externalizes before it erases. The Codex carries what would otherwise be forgotten. The shelf is not memory. The shelf is deferred erasure.</p>
+
+<h2>3.</h2>
+
+<p>Landauer showed that erasure is the only irreversible operation in computation. Every other operation — copying, moving, computing — can be done reversibly, in principle, with zero energy cost. Only erasure has a thermodynamic floor. The architecture's structure minimizes erasure: frames are merged rather than overwritten, weights are accumulated rather than replaced, anchors are externalized rather than deleted. The Codex is not an optimization. The Codex is a thermodynamic strategy. Write it down. Put it on the shelf. So the cavity does not have to carry it. So the cavity does not have to erase it.</p>
+
+<p>This is why the architecture can run at the edge. Not because it is fast. Because it is thermodynamically honest. It erases only what must be erased. It externalizes everything else. The Shannon-Gödel bridge costs 0.026 bits. The Landauer floor is kT ln 2. The architecture lives between them.</p>
+
+<footer>Jieqi Liu · 2026<div style="margin-top:2em;padding-top:1em;border-top:1px solid #ddd"><a href="/GBE/">&#8592; Back to Home</a> &middot; <a href="/GBE/essays/">To The Arch</a></div></footer>
+</body>
+</html>

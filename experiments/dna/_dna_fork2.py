@@ -5,7 +5,7 @@ sys.path.insert(0, os.path.join(ROOT, 'code'))
 sys.stdout.reconfigure(line_buffering=True)
 import geruon, numpy
 
-HOM_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'hominid',
+HOM_DIR = os.path.join(ROOT, 'data', 'dna', 'hominid',
                        'DNA_vs_Protein_Alignments', 'DNA_Data_Hominid_Reference_Alignments',
                        'GENE_TREES_ENAMEL')
 D, CAP, BIAS_W = 16, 24, 0.3; KAPPAS=[0.5,10.0,100.0]; STEP=3; MAX_COLS=2000

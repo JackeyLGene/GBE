@@ -1,0 +1,40 @@
+title: GBE — Generative Being Externalized
+description: A trilogy in three papers, one runnable cognitive instrument, and four frozen experiment tracks.
+theme: just-the-docs
+
+url: https://jackeylgene.github.io
+baseurl: "/GBE"
+
+# Navigation
+nav_external_links:
+  - title: GitHub
+    url: https://github.com/JackeyLGene/GBE
+
+# Just the Docs settings
+color_scheme: dark
+search_enabled: true
+heading_anchors: true
+
+# Logo
+logo: "/assets/images/logo.png"
+
+# Collections
+collections:
+  essays:
+    output: true
+    permalink: /essays/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# Exclude from build
+exclude:
+  - code/
+  - demo/
+  - .git/
+  - README.md
+  - LICENSE

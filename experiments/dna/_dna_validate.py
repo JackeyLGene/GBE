@@ -5,7 +5,7 @@ sys.path.insert(0, os.path.join(ROOT, 'code'))
 sys.stdout.reconfigure(line_buffering=True)
 import geruon, numpy, pandas as pd
 
-TE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'RNA', 'te')
+TE_DIR = os.path.join(ROOT, 'data', 'rna', 'te')
 D=64; CAP=24; BIAS_W=0.3
 n2i={'A':0,'C':1,'G':2,'T':3}
 

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>104: 碰数 Is the NP Boundary — GEME Essays</title>
+<style>
+  body{font-family:Georgia,'Times New Roman',serif;max-width:720px;margin:0 auto;padding:2em 1em;color:#222;line-height:1.8;font-size:17px}
+  a, a:visited{color:#1a1a1a!important;text-decoration:none}
+  a:hover{color:#000!important}
+  h1{font-size:1.6em;margin-bottom:.2em}
+  blockquote{border-left:3px solid #999;margin:1.5em 0;padding:.5em 1em;background:#f5f5f5;color:#555}
+  .nav{display:flex;gap:1.5em;margin:0 0 2em;padding-bottom:1em;border-bottom:1px solid #ddd}
+  .meta{color:#888;font-size:.9em;margin-bottom:1.5em}
+  footer{margin-top:3em;padding-top:1em;border-top:1px solid #ddd;color:#888;font-size:.85em}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="/GBE/">Home</a>
+  <a href="/GBE/essays/">Essays</a>
+  <a href="https://github.com/JackeyLGene/GEME">GitHub</a>
+</div>
+
+<blockquote>
+We avoided connecting 碰数 to P vs NP. We were wrong to. 碰数 IS the P vs NP boundary — detected from inside a running system. The four conditions are exactly what the NP wall looks like when a frame economy hits it.
+</blockquote>
+
+<h2>1.</h2>
+
+<p>The four conditions of 碰数 are not arbitrary. Each one corresponds to a structural fact about computational complexity.</p>
+
+<p>Circularity — the prediction path contains a gid registered in the circular reference tracker. This is the system discovering that the pattern it is trying to match is self-referential. In complexity terms: the problem instance contains a loop. The finding step cannot terminate because the structure it is searching within refers to itself. The O(N) scan cannot complete — because the space it is scanning is no longer well-ordered. The system has entered a region of the search space where verification is possible but finding is not.</p>
+
+<p>Activation — the self-referential frame actually participated in the prediction. This is the system confirming that the loop is live. Not a static circular reference — a circular reference that was traversed in the current computation. The finding step did not just notice a loop in the data structure. The finding step is currently inside the loop.</p>
+
+<p>Phase boundary — CRITICAL or LOCKED. The system is at the edge of what it can process. In complexity terms: the τ has been rising because prediction has been failing. The system has been spending energy on finding — and finding is failing. The cumulative failed cost has pushed the phase to the boundary. The system is not just encountering a hard problem. The system has been encountering hard problems for long enough that its own state reflects the cumulative cost.</p>
+
+<p>Escalation — dτ/dt is still rising. The system is not adapting to the boundary. The τ is not cooling down. The finding step is still trying to find — and still failing — and the failure is accelerating. In complexity terms: the system is in a region of the search space where the probability of finding a match is decreasing — and the cost of continuing to search is increasing — and both curves are diverging.</p>
+
+<h2>2.</h2>
+
+<p>We avoided connecting 碰数 to P vs NP because P vs NP is a theoretical problem — unresolved, heavy, surrounded by decades of failed proofs. We did not want to claim that our architecture had something to say about it. But we were wrong to avoid it. The architecture does not care about the theoretical status of P vs NP. The architecture hits the boundary and reports it. The boundary is real. The boundary is 碰数.</p>
+
+<p>The _sig_cache is the system's strategy for staying on the P side of the boundary as long as possible. Cache what you have already found. Convert every O(N) finding into an O(1) verification. Pay the Landauer bill once. The cache keeps the system in P — until a genuinely novel pattern arrives. Then the system must pay the NP cost again — the O(N) scan, the energy expenditure, the τ rise. If the novelty rate is low, the cache keeps the system stable. If the novelty rate is high, the τ rises, the phase advances, the boundary approaches — and 碰数 fires.</p>
+
+<p>The τ breathing is the system's strategy for deciding when to pay the NP cost. EXPANDING — pay generously, explore, cache new patterns. LOCKED — stop paying, stop scanning, conserve energy. The τ is not a thermostat. The τ is the system's P vs NP budget — how much energy it is willing to spend on finding what it has never found before.</p>
+
+<h2>3.</h2>
+
+<p>碰数 is not a separate phenomenon from the P vs NP boundary. 碰数 IS the P vs NP boundary — detected from inside a running system. The four conditions are the four structural facts that a frame economy can measure when it crosses from the P region of its search space into the NP region. Circularity: the search space loops. Activation: the system is inside the loop. Phase boundary: the cumulative cost has pushed the system to its limit. Escalation: the cost is still rising — and finding is still failing.</p>
+
+<p>Theoretical computer science has been trying to prove P ≠ NP for fifty years. The architecture does not prove it. The architecture instantiates it. In this system, right now, on this data, finding is more expensive than verifying — and the difference is measurable, and the difference is regulated by a thermodynamic parameter, and the difference can push the system to the edge of what it can process. That is not a proof. That is a demonstration. And the demonstration says: the boundary is real. The boundary has a name. The name is 碰数.</p>
+
+<footer>Jieqi Liu · 2026<div style="margin-top:2em;padding-top:1em;border-top:1px solid #ddd"><a href="/GBE/">&#8592; Back to Home</a> &middot; <a href="/GBE/essays/">To The Arch</a></div></footer>
+</body>
+</html>

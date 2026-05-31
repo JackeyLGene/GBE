@@ -30,6 +30,14 @@ After the quickstarts, read the manuals in order:
 | 2 | [docs/EE_MANUAL.md](docs/EE_MANUAL.md) | Self / We / Codex assembly and the four experiment architectures |
 | 3 | [docs/experiment-passive-calibration-report.md](docs/experiment-passive-calibration-report.md) | Passive instrument calibration and frozen readout policy |
 
+For a slightly larger bridge experiment before the full paper tracks, run:
+
+```powershell
+python experiments\shepard\_shepard.py
+```
+
+Interpretation: [docs/experiment-shepard-paradox.md](docs/experiment-shepard-paradox.md).
+
 ---
 
 ## What This Is
@@ -79,7 +87,12 @@ GBE/
 │   ├── quickstart_ee_self.py
 │   ├── GERUON_MANUAL.md
 │   ├── EE_MANUAL.md
-│   └── experiment-passive-calibration-report.md
+│   ├── experiment-passive-calibration-report.md
+│   └── experiment-shepard-paradox.md
+├── demo/
+│   ├── demo_self_sine.py
+│   ├── demo_geruon_bach.py
+│   └── bwv846.mid
 ├── code/
 │   ├── geme.py
 │   ├── geruon.py
@@ -92,7 +105,8 @@ GBE/
 │   ├── un/
 │   ├── wtc/
 │   ├── dna/
-│   └── rna/
+│   ├── rna/
+│   └── shepard/
 └── paper/
     ├── gEME.pdf
     ├── bGM.pdf
@@ -106,6 +120,7 @@ GBE/
 ## Reproducibility Notes
 
 - The two quickstarts are zero-dependency checks for the public instrument.
+- The `demo/` and `experiments/shepard/` scripts are small runnable bridge examples.
 - The frozen experiment scripts are included under `experiments/`.
 - Large raw datasets are not committed; data sources and expected inputs are documented in each experiment track.
 - Domain experiments may require packages such as `numpy`, `pandas`, `pyarrow`, or `pybigtools`, depending on the script.

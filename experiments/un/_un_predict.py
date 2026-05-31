@@ -15,7 +15,7 @@ random.seed(42)
 
 # Resolution metadata: rcid -> year
 res_meta = {}
-with open('data/un_votes/roll_calls.csv','r',encoding='utf-8') as f:
+with open(os.path.join(ROOT, 'data', 'un_votes', 'roll_calls.csv'),'r',encoding='utf-8') as f:
     for row in csv.DictReader(f):
         rcid = int(row['rcid'])
         d = row.get('date','')
@@ -24,7 +24,7 @@ with open('data/un_votes/roll_calls.csv','r',encoding='utf-8') as f:
 
 # Vote events: (rcid, country_code, vote, year)
 events = []
-with open('data/un_votes/unvotes.csv','r',encoding='utf-8') as f:
+with open(os.path.join(ROOT, 'data', 'un_votes', 'unvotes.csv'),'r',encoding='utf-8') as f:
     for row in csv.DictReader(f):
         rcid = int(row['rcid'])
         yr = res_meta.get(rcid, 0)
@@ -37,7 +37,7 @@ print('Events: %d votes (%d-%d)' % (len(events), events[0][1], events[-1][1]))
 
 # FRED
 fred = {}
-with open('data/econ_data/fred_annual.csv','r',encoding='utf-8') as f:
+with open(os.path.join(ROOT, 'data', 'econ_data', 'fred_annual.csv'),'r',encoding='utf-8') as f:
     for row in csv.DictReader(f):
         yr = int(list(row.values())[0])
         vs = [float(v) for v in list(row.values())[1:] if v]

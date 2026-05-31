@@ -12,7 +12,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 from geruon import Geruon
 
 rows = []
-with open('data/econ_data/nasdaq_ohlcv.csv','r',encoding='utf-8') as f:
+with open(os.path.join(ROOT, 'data', 'econ_data', 'nasdaq_ohlcv.csv'),'r',encoding='utf-8') as f:
     for r in csv.DictReader(f):
         rows.append((r['date'], float(r['open']), float(r['high']),
                       float(r['low']), float(r['close']), float(r['volume'])))

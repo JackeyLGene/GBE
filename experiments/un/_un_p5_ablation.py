@@ -7,14 +7,14 @@ from geruon import Geruon
 
 P5 = ['USA','GBR','FRA','RUS','CHN']; D=12; CAP=64; KAPPA=3
 
-data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'un_votes')
+data_dir = os.path.join(ROOT, 'data', 'un_votes')
 ideal = collections.defaultdict(dict)
 with open(os.path.join(data_dir, 'Idealpointestimates1946-2025.tab'), 'r', encoding='utf-8') as f:
     for row in csv.DictReader(f, delimiter='\t'):
         ideal[int(row['year'])][row['iso3c']] = float(row['IdealPointFP'])
 
 fred = {}
-fred_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data', 'econ_data', 'fred_annual.csv')
+fred_path = os.path.join(ROOT, 'data', 'econ_data', 'fred_annual.csv')
 if os.path.exists(fred_path):
     with open(fred_path, 'r', encoding='utf-8') as f:
         for row in csv.DictReader(f):

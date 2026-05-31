@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>077: The Right Lens — GEME Essays</title>
+<style>
+  body{font-family:Georgia,'Times New Roman',serif;max-width:720px;margin:0 auto;padding:2em 1em;color:#222;line-height:1.8;font-size:17px}
+  a, a:visited{color:#1a1a1a!important;text-decoration:none}
+  a:hover{color:#000!important}
+  h1{font-size:1.6em;margin-bottom:.2em}
+  blockquote{border-left:3px solid #999;margin:1.5em 0;padding:.5em 1em;background:#f5f5f5;color:#555}
+  .nav{display:flex;gap:1.5em;margin:0 0 2em;padding-bottom:1em;border-bottom:1px solid #ddd}
+  .meta{color:#888;font-size:.9em;margin-bottom:1.5em}
+  table{border-collapse:collapse;width:100%;margin:1em 0}
+  td,th{border:1px solid #ddd;padding:.5em .8em}
+  th{background:#f1f5f9}
+  footer{margin-top:3em;padding-top:1em;border-top:1px solid #ddd;color:#888;font-size:.85em}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="/GBE/">Home</a>
+  <a href="/GBE/essays/">Essays</a>
+  <a href="https://github.com/JackeyLGene/GEME">GitHub</a>
+</div>
+
+<blockquote>
+Computational complexity is not a cost to minimize. It is a lens to match to the data. Simple streams need Geruon. Multi-perspective streams need Self. Multi-actor streams need We. The architecture knows which lens to use.
+</blockquote>
+
+<h2>1.</h2>
+
+<p>Most systems treat computational complexity as a burden. More layers, more parameters, more computation — always more, never less. The goal is to minimize it. The assumption is that all data deserves the full architecture.</p>
+
+<p>All data does not deserve the full architecture. The ECG tells you it does not need We. The architecture tells you it does not need We — 0.8 seconds, single Geruon, forty percent convergence. Add We and the same task takes 300 times longer with one-tenth the accuracy. Not because We is broken. Because the data has no multi-perspective structure for We to discover. The data is a single stream. The lens for a single stream is a single Geruon.</p>
+
+<h2>2.</h2>
+
+<table>
+  <tr><th>Data</th><th>Structure</th><th>Lens</th></tr>
+  <tr><td>ECG RR intervals</td><td>1-2 independent dimensions</td><td>Geruon — merge vs create</td></tr>
+  <tr><td>Bach C major Prelude</td><td>27-dim chroma, harmonic complexity</td><td>Self — three κ_τ, boundary detection</td></tr>
+  <tr><td>Bach fugue (3 voices)</td><td>Multi-stream counterpoint</td><td>We — cross-Self harm, Archive</td></tr>
+  <tr><td>Sleep EEG+EOG+EMG</td><td>Multi-channel, temporal hierarchy</td><td>We — cross-window, multi-scale</td></tr>
+  <tr><td>UN voting (193 nations)</td><td>Multi-actor, 80-year history</td><td>We — inter-generational harm tracking</td></tr>
+</table>
+
+<p>The architecture is not one lens. It is three lenses — Geruon, Self, We — each ground for a different information distance. The data tells you which lens it needs. The ECG data asks for Geruon. The fugue asks for We. The architecture does not force We onto the ECG. The ECG experiment did not fail. It proved that the architecture self-limits.</p>
+
+<p>This is not a parameter to tune. It is a property of the data. Information density in the stream determines the required computational complexity. Low density — single lens. High density — full architecture. The match is automatic. The architecture degrades gracefully when over-applied — not because it is fragile, but because it expects structure that is not there. The degradation itself is the signal that the lens is wrong.</p>
+
+<h2>3.</h2>
+
+<p>Computational complexity and data complexity are not separate concerns. They are the same concern from two sides. The architecture's cost is not a function of its own design — it is a function of what the data demands. Give it a single stream and it costs almost nothing. Give it three voices in counterpoint and it costs what counterpoint costs to detect.</p>
+
+<p>This is the economics of the Shannon-Gödel bridge, scaled up. Self-reference costs 0.026 bits — nearly free. The architecture adds complexity only when the data has structure that justifies it. The data pays for its own detection. The architecture is not expensive. The architecture is honest.</p>
+
+<footer>Jieqi Liu · 2026<div style="margin-top:2em;padding-top:1em;border-top:1px solid #ddd"><a href="/GBE/">&#8592; Back to Home</a> &middot; <a href="/GBE/essays/">To The Arch</a></div></footer>
+</body>
+</html>

@@ -42,8 +42,8 @@ def encode(events):
 
 # ── Build initial mixed Codex ──
 # Use existing true_codex + wrong_codex, merge into one
-true_cx = Codex.load('data/wtc_phase2/codex_true_cap12.json')
-wrong_cx = Codex.load('data/wtc_phase2/codex_wrong_cap12.json')
+true_cx = Codex.load(os.path.join(ROOT, 'data', 'wtc_phase2', 'codex_true_cap12.json'))
+wrong_cx = Codex.load(os.path.join(ROOT, 'data', 'wtc_phase2', 'codex_wrong_cap12.json'))
 
 # Create mixed Codex: tag each entry with source
 mixed = Codex.empty(name='mixed', vec_dim=D)
@@ -65,7 +65,7 @@ for sym in mixed._table:
     source_map[sym] = 'TRUE' if 'TRUE' in sym else 'WRONG'
 
 # ── Run on wtc_00 for N_GENS ──
-with open('data/wtc_pieces/wtc_00.pkl','rb') as f:
+with open(os.path.join(ROOT, 'data', 'wtc_pieces', 'wtc_00.pkl'),'rb') as f:
     events,_ = pickle.load(f)
 cv, iv = encode(events)
 

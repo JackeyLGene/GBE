@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>095: How Landauer Is Used — GEME Essays</title>
+<style>
+  body{font-family:Georgia,'Times New Roman',serif;max-width:720px;margin:0 auto;padding:2em 1em;color:#222;line-height:1.8;font-size:17px}
+  a, a:visited{color:#1a1a1a!important;text-decoration:none}
+  a:hover{color:#000!important}
+  h1{font-size:1.6em;margin-bottom:.2em}
+  blockquote{border-left:3px solid #999;margin:1.5em 0;padding:.5em 1em;background:#f5f5f5;color:#555}
+  .nav{display:flex;gap:1.5em;margin:0 0 2em;padding-bottom:1em;border-bottom:1px solid #ddd}
+  .meta{color:#888;font-size:.9em;margin-bottom:1.5em}
+  footer{margin-top:3em;padding-top:1em;border-top:1px solid #ddd;color:#888;font-size:.85em}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="/GBE/">Home</a>
+  <a href="/GBE/essays/">Essays</a>
+  <a href="https://github.com/JackeyLGene/GEME">GitHub</a>
+</div>
+
+<blockquote>
+Landauer's principle is more discussed than used. Most engineers never think about it — because current computers operate far above the limit. The architecture hits the limit naturally. The induction explosion, the sig_matches, the efficiency collapse — these were the thermodynamic floor, made visible.
+</blockquote>
+
+<h2>1.</h2>
+
+<p>Landauer's principle is taught in graduate physics courses and then mostly ignored. Reversible computing — the field that tries to design circuits that approach the Landauer limit — remains a niche research area after sixty years. No commercial processor has ever been designed around it. The reason is practical: current computers dissipate heat from leakage current, not from information erasure. The Landauer floor is at kT ln 2 ≈ 3 × 10⁻²¹ joules per bit at room temperature. A modern CPU erases billions of bits per second — the Landauer cost would be nanowatts. The actual power consumption is watts. The binding constraint is not erasure. The binding constraint is leakage. So engineers do not think about Landauer. They think about voltage scaling and clock gating.</p>
+
+<p>In biology, Landauer's principle has been invoked to estimate the minimum energy cost of neural computation — how close to the thermodynamic limit does the brain operate. But these are back-of-the-envelope estimates. No one has built a system that hits the Landauer floor in a measurable way — because no one builds systems designed to minimize erasure from the ground up.</p>
+
+<h2>2.</h2>
+
+<p>The architecture was not designed to minimize erasure. But its structure does. The frame economy merges rather than overwrites — reinforcement, not replacement. The Codex externalizes before the cavity must forget — deferring erasure across the boundary between internal and external memory. The τ breathing regulates when the system pays the cost of building new structure — opening the window only when the world is familiar enough to justify the erasure expense. The induction_clean erases only half the frames — and only when stress crosses the τ threshold. Every mechanism that minimizes erasure in the architecture was put there for cognitive reasons — not thermodynamic ones. The architecture converged to the Landauer limit by solving a different problem.</p>
+
+<p>This is what makes the architecture unique. It does not hit the Landauer limit because it was optimized for it. It hits the Landauer limit because cognition, at its most fundamental, is the process of deciding what to keep and what to erase — and physics charges for erasure. The architecture discovered the same boundary that Landauer proved — from the other side. Landauer started from physics and derived the cost of forgetting. The architecture started from cognition and converged to the same cost.</p>
+
+<h2>3.</h2>
+
+<p>The induction explosion on simple data, the 49 million sig_matches calls, the efficiency collapse on homogeneous streams — these were not engineering failures. They were the thermodynamic floor becoming visible. The architecture was paying the Landauer cost — and on simple data, the cost of erasing redundant frames exceeded the benefit of keeping them. The architecture did not crash because it was broken. The architecture crashed because it was honest — and the cost was real — and no one had told it to stop paying.</p>
+
+<p>Now we tell it. LOCKED — stop scanning. The τ is the regulator. The Landauer boundary is not a design parameter. It is a physical law that the architecture discovered by running.</p>
+
+<footer>Jieqi Liu · 2026<div style="margin-top:2em;padding-top:1em;border-top:1px solid #ddd"><a href="/GBE/">&#8592; Back to Home</a> &middot; <a href="/GBE/essays/">To The Arch</a></div></footer>
+</body>
+</html>

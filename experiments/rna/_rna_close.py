@@ -5,12 +5,12 @@ sys.path.insert(0, os.path.join(ROOT, 'code'))
 sys.stdout.reconfigure(line_buffering=True)
 import geruon, numpy, pandas as pd, pybigtools
 
-BW_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'RNA', 'rpfdb',
+BW_DIR = os.path.join(ROOT, 'data', 'rna', 'rpfdb',
                        'HeLa_GSE79664', 'Hsapiens_GSE79664_RPF')
-TE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'RNA', 'te')
-GTF_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'RNA', 'gencode',
+TE_DIR = os.path.join(ROOT, 'data', 'rna', 'te')
+GTF_PATH = os.path.join(ROOT, 'data', 'rna', 'gencode',
                         'gencode.v49.primary_assembly.annotation.gtf.gz')
-DERIVED_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'RNA', 'derived')
+DERIVED_DIR = os.path.join(ROOT, 'data', 'rna', 'derived')
 os.makedirs(DERIVED_DIR, exist_ok=True)
 CAP, BIAS_W = 24, 0.3; WINDOW, STRIDE = 256, 64
 KAPPAS=[0.5,10.0,100.0]
