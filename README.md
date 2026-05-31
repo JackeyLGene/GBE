@@ -36,21 +36,21 @@ Two demo videos generated from the same instrument. Each script also runs locall
 
 ### 1. Sine Boundary Detection — 3-Cavity Self
 
-· [MP4](demo/demo_self_sine.mp4)
-· [Run locally](demo/demo_self_sine.py)
 =======
 https://github.com/user-attachments/assets/2cfbcd0b-2b1a-473e-a69d-725830775f3b
 
 A synthetic stream with three known structural boundaries. A 3-cavity Self processes the stream blind — cross-harm peaks at all three boundary positions. The video explains what cross-harm and τ measure, and why they are orthogonal readings.
 
+· [Run locally](demo/demo_self_sine.py)
+
 ### 2. Bach C Major Prelude — Solo Geruon
 
-· [MP4](demo/demo_geruon_bach.mp4)
-· [Run locally](demo/demo_geruon_bach.py)
 =======
 https://github.com/user-attachments/assets/72960818-f4ae-4072-aacb-26f372d3f286
 
 Bach's BWV 846 as 12-dim chroma. A solo Geruon with zero music theory — F responds to harmonic density, wit density tracks structural novelty across four sections, and their divergence shows the two readings are orthogonal. Piano audio synthesized from MIDI.
+
+· [Run locally](demo/demo_geruon_bach.py)
 
 To regenerate both videos:
 
