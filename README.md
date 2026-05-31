@@ -36,11 +36,15 @@ Two zero-dependency demo videos generated from the same instrument. Each runs in
 
 ### 1. Sine Boundary Detection — 3-Cavity Self
 
+https://github.com/user-attachments/assets/2cfbcd0b-2b1a-473e-a69d-725830775f3b
+
 ▶ **[Watch on Substack](https://ljieqi.substack.com/p/sine-boundary-detection-3-cavity)**
 
 A synthetic stream with three known structural boundaries. A 3-cavity Self processes the stream blind — cross-harm peaks at all three boundary positions. The video explains what cross-harm and τ measure, and why they are orthogonal readings.
 
 ### 2. Bach C Major Prelude — Solo Geruon
+
+https://github.com/user-attachments/assets/72960818-f4ae-4072-aacb-26f372d3f286
 
 ▶ **[Watch on Substack](https://ljieqi.substack.com/p/bach-c-major-prelude-solo-geruon)**
 
