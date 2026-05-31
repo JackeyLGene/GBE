@@ -38,13 +38,13 @@ Two zero-dependency demo videos generated from the same instrument. Each runs in
 
 ### 1. Sine Boundary Detection — 3-Cavity Self
 
-<iframe src="https://ljieqi.substack.com/embed/p/sine-boundary-detection-3-cavity" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
+▶ **[Watch on Substack](https://ljieqi.substack.com/p/sine-boundary-detection-3-cavity)**
 
 A synthetic stream with three known structural boundaries. A 3-cavity Self processes the stream blind — cross-harm peaks at all three boundary positions. The video explains what cross-harm and τ measure, and why they are orthogonal readings.
 
 ### 2. Bach C Major Prelude — Solo Geruon
 
-<iframe src="https://ljieqi.substack.com/embed/p/bach-c-major-prelude-solo-geruon" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
+▶ **[Watch on Substack](https://ljieqi.substack.com/p/bach-c-major-prelude-solo-geruon)**
 
 Bach's BWV 846 as 12-dim chroma. A solo Geruon with zero music theory — F responds to harmonic density, wit density tracks structural novelty across four sections, and their divergence shows the two readings are orthogonal. Piano audio synthesized from MIDI.
 
