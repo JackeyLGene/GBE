@@ -36,15 +36,15 @@ Two zero-dependency demo videos generated from the same instrument. Each runs in
 
 ### 1. Sine Boundary Detection — 3-Cavity Self
 
-[`demo/demo_self_sine.mp4`](demo/demo_self_sine.mp4) · [`demo/demo_self_sine.py`](demo/demo_self_sine.py)
+<video src="demo/demo_self_sine.mp4" width="100%" controls></video>
 
-A synthetic stream with three known structural boundaries (frequency doubling, phase inversion, return to baseline). A 3-cavity Self processes the stream blind. Cross-harm peaks at all three boundary positions. The video explains what cross-harm and τ measure — and why they are orthogonal readings. Good for understanding the instrument's principle.
+A synthetic stream with three known structural boundaries (frequency doubling, phase inversion, return to baseline). A 3-cavity Self processes the stream blind. Cross-harm peaks at all three boundary positions. The video explains what cross-harm and τ measure — and why they are orthogonal readings. [`demo/demo_self_sine.py`](demo/demo_self_sine.py)
 
 ### 2. Bach C Major Prelude — Solo Geruon
 
-[`demo/demo_geruon_bach.mp4`](demo/demo_geruon_bach.mp4) · [`demo/demo_geruon_bach.py`](demo/demo_geruon_bach.py)
+<video src="demo/demo_geruon_bach.mp4" width="100%" controls></video>
 
-Bach's BWV 846 encoded as 12-dim chroma vectors. A solo Geruon processes the stream with zero music theory knowledge. F (field curvature) responds to harmonic density, wit density tracks structural novelty across four musical sections, and their divergence in the final section shows the two readings are orthogonal. With piano audio synthesized from the MIDI.
+Bach's BWV 846 encoded as 12-dim chroma vectors. A solo Geruon processes the stream with zero music theory knowledge. F (field curvature) responds to harmonic density, wit density tracks structural novelty across four musical sections, and their divergence in the final section shows the two readings are orthogonal. With piano audio. [`demo/demo_geruon_bach.py`](demo/demo_geruon_bach.py)
 
 To regenerate both videos:
 
@@ -53,6 +53,12 @@ python demo\make_video.py
 ```
 
 Requires `matplotlib`, `numpy`, `soundfile`, and `ffmpeg`.
+
+### 3. Shepard Paradox — Structural Negative Result
+
+[`experiments/shepard/_shepard.py`](experiments/shepard/_shepard.py) · [interpretation](docs/experiment-shepard-paradox.md)
+
+The Shepard tone is an auditory illusion of endless ascent. It simultaneously contains a chroma circle (closed) and a height drift (open) — a structural contradiction. A solo Geruon does NOT detect this as a paradox: it locks onto the strong chroma periodicity and barely registers the height drift. A 3-cavity Self confirms the null result. This is an honest negative: the instrument is immune to perceptual illusions that lack physical structure. Good for understanding what the instrument can and cannot see.
 
 ---
 
@@ -88,9 +94,8 @@ The same core instrument is used across four domains:
 
 - [Paper I: GEME](paper/gEME.pdf) — DOI: 10.5281/zenodo.20344974
 - [Paper II: BGM](paper/bGM.pdf) — DOI: 10.5281/zenodo.20238099
-- [Paper III: EE v1.6 PDF](paper/ee.pdf)
-- [Paper III: EE v1.6 source](paper/ee_paper_v1.6.md)
-- [EE Supplement v1.6](paper/ee_supplement_v1.6.md)
+- [Paper III: EE](paper/ee.pdf) — v1.6, May 2026
+- [EE Supplement](paper/ee_supplement.pdf)
 
 ---
 
@@ -130,8 +135,7 @@ GBE/
     ├── gEME.pdf
     ├── bGM.pdf
     ├── ee.pdf
-    ├── ee_paper_v1.6.md
-    └── ee_supplement_v1.6.md
+    └── ee_supplement.pdf
 ```
 
 ---
