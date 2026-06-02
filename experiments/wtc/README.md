@@ -1,3 +1,9 @@
+---
+title: Bach WTC
+parent: Experiments
+nav_order: 2
+---
+
 # Bach Well-Tempered Clavier — §4.2
 
 Externalized cognition and Codex convergence. Dual-encoding Self (chroma + IOI) on Bach's WTC Book I & II. Zero musicological priors.

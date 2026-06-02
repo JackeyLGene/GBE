@@ -1,3 +1,9 @@
+---
+title: Shepard Paradox
+parent: Experiments
+nav_order: 5
+---
+
 # Shepard Scale Paradox — Bridge Experiment
 
 A zero-data bridge between the quickstarts and the four paper experiments.

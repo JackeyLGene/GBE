@@ -1,3 +1,9 @@
+---
+title: DNA Alignments
+parent: Experiments
+nav_order: 3
+---
+
 # DNA Evolutionary Archive — §4.3
 
 Evidence that evolutionary constraint leaves a detectable structural signature in DNA. Exon/intron separation and fork-column calibration. Instrument has no genetic code knowledge.

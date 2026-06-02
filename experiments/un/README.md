@@ -1,3 +1,9 @@
+---
+title: UN Voting
+parent: Experiments
+nav_order: 1
+---
+
 # UN Diplomatic Voting — §4.1
 
 Civilizational-scale forward prediction. 79 years of UN General Assembly ideal points (1946-2025), 193 countries. P5 ablation and FRED economic negative control.

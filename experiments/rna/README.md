@@ -1,3 +1,9 @@
+---
+title: RNA Transcripts
+parent: Experiments
+nav_order: 4
+---
+
 # RNA Operation Boundary — §4.4
 
 Blind translational boundary detection. The instrument locates CDS boundaries without codon knowledge, AUG scanning, or genetic code. Temporal-lens divergence produces cross-harm peaks at structural transitions.

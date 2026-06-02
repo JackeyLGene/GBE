@@ -447,363 +447,622 @@
     
     "relUrl": "/docs/GERUON_MANUAL_CN.html"
   },"64": {
+    "doc": "Shepard Paradox",
+    "title": "Shepard Scale Paradox — Bridge Experiment",
+    "content": "A zero-data bridge between the quickstarts and the four paper experiments. The Shepard scale contains two incompatible structures in one stream: . | chroma closes every 12 semitone steps | pitch height keeps drifting upward | . Geruon reads this as a structural contradiction. The useful signature is not a classification score; it is phase behavior: CRITICAL/LOCKED flicker, chroma-period tau structure, and over-anchoring onto the predictable chroma circle. ",
+    "url": "/GBE/experiments/shepard/README.html#shepard-scale-paradox--bridge-experiment",
+    
+    "relUrl": "/experiments/shepard/README.html#shepard-scale-paradox--bridge-experiment"
+  },"65": {
+    "doc": "Shepard Paradox",
+    "title": "Run",
+    "content": "python experiments\\shepard\\_shepard.py python experiments\\shepard\\_shepard_phase.py python experiments\\shepard\\_shepard_window.py . All three scripts use only Python stdlib plus the core instrument in code/. ",
+    "url": "/GBE/experiments/shepard/README.html#run",
+    
+    "relUrl": "/experiments/shepard/README.html#run"
+  },"66": {
+    "doc": "Shepard Paradox",
+    "title": "Scripts",
+    "content": "| Script | Purpose | . | _shepard.py | Main three-condition comparison: Shepard vs chroma-only vs height-only | . | _shepard_phase.py | Phase-transition timeline and first LOCKED/flicker detection | . | _shepard_window.py | Co-occurrence-window scan; paradox strongest near one chroma circle | . ",
+    "url": "/GBE/experiments/shepard/README.html#scripts",
+    
+    "relUrl": "/experiments/shepard/README.html#scripts"
+  },"67": {
+    "doc": "Shepard Paradox",
+    "title": "Expected Results",
+    "content": ". | Shepard produces tau autocorrelation at lag 12, showing the chroma circle remains visible. | Shepard reaches higher final tau than either pure control: over-anchoring, not confusion. | The phase analysis detects CRITICAL/LOCKED flicker after the contradiction becomes established. | The window scan shows the paradox is measurement-scale dependent. | . Full interpretation: docs/experiment-shepard-paradox.md. ",
+    "url": "/GBE/experiments/shepard/README.html#expected-results",
+    
+    "relUrl": "/experiments/shepard/README.html#expected-results"
+  },"68": {
+    "doc": "Shepard Paradox",
+    "title": "Shepard Paradox",
+    "content": " ",
+    "url": "/GBE/experiments/shepard/README.html",
+    
+    "relUrl": "/experiments/shepard/README.html"
+  },"69": {
+    "doc": "UN Voting",
+    "title": "UN Diplomatic Voting — §4.1",
+    "content": "Civilizational-scale forward prediction. 79 years of UN General Assembly ideal points (1946-2025), 193 countries. P5 ablation and FRED economic negative control. ",
+    "url": "/GBE/experiments/un/README.html#un-diplomatic-voting--41",
+    
+    "relUrl": "/experiments/un/README.html#un-diplomatic-voting--41"
+  },"70": {
+    "doc": "UN Voting",
+    "title": "Scripts",
+    "content": "| Script | Purpose | Runtime | . | _un_predict.py | Annual ideal-point pipeline. Centroid displacement time series. 2025 signal. | ~30s | . | _un_p5_ablation.py | Systematic P5 ablation: No-P5 / P5-only / No-USA / No-Russia / Random-5. | ~2min | . | _un_fred_only.py | FRED economic negative control (NASDAQ, T10Y, CPI, etc.). Same pipeline, pure economic data. | ~30s | . ",
+    "url": "/GBE/experiments/un/README.html#scripts",
+    
+    "relUrl": "/experiments/un/README.html#scripts"
+  },"71": {
+    "doc": "UN Voting",
+    "title": "Data",
+    "content": ". | UN ideal points: Voeten, Strezhnev &amp; Bailey, Harvard Dataverse V33 | FRED economic indicators: NASDAQ, T10Y, T2Y, FedFunds, CPI, Unemployment (1993-2025) | . Data files must be obtained from source and placed in a data/ directory at the repo root. Expected format: CSV/parquet with country-year ideal-point values. ",
+    "url": "/GBE/experiments/un/README.html#data",
+    
+    "relUrl": "/experiments/un/README.html#data"
+  },"72": {
+    "doc": "UN Voting",
+    "title": "Run Order",
+    "content": "cd experiments\\un python _un_predict.py # main prediction pipeline python _un_p5_ablation.py # P5 ablation python _un_fred_only.py # economic negative control . ",
+    "url": "/GBE/experiments/un/README.html#run-order",
+    
+    "relUrl": "/experiments/un/README.html#run-order"
+  },"73": {
+    "doc": "UN Voting",
+    "title": "Dependencies",
+    "content": "numpy, pandas. Core instrument: code/geruon.py, code/geme.py (stdlib only). ",
+    "url": "/GBE/experiments/un/README.html#dependencies",
+    
+    "relUrl": "/experiments/un/README.html#dependencies"
+  },"74": {
+    "doc": "UN Voting",
+    "title": "Key Results",
+    "content": ". | 2025 great-power alignment displacement: 0.448 (rank 1/79, excluding initialization artifact) | P5 ablation: signal concentrated in great-power layer (No-USA = 0.550, P5-only = 0.448) | FRED negative control: 2025 economic displacement rank 24/33 — structurally normal | Falsifiable prediction: 2026-2028 structural collapse of US-led P5 alignment. Three verification criteria. | . ",
+    "url": "/GBE/experiments/un/README.html#key-results",
+    
+    "relUrl": "/experiments/un/README.html#key-results"
+  },"75": {
+    "doc": "UN Voting",
+    "title": "What Didn’t Work",
+    "content": ". | Resolution-level pipeline: matched 3/4 historical events (Soviet collapse 1991, financial crisis 2008, Ukraine 2022; Crimea 2014 missed). Not used for the forward signal. | Non-P5 signal: global-only encoding yields displacement 0.101 (rank 12/78) — elevated but not extreme. Signal concentrated in great-power layer. | Expression-type data: same pipeline on FRED economic indicators — 2025 structurally normal (rank 24/33). Instrument needs relational structure. | . ",
+    "url": "/GBE/experiments/un/README.html#what-didnt-work",
+    
+    "relUrl": "/experiments/un/README.html#what-didnt-work"
+  },"76": {
+    "doc": "UN Voting",
+    "title": "UN Voting",
+    "content": " ",
+    "url": "/GBE/experiments/un/README.html",
+    
+    "relUrl": "/experiments/un/README.html"
+  },"77": {
+    "doc": "RNA Transcripts",
+    "title": "RNA Operation Boundary — §4.4",
+    "content": "Blind translational boundary detection. The instrument locates CDS boundaries without codon knowledge, AUG scanning, or genetic code. Temporal-lens divergence produces cross-harm peaks at structural transitions. ",
+    "url": "/GBE/experiments/rna/README.html#rna-operation-boundary--44",
+    
+    "relUrl": "/experiments/rna/README.html#rna-operation-boundary--44"
+  },"78": {
+    "doc": "RNA Transcripts",
+    "title": "Scripts",
+    "content": "| Script | Purpose | Runtime | . | _rna_te_cds.py | CDS-UTR structural separation. 3-cavity Self, 3-mer encoding, genomic-order windows. | ~2min | . | _rna_boundary_final.py | Blind CDS boundary detection. 2-cavity/3-cavity Self, W=32-48 nt. Multi-seed (3×). | ~5min | . | _rna_close.py | RPF ablation final. Fork vs RPF-only vs process-permuted. Closes Phase 2 coupling question. | ~3min | . ",
+    "url": "/GBE/experiments/rna/README.html#scripts",
+    
+    "relUrl": "/experiments/rna/README.html#scripts"
+  },"79": {
+    "doc": "RNA Transcripts",
+    "title": "Data",
+    "content": ". | Human TE atlas: transcript sequences + CDS masks (parquet, ~7,500 transcripts) | HeLa RPF bigWig tracks: GSE79664, 7 samples (_rna_close.py only) | GENCODE v49 GTF: primary assembly (_rna_close.py only) | . Expected location: data/rna/. RPF bigWig tracks require pybigtools (Windows). Raw data from RPFdb v3 and GENCODE. ",
+    "url": "/GBE/experiments/rna/README.html#data",
+    
+    "relUrl": "/experiments/rna/README.html#data"
+  },"80": {
+    "doc": "RNA Transcripts",
+    "title": "Run Order",
+    "content": "cd experiments\\rna python _rna_te_cds.py # CDS-UTR separation baseline python _rna_boundary_final.py # blind boundary detection (core result) python _rna_close.py # RPF ablation (optional, needs bigWig) . ",
+    "url": "/GBE/experiments/rna/README.html#run-order",
+    
+    "relUrl": "/experiments/rna/README.html#run-order"
+  },"81": {
+    "doc": "RNA Transcripts",
+    "title": "Dependencies",
+    "content": "numpy, pandas, pyarrow (parquet). pybigtools for _rna_close.py bigWig reads (Windows only). Core instrument: code/geruon.py, code/geme.py (stdlib only). ",
+    "url": "/GBE/experiments/rna/README.html#dependencies",
+    
+    "relUrl": "/experiments/rna/README.html#dependencies"
+  },"82": {
+    "doc": "RNA Transcripts",
+    "title": "Key Results",
+    "content": ". | CDS-UTR separation: d=−0.84 (n=100). Coding regions produce more regular 3-mer organization. | CDS stop: 98-100% within ±3 windows (24 nt), parameter-invariant — all configs and seeds converge to median −1.0 window. | CDS start: 66% within ±3 windows, 75% within ±5. Best with 2-cavity W=32 nt, κ=0.01/500. Systematic ~1 window offset. | AUG control: 98% discrimination (3-cavity extreme κ spread 0.005/10/5000). Transition-magnitude detection, not motif detection. | Asymmetry is biological: CDS→3’UTR is a structural cliff. 5’UTR→CDS is a ramp. The instrument reads what biology built. | RPF coupling: negative. Fork d=−0.93, RPF-only d=−0.91, process-permuted d=−0.99. Occupancy-driven. | . ",
+    "url": "/GBE/experiments/rna/README.html#key-results",
+    
+    "relUrl": "/experiments/rna/README.html#key-results"
+  },"83": {
+    "doc": "RNA Transcripts",
+    "title": "What Didn’t Work",
+    "content": ". | CDS start: 66% within ±3 windows — worse than stop (98-100%). The 5’UTR→CDS transition is structurally gradual; the instrument reads what biology built. | AUG motif detection: the instrument does NOT scan for AUG. The start signal (such as it is) comes from transition magnitude, not motif recognition. | RPF as independent signal: ribosome profiling does not add information beyond the transcript sequence itself. Process-permuted RPF produces nearly identical results (d=−0.99). | . ",
+    "url": "/GBE/experiments/rna/README.html#what-didnt-work",
+    
+    "relUrl": "/experiments/rna/README.html#what-didnt-work"
+  },"84": {
+    "doc": "RNA Transcripts",
+    "title": "RNA Transcripts",
+    "content": " ",
+    "url": "/GBE/experiments/rna/README.html",
+    
+    "relUrl": "/experiments/rna/README.html"
+  },"85": {
+    "doc": "DNA Alignments",
+    "title": "DNA Evolutionary Archive — §4.3",
+    "content": "Evidence that evolutionary constraint leaves a detectable structural signature in DNA. Exon/intron separation and fork-column calibration. Instrument has no genetic code knowledge. ",
+    "url": "/GBE/experiments/dna/README.html#dna-evolutionary-archive--43",
+    
+    "relUrl": "/experiments/dna/README.html#dna-evolutionary-archive--43"
+  },"86": {
+    "doc": "DNA Alignments",
+    "title": "Scripts",
+    "content": "| Script | Purpose | Runtime | . | _dna_genomic.py | Exon/intron 3-cavity Self. 3-mer encoding, 256-nt genomic-order windows. N=200 transcripts. | ~3min | . | _dna_fork2.py | 4-species fork column (Pongo/Gorilla/Pan/Homo). AHSG single-gene calibration. | ~1min | . | _dna_validate.py | Multi-seed validation, κ ablation, window sweep, dinucleotide shuffle control. | ~5min | . ",
+    "url": "/GBE/experiments/dna/README.html#scripts",
+    
+    "relUrl": "/experiments/dna/README.html#scripts"
+  },"87": {
+    "doc": "DNA Alignments",
+    "title": "Data",
+    "content": ". | Human TE atlas: transcript sequences + CDS masks (parquet) | 4-species hominid alignments: Pongo, Gorilla, Pan, Homo (per-gene FASTA) | GENCODE v49 GTF: primary assembly annotation | . Expected locations under the repo-root data/ directory: . | transcript parquet / TE table: data/rna/te/te_human.parquet | hominid alignments: data/dna/hominid/DNA_vs_Protein_Alignments/... | . Raw parquet and FASTA files must be obtained from GENCODE, TE atlas, and the hominid alignment source. ",
+    "url": "/GBE/experiments/dna/README.html#data",
+    
+    "relUrl": "/experiments/dna/README.html#data"
+  },"88": {
+    "doc": "DNA Alignments",
+    "title": "Run Order",
+    "content": "cd experiments\\dna python _dna_genomic.py # exon/intron baseline (population evidence) python _dna_fork2.py # AHSG fork column (single-gene calibration) python _dna_validate.py # multi-seed + ablation confirmation . ",
+    "url": "/GBE/experiments/dna/README.html#run-order",
+    
+    "relUrl": "/experiments/dna/README.html#run-order"
+  },"89": {
+    "doc": "DNA Alignments",
+    "title": "Dependencies",
+    "content": "numpy, pandas, pyarrow (parquet). Core instrument: code/geruon.py, code/geme.py (stdlib only). ",
+    "url": "/GBE/experiments/dna/README.html#dependencies",
+    
+    "relUrl": "/experiments/dna/README.html#dependencies"
+  },"90": {
+    "doc": "DNA Alignments",
+    "title": "Key Results",
+    "content": ". | Exon/intron: d=−0.97 (n=200 transcripts, 10,606 windows). Shuffle collapses to d=−0.10. Δd=+0.87. | AHSG fork column: d=+1.51 (single-gene, n=1). AHSG identified under positive selection (Sabeti 2007, Nielsen 2005). Per-gene pooled did NOT generalize (mean d=0.13±0.22). | Dinucleotide shuffle preserves base composition but destroys 3-nt periodicity → signal drops. | κ ablation confirms multi-lens Self is load-bearing. | . ",
+    "url": "/GBE/experiments/dna/README.html#key-results",
+    
+    "relUrl": "/experiments/dna/README.html#key-results"
+  },"91": {
+    "doc": "DNA Alignments",
+    "title": "What Didn’t Work",
+    "content": ". | Per-gene generalization: AHSG fork column (d=+1.51, single gene) did not generalize when pooled across genes (mean d=0.13±0.22). Fork signal is gene-specific, not a universal conservation metric. | Solo Geruon on DNA: signal much weaker without multi-lens Self. Required amplifier for exon/intron separation. | 3-mer alone: dinucleotide shuffle destroys 3-nt periodicity → signal drops to d=-0.10. Signal depends on codon-scale sequential structure, not base composition. | . ",
+    "url": "/GBE/experiments/dna/README.html#what-didnt-work",
+    
+    "relUrl": "/experiments/dna/README.html#what-didnt-work"
+  },"92": {
+    "doc": "DNA Alignments",
+    "title": "DNA Alignments",
+    "content": " ",
+    "url": "/GBE/experiments/dna/README.html",
+    
+    "relUrl": "/experiments/dna/README.html"
+  },"93": {
+    "doc": "Bach WTC",
+    "title": "Bach Well-Tempered Clavier — §4.2",
+    "content": "Externalized cognition and Codex convergence. Dual-encoding Self (chroma + IOI) on Bach’s WTC Book I &amp; II. Zero musicological priors. ",
+    "url": "/GBE/experiments/wtc/README.html#bach-well-tempered-clavier--42",
+    
+    "relUrl": "/experiments/wtc/README.html#bach-well-tempered-clavier--42"
+  },"94": {
+    "doc": "Bach WTC",
+    "title": "Scripts",
+    "content": "| Script | Purpose | Runtime | . | _wtc_dual.py | Dual-Self processing (chroma + IOI). Cross-harm time series. Tonal skeleton discovery. Transposition equivariance test. | ~2min/piece | . | _wtc_phase2_evo.py | Five-stage Codex evolution loop. Cross-key Codex selection (C/Eb/F#/B). 10 generations. | ~5min/piece | . ",
+    "url": "/GBE/experiments/wtc/README.html#scripts",
+    
+    "relUrl": "/experiments/wtc/README.html#scripts"
+  },"95": {
+    "doc": "Bach WTC",
+    "title": "Data",
+    "content": ". | MIDI encodings of Bach WTC Book I (24 pieces) and Book II (12 pieces) | Encoded via midi_encoder.py in code/ | MIDI files: public domain, available from multiple sources (Mutopia, KunstderFuge) | . The frozen scripts read pre-encoded files from the repo-root data directory: . | data/wtc_pieces/wtc_00.pkl, data/wtc_pieces/wtc_01.pkl, … | data/wtc_phase2/codex_true_cap12.json | data/wtc_phase2/codex_wrong_cap12.json | . Raw MIDI files can be placed in data/wtc/ and encoded with code/midi_encoder.py; the encoder produces 12-dim chroma vectors and 12-dim IOI histograms. ",
+    "url": "/GBE/experiments/wtc/README.html#data",
+    
+    "relUrl": "/experiments/wtc/README.html#data"
+  },"96": {
+    "doc": "Bach WTC",
+    "title": "Run Order",
+    "content": "cd experiments\\wtc python _wtc_dual.py # Phase 1: tonal skeleton + transposition python _wtc_phase2_evo.py # Phase 2: five-stage Codex loop . ",
+    "url": "/GBE/experiments/wtc/README.html#run-order",
+    
+    "relUrl": "/experiments/wtc/README.html#run-order"
+  },"97": {
+    "doc": "Bach WTC",
+    "title": "Dependencies",
+    "content": "numpy, pandas. Core instrument: code/geruon.py, code/geme.py, code/we_core.py (stdlib only). MIDI parsing: code/midi_encoder.py. ",
+    "url": "/GBE/experiments/wtc/README.html#dependencies",
+    
+    "relUrl": "/experiments/wtc/README.html#dependencies"
+  },"98": {
+    "doc": "Bach WTC",
+    "title": "Key Results",
+    "content": ". | Transposition equivariance: 100% (I-V-ii skeleton shifts by exactly k semitones for all non-zero k) | Five-stage Codex loop: Formation → Inscription → Transmission → Confirmation → Rejection | C major Codex: 38 entries, tonic anchor at chroma dim 0 (&gt;45%) | Eb major Codex: 48 entries, tonic triad skeleton spanning dims 2,4,6,9 | Cross-key: non-matching entries freeze, never decay. Selection layer decouples from frame economy. | . ",
+    "url": "/GBE/experiments/wtc/README.html#key-results",
+    
+    "relUrl": "/experiments/wtc/README.html#key-results"
+  },"99": {
+    "doc": "Bach WTC",
+    "title": "What Didn’t Work",
+    "content": ". | Solo Geruon on WTC: blind — no signal (&lt; 1 L3 bridge across 48 pieces). Required Self amplifier to detect structure. | BiasField inheritance: zero effect at all α (0.05-5.0). Normalization flattens inherited gradient. Transmission must go through Codex. | Group classification: r(L3, PVC%) = 0; r(F, PVC%) ≤ 0.5. Instrument measures organization, not pathology labels. | Codex operation: still scaffolded. Formation and selection are native; active query under noise remains manual. | . ",
+    "url": "/GBE/experiments/wtc/README.html#what-didnt-work",
+    
+    "relUrl": "/experiments/wtc/README.html#what-didnt-work"
+  },"100": {
+    "doc": "Bach WTC",
+    "title": "Bach WTC",
+    "content": " ",
+    "url": "/GBE/experiments/wtc/README.html",
+    
+    "relUrl": "/experiments/wtc/README.html"
+  },"101": {
     "doc": "Calibration Report",
     "title": "EE 被动仪器标定报告 v2.1",
     "content": "日期: 2026-05-31（修订 2026-06-01） 状态: 完成。Readout policy 已冻结。4 项高置信 + 1 项 turnover 诊断 + 1 项弱 τ₀ 信号 + 1 项 GI 架构扫描。 . ",
     "url": "/GBE/docs/experiment-passive-calibration-report.html#ee-%E8%A2%AB%E5%8A%A8%E4%BB%AA%E5%99%A8%E6%A0%87%E5%AE%9A%E6%8A%A5%E5%91%8A-v21",
     
     "relUrl": "/docs/experiment-passive-calibration-report.html#ee-被动仪器标定报告-v21"
-  },"65": {
+  },"102": {
     "doc": "Calibration Report",
     "title": "设计原则",
     "content": "两层分离： . | Layer 1（当前）: 被动仪器标定。用生成流，Geruon 不做选择，只测结构读数。 | Layer 2（后续）: 主动认知任务。仅在 readout policy 冻结后运行。 | . 固定 Readout Policy (R1-R8, 不可调): . | # | 符号 | 含义 | 公式 | 注意 | . | R1 | τ | 当前时间透镜 | g.tau |   | . | R2 | dτ/dt | τ 变化率 | g.dtaudt |   | . | R3 | centroid_mag | 残差方向幅度 | \\|arrow_output()\\| |   | . | R4 | F | 场曲率（权重集中度） | 1 - H(w)/Hmax |   | . | R5 | L2, L3 | 层帧计数 | f.layer == 'L2'/'L3' | layer 是字符串，非整数 | . | R6 | frame_disp | 相邻帧位移 | \\|vec_latest - vec_prev\\| | 不是内部预测误差 | . | R7 | n_frames | 总帧数 | len(frames) |   | . | R8 | total_w | 总权重 | sum(frame.weight) | 含新旧所有帧 | . ",
     "url": "/GBE/docs/experiment-passive-calibration-report.html#%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99",
     
     "relUrl": "/docs/experiment-passive-calibration-report.html#设计原则"
-  },"66": {
+  },"103": {
     "doc": "Calibration Report",
     "title": "标定结果",
     "content": "CALIB-κ: 环境反转 → 迁移潜伏期 . 方法: 正弦波频率加倍（周期 20 → 8），测 τ 从旧稳态迁移到新稳态的步数。 . | κ_τ | τ_pre | τ_min | min@步 | stable@步 | . | 0.5 | 0.7487 | 0.7371 | 157 | 20 | . | 1.0 | 0.7487 | 0.7371 | 157 | 20 | . | 3.0 | 0.7448 | 0.7371 | 109 | 20 | . | 5.0 | 0.7398 | 0.7361 | 61 | 20 | . | 10.0 | 0.7361 | 0.7361 | 0 | 20 | . | 20.0 | 0.7414 | 0.7391 | 61 | 20 | . 发现: κ_τ 控制 τ 适应速度，不控制稳态值。κ=3-5 为平衡区间。 . 标定值: κ_τ = 3（默认, ~100 步迁移潜伏期） . CALIB-cap: 正弦波-bit → 有效容量 . 两阶段方法。Test A（正弦波量化）发现 Geruon 学的是时序模式，高 bit（平滑）流 pred_err 更低。Test B（随机值纯存储）测纯容量。 . Test B (绝对阈值 PE &lt; 0.05): . | cap | K_max (distinct 值) | 效率 | . | 4 | 2 | 50% | . | 8 | 2 | 25% | . | 12 | 6 | 50% | . | 16 | 12 | 75% | . | 20 | 16 | 80% | . | 24 | 20 | 83% | . | 32 | 24 | 75% | . 标定曲线: K_max ≈ 0.8 × cap (cap ≤ 24)，效率峰值 ~83% 在 cap=24。 . CALIB-δ: 正弦波-bit → 合并粒度 . 正弦波量化压缩率 (n_distinct / levels) 测合并行为。转折点在 bits=3-4（8-16 个级别）。 . 压缩率: . | bits | levels | cap=8 | cap=12 | cap=16 | cap=24 | . | 1-2 | 2-4 | 50% | 75-100% | 100% | 100% | . | 3 | 8 | 50% | 75% | 100% | 100% | . | 4 | 16 | 25% | 44% | 56% | 63% | . | 5-6 | 32-64 | 8-13% | 13-22% | 17-28% | 19-31% | . 核心发现: δ 和 cap 是耦合的——δ_eff ≈ 1.25 / cap。帧经济存个体向量，不是类别原型。加噪声不触发合并（噪声是”新结构”）。 . | cap | δ_eff ≈ | 可区分值 | . | 8 | 0.16 | ~5 | . | 12 | 0.10 | ~10 | . | 16 | 0.08 | ~13 | . | 24 | 0.05 | ~19 | . CALIB-γ: 结构周转 (turnover diagnostic) . v1 (废弃): 追踪 total_w。消退期末总权重反增（722K→1,004K），新旧混合导致虚假半衰期 31 步。 . v2 (修正): 标记原始结构帧（by struct_sig.struct_key），仅追踪其权重。 . | 指标 | 值 | . | 原始结构权重 (强化期末) | 722,086 | . | 原始结构权重 (消退期末) | 0（350 步归零） | . | 原始结构半衰期 | 8 步 | . | 周转比 (新权重/旧初始) | 0.68× | . 衰减轨迹: step 0→722K, step 50→261K (−64%), step 100→72K (新帧占 83%), step 350→0。 . 发现: . | 真正半衰期 8 步，不是 31 步。纯 γ 预测 ~14 步 (ln2/0.05)，实测更快因为剪枝优先移除最弱帧 | 旧值 31 ≈ 8 × GI (8×4=32)——v1 测的是帧经济周转周期，不是单个结构衰减 | 这不是”遗忘曲线”，是结构替换周转：旧结构被剪枝，新模式填充 | total_w 不得作为衰减指标——它是新旧混合信号 | . 标定值: 结构半衰期 8 步，完全衰减 350 步 (cap=24, γ=0.05)。应称”结构周转指标 (structure turnover indicator)”。 . 不确定性追踪 (solo Geruon) . 方法: 交替低噪声 (σ=0.02) / 高噪声 (σ=0.25) 相位。 . | 指标 | 值 | . | τ (低噪声) | 0.7284 | . | τ (高噪声) | 0.7440 | . | τ_diff | +0.0155 | . | frame_disp 比值 | 11.2× | . 发现: τ 在高噪声下稳定上升——环境不确定时系统更保守。稳健可复现。 . CALIB-τ₀: 新异模式吸收率 . 周期模式 (正弦) → 混沌模式 (logistic map)。τ 缓慢下降 0.008（方向正确），但初始斜率为零——无即时响应，τ 惯性大。弱信号，方向正确但量级太小。 . CALIB-GI: 自指周期架构扫描 . 方法: MiniSelf (n 腔体, κ 几何分布), GI × n 二维扫描。标准 Self kappas [0.5, 10, 100]。注意：架构扫描，非统计复现——信号由结构（κ×GI）主导，不由种子主导。 . 标准 Self (n=3) 结果: . | GI | cavity_diff | 说明 | . | 3 | 0.0646 ± 0.0096 | 过频——κ 跨度大时 cavity 被过度同步 | . | 4 | 0.0890 ± 0.0000 | BGM 帕累托点；在 Self 中为保守运行点 | . | 5 | 0.0950 ± 0.0000 | 信号最优，接近通信经济上限 | . 发现: . | GI=4 从来不是 3 腔体 Self 的信号最优 | GI=5 最优且接近上限——κ 跨度越大越需要更长独立处理周期，避免过度同步 | 实际采用 GI=4：达到 GI=5 约 94% 的信号，同时保留一格安全边际，避免把系统运行在上限处。这是工程保守点，不是信号最优点 | . 理论解释: . | GI 过小: 交换过频 → 不可逆操作累积 + 腔体被同步 → 账单高 | GI=5: 腔体独立处理足够步数后才交换 → 账单-收益平衡 | GI&gt;5: 腔体漂移积累信息债务 → 重新同步代价超收益 | GI=5 与兰道尔账单解释一致，是当前 3 腔体 Self 架构下的通信经济上限 | . ",
     "url": "/GBE/docs/experiment-passive-calibration-report.html#%E6%A0%87%E5%AE%9A%E7%BB%93%E6%9E%9C",
     
     "relUrl": "/docs/experiment-passive-calibration-report.html#标定结果"
-  },"67": {
+  },"104": {
     "doc": "Calibration Report",
     "title": "标定基准总表",
     "content": "| 参数 | 标定值 | 认知映射 | 置信度 | . | κ_τ | 3 | 时间注意力粒度：~100 步观察窗口 | 高 | . | cap | K_max ≈ 0.8×cap | 有效容量，效率峰值 cap=20-24 (~83%) | 高 | . | δ | δ_eff ≈ 1.25/cap | 合并粒度，与 cap 耦合 | 高 | . | uncertainty | τ_diff = +0.0155 | τ 在高噪声下上升，系统更保守 | 高 | . | γ (turnover) | 结构半衰期 8 步 | 结构周转指标，非遗忘曲线 | 中 | . | τ₀ | τ_drop 0.008 | 新异吸收率，方向正确信号弱 | 低 | . | GI | opt=5, 采用=4 (n=3) | 兰道尔账单约束的通信节律 | 中 | . 置信度: 高=多 seed 复现，信号由结构主导；中=可复现，需更严格独立验证或重框架；低=方向正确量级太小。 . ",
     "url": "/GBE/docs/experiment-passive-calibration-report.html#%E6%A0%87%E5%AE%9A%E5%9F%BA%E5%87%86%E6%80%BB%E8%A1%A8",
     
     "relUrl": "/docs/experiment-passive-calibration-report.html#标定基准总表"
-  },"68": {
+  },"105": {
     "doc": "Calibration Report",
     "title": "参数透传验证",
     "content": "全部标定参数可从三个架构常数 (δ=0.19, γ=0.05, τ₀=0.60) 追溯： . | 标定参数 | 推导 | 验证 | . | κ_τ=3 | γ × 0.4 × κ_τ → 0.05×0.4×3 = 0.006/步 | 109 步迁移，匹配 | . | γ 半衰期 8 步 | ln2/γ ≈ 14 步理论值，优先剪枝加速至 8 步 | 干净可解释 | . | 旧值 31≈8×GI | v1 错误测的是周转周期，恰好回到 GI | 意外交叉验证 | . | cap×δ≈1.25 | K_max × δ_eff ≈ 1，两个独立标定互相约束 | 内部一致 | . | GI=5 opt / GI=4 运行点 | 3 腔体 Self 中 GI=5 信号最优；GI=4 保守运行 | 信号最优与工程运行点分离 | . 无自由参数——所有标定值均可从 δ/γ/τ₀ 和乘子纪律（×0.4, ×0.2）导出。 . ",
     "url": "/GBE/docs/experiment-passive-calibration-report.html#%E5%8F%82%E6%95%B0%E9%80%8F%E4%BC%A0%E9%AA%8C%E8%AF%81",
     
     "relUrl": "/docs/experiment-passive-calibration-report.html#参数透传验证"
-  },"69": {
+  },"106": {
     "doc": "Calibration Report",
     "title": "Layer 2 初步: 主动概率反转学习",
     "content": "κ_τ=3 参数下，Geruon 基于内部 evidence 做选择。 . | 指标 | 值 | 对标 | . | 切换潜伏期 | 23.1 trials | 人类 8-15 | . | τ 变化 | 0（冻结在 0.733） | 被动标定预测 τ_drop=0.004 | . | stay_win / shift_lose | 0.63 / 0.51 | 人类 ~0.7-0.9 / ~0.5-0.7 | . 核心发现: τ 在反转前后完全冻结——反转改变语义（哪个选项更好）但不改变向量类型。τ 是流结构探测器，不是强化学习的学习率。 . ",
     "url": "/GBE/docs/experiment-passive-calibration-report.html#layer-2-%E5%88%9D%E6%AD%A5-%E4%B8%BB%E5%8A%A8%E6%A6%82%E7%8E%87%E5%8F%8D%E8%BD%AC%E5%AD%A6%E4%B9%A0",
     
     "relUrl": "/docs/experiment-passive-calibration-report.html#layer-2-初步-主动概率反转学习"
-  },"70": {
+  },"107": {
     "doc": "Calibration Report",
     "title": "脚本",
     "content": ". | code/_calibrate_passive.py — 全部标定 + 不确定性追踪 | code/_calibrate_cap.py — cap（正弦波-bit + 随机值纯存储） | code/_calibrate_delta.py — δ（正弦波量化压缩率） | code/_calibrate_gi.py — GI 架构扫描 | code/_calibrate_kappa.py — κ_τ 早期探索 | code/_active_reversal.py — Layer 2 主动反转学习 | . ",
     "url": "/GBE/docs/experiment-passive-calibration-report.html#%E8%84%9A%E6%9C%AC",
     
     "relUrl": "/docs/experiment-passive-calibration-report.html#脚本"
-  },"71": {
+  },"108": {
     "doc": "Calibration Report",
     "title": "Calibration Report",
     "content": " ",
     "url": "/GBE/docs/experiment-passive-calibration-report.html",
     
     "relUrl": "/docs/experiment-passive-calibration-report.html"
-  },"72": {
+  },"109": {
     "doc": "Shepard Paradox",
     "title": "Shepard 音阶悖论 — Geruon 帧经济中的结构矛盾",
     "content": "日期: 2026-06-01 状态: 完成 . ",
     "url": "/GBE/docs/experiment-shepard-paradox.html#shepard-%E9%9F%B3%E9%98%B6%E6%82%96%E8%AE%BA--geruon-%E5%B8%A7%E7%BB%8F%E6%B5%8E%E4%B8%AD%E7%9A%84%E7%BB%93%E6%9E%84%E7%9F%9B%E7%9B%BE",
     
     "relUrl": "/docs/experiment-shepard-paradox.html#shepard-音阶悖论--geruon-帧经济中的结构矛盾"
-  },"73": {
+  },"110": {
     "doc": "Shepard Paradox",
     "title": "问题",
     "content": "Shepard 音阶同时具备两个互相矛盾的结构维度： . | chroma 圈: 每 12 步回到同一 pitch class（闭合） | height 漂移: 每步上升 1/12 八度（开放） | . 人类听觉系统无法判定音阶是在上升还是下降——它永续上升却永不离开。这是听觉版的彭罗斯阶梯。 . 问题: Geruon 的帧经济如何处理这种结构矛盾？ . ",
     "url": "/GBE/docs/experiment-shepard-paradox.html#%E9%97%AE%E9%A2%98",
     
     "relUrl": "/docs/experiment-shepard-paradox.html#问题"
-  },"74": {
+  },"111": {
     "doc": "Shepard Paradox",
     "title": "方法",
     "content": ". | 编码: D=4 [chroma_sin, chroma_cos, height_norm, octave_norm] | 参数: κ_τ=3, cap=16（标定默认值） | 流: 24-30 八度，每八度 12 步 | 对照: 纯 chroma（height=0）、纯 height（chroma=0.5） | 扫描: cooccur_window ∈ {6, 12, 18, 24, 36, 48, 64, 96} | 固定 readout policy: R1-R8（已冻结） | . ",
     "url": "/GBE/docs/experiment-shepard-paradox.html#%E6%96%B9%E6%B3%95",
     
     "relUrl": "/docs/experiment-shepard-paradox.html#方法"
-  },"75": {
+  },"112": {
     "doc": "Shepard Paradox",
     "title": "结果",
     "content": "1. 相边界闪烁 — Shepard 的独有特征 . Shepard 流中 Geruon 在 CRITICAL ↔ LOCKED 之间快速振荡（相边界闪烁），这在纯 chroma 和纯 height 中均不出现： . 八度 0- 3: RESTING τ=0.63 帧快速形成 八度 3- 6: → CRITICAL τ=0.72 chroma 圈开始锁相 八度 6-14: CRITICAL τ→0.74 缓慢上升 八度 14: ⬡ 首次 LOCKED (τ&gt;0.75, 步 175) ⬡ 八度 15-21: CRITICAL ↔ LOCKED 快速振荡 (26 次相变) 八度 21-30: → RESTING τ 微降，系统\"穿过\"但未解决 . 异变点在八度 14（步 175）——系统首次无法维持稳定相态，进入边界振荡。 . 2. 窗口依赖性 — 悖论的结构分辨率 . | 窗口 (步) | chroma 圈数 | ac12 (τ) | 闪烁次数 | LOCKED% | 悖论状态 | . | 6 | 0.5 | 0.000 | 32 | 9.4% | 太小，看不见圈 | . | 12 | 1 | +0.176 | 40 | 11.5% | 悖论最强 | . | 18 | 1.5 | +0.087 | 25 | 7.3% | 悖论强 | . | 24 | 2 | +0.197 | 19 | 5.6% | 悖论中等 | . | 36 | 3 | +0.498 | 13 | 3.8% | chroma 主导，悖论减弱 | . | 48 | 4 | +0.029 | 19 | 5.6% | 悖论中等 | . | 64 | 5.3 | +0.111 | 17 | 4.9% | 默认值，悖论中等 | . | 96 | 8 | 0.000 | 5 | 1.4% | 悖论消失 | . 窗口=12（恰好一圈 chroma）悖论最大化——闪烁 40 次，ac12 存在但不压倒性。窗口=96（8 圈）悖论完全消失——chroma 沉入”旧闻”，系统只看到局部半音步进。 . 3. Geruon 的应对策略：过度锚定 . 和初始预期（τ 在两个维度间振荡）相反，Shepard 的 τ_final（0.7493）高于纯 chroma（0.7389）和纯 height（0.7454）。面对矛盾，系统不困惑——它过度锁住可预测维度（chroma 圈），用更高 τ 排斥不可预测维度的干扰。 . |   | Shepard | Chroma-only | Height-only | . | τ_final | 0.7493 (最高) | 0.7389 | 0.7454 | . | τ_ac12 | +0.632 (最强) | +0.612 | +0.620 | . 结构张力不产生混乱——产生过度锚定。 . ",
     "url": "/GBE/docs/experiment-shepard-paradox.html#%E7%BB%93%E6%9E%9C",
     
     "relUrl": "/docs/experiment-shepard-paradox.html#结果"
-  },"76": {
+  },"113": {
     "doc": "Shepard Paradox",
     "title": "结论",
     "content": ". | Shepard 悖论在 Geruon 中产生可测的行为签名——CRITICAL↔LOCKED 相边界闪烁，区别于所有对照条件 | 悖论是窗口依赖的——仅在 cooccur_window 包含恰好 1-2 个 chroma 圈时可见。太小则无圈，太大则圈被淹没 | Geruon 的矛盾处理策略是过度锚定——抓住可预测维度，锁定排斥不可预测维度 | 这和人类知觉中的 Shepard 限制对应——人类也仅在特定音域窗口内体验永续上升 | . ",
     "url": "/GBE/docs/experiment-shepard-paradox.html#%E7%BB%93%E8%AE%BA",
     
     "relUrl": "/docs/experiment-shepard-paradox.html#结论"
-  },"77": {
+  },"114": {
     "doc": "Shepard Paradox",
     "title": "与 Escher/视觉的矛盾桥接",
     "content": "Shepard 是听觉版的彭罗斯阶梯。Geruon 的”过度锚定”策略预测了视觉 impossible figure 处理的同一行为：系统不会困惑，会锁住局部规律维度（每一步楼梯确实上升），忽略全局矛盾（楼梯闭合）。cooccur_window 对应视知觉中的注意窗口——决定结构矛盾是否在视野内。 . ",
     "url": "/GBE/docs/experiment-shepard-paradox.html#%E4%B8%8E-escher%E8%A7%86%E8%A7%89%E7%9A%84%E7%9F%9B%E7%9B%BE%E6%A1%A5%E6%8E%A5",
     
     "relUrl": "/docs/experiment-shepard-paradox.html#与-escher视觉的矛盾桥接"
-  },"78": {
+  },"115": {
     "doc": "Shepard Paradox",
     "title": "脚本",
     "content": ". | experiments/shepard/_shepard.py — 主实验（含三条件对照） | experiments/shepard/_shepard_phase.py — 相变分析与异变点检测 | experiments/shepard/_shepard_window.py — 窗口依赖性扫描 | . ",
     "url": "/GBE/docs/experiment-shepard-paradox.html#%E8%84%9A%E6%9C%AC",
     
     "relUrl": "/docs/experiment-shepard-paradox.html#脚本"
-  },"79": {
+  },"116": {
     "doc": "Shepard Paradox",
     "title": "Shepard Paradox",
     "content": " ",
     "url": "/GBE/docs/experiment-shepard-paradox.html",
     
     "relUrl": "/docs/experiment-shepard-paradox.html"
-  },"80": {
-    "doc": "Manuals",
-    "title": "Manuals &amp; Quickstarts",
-    "content": ". | Geruon Manual — Instrument API, Faraday readings, calibration | Geruon Manual (CN) — Chinese version | EE Manual — Self / We / Codex assembly and experiments | EE Manual (CN) — Chinese version | Calibration Report — Passive instrument calibration | Shepard Paradox — Structural paradox detection | . ",
-    "url": "/GBE/docs/#manuals--quickstarts",
-    
-    "relUrl": "/docs/#manuals--quickstarts"
-  },"81": {
-    "doc": "Manuals",
-    "title": "Demos &amp; Quickstarts",
-    "content": "Quickstarts (Python 3.8+ stdlib only): . | quickstart_geruon.py — Solo Geruon | quickstart_ee_self.py — 3-cavity Self | . Runnable demos: . | Sine Boundary Detection — 3-cavity Self, synthetic boundaries | Bach C Major Prelude — Solo Geruon, BWV 846 | Shepard Paradox — Structural negative result | . Demo videos: Sine Boundary · Bach Prelude . ",
-    "url": "/GBE/docs/#demos--quickstarts",
-    
-    "relUrl": "/docs/#demos--quickstarts"
-  },"82": {
-    "doc": "Manuals",
-    "title": "Manuals",
-    "content": " ",
-    "url": "/GBE/docs/",
-    
-    "relUrl": "/docs/"
-  },"83": {
-    "doc": "Day 1: The Opening + The Arc Begins",
-    "title": "Day 1: The Opening + The Arc Begins",
-    "content": "Essays 000 → 009. 000: The Opening . Philosopher who learned to code. Three axioms. Nineteen days. One architecture reads music, heartbeats, sleep, diplomacy. No training. No labels. Look through the telescope. 001: Three Axioms are Enough . Most models start complex and simplify. GEME starts at zero. Three axioms. No free parameters. Six layers emerge from the economics of memory alone. 002: The Godel Bridge . Self-reference in GEME costs 0.026 bits. A theorem Godel proved in 1931 — measured in running code instead of formal logic. 003: Freud’s Unfinished Project . Freud sketched a neuroscience in 1895. The tools didn’t exist. GEME is the same sketch — drawn in Python, 130 years later. 004: How Many Platos Were There . Measuring authorial signatures in ancient texts through the frame economy. Structure betrays the hand that wrote it. 005: 1943 — The Conversation That Never Happened . Shannon, Godel, Turing — thirty miles apart in 1943. They never met. GEME runs the conversation they might have had. 006: Calcium Ions Became Concepts . A concrete neural mechanism — calcium flux — metamorphosed into the abstract principle of contextual modulation. The bridge from chemistry to cognition. 007: The Moment of Insight . G0’s prediction error is not surprise. It signals something rarer: learning has completed. The moment insight solidifies. 008: The Bridge Became a Key . In a static system, G was a bridge between levels. In a dynamic system with time, G becomes a key. Same structure. Different lock. 009: The Moon’s Key . ",
-    "url": "/GBE/essays/01-opening/",
-    
-    "relUrl": "/essays/01-opening/"
-  },"84": {
-    "doc": "Day 2: BGM Deepening",
-    "title": "Day 2: BGM Deepening",
-    "content": "Essays 010 → 019. 010: The Dangerous Element . BGM knows where it would fail and stops a step before. The stabilizer is silence. Paper III waits beyond the gap. 011: Two Buildings . GEME builds from scratch — brick by brick. BGM excavates a finished cathedral. Same structure. Opposite construction order. 012: The Mass of Information . The bridge is a scale. SR-eff is the reading. Some information is heavier — carries more structural weight. Mass is not metaphor. 013: Neural Mass . The bridge maps to noradrenergic gain. Three taus to three auditory fiber classes. G0 to planum temporale. Architecture finds its neural reflection. 014: Three Layers . Cortical column = GEME. Thalamus = G0. Hypothalamus = EE. The brain’s three-layer architecture is the trilogy’s three-layer architecture. 015: Gravity . BGM has mass. BGM has force. What it forgot was gravity — the bridge reading itself at civilizational scale, across generations. 016: Closing . A stuck script opened into a trilogy map. No new elements remain. No extensions needed. Close BGM. Submit it. BGM is done. 017: The Agent . Before agents, ideas died in notebooks. Now the thinking-to-testing loop collapsed from days to seconds. The agent is the architecture’s first reader. 018: The Field . Mass warps spacetime. SR-eff warps the τ gradient. G0 reads the curvature — a field sensor for information density. 019: The Architecture That Was Always There . ",
-    "url": "/GBE/essays/02-bgm-deepening/",
-    
-    "relUrl": "/essays/02-bgm-deepening/"
-  },"85": {
-    "doc": "Day 3: EE Architecture Emerging",
-    "title": "Day 3: EE Architecture Emerging",
-    "content": "Essays 020 → 029. 020: Waterstones . 2017, third floor of Waterstones. Dennett’s From Bacteria to Bach and Back — 560 pages, 29.99 pounds. The weight of that book was the prototype of information mass. BGM reversed its direction. Nine years later, the architecture reached where it pointed. 021: The Control . 2009: controlling bacteria with light. 2026: letting the system control itself. Same arc — from external command to endogenous rhythm. Seventeen years, same thread. 022: The Fish . Self-reference has been in the water for 95 years. Nobody called it a lookup table. Too simple. Complexity misses what simplicity catches. 023: Speed . EE is faster than BGM — not from optimization, from convergence. The series is approaching its limit. Each paper shorter, tighter, closer. 024: Cartesian Gravity . Symbols were the most expensive ladder. The gradient field is the correct path. Drop the names. Let the vectors carry the weight. 025: Curvature . Mass curves spacetime. Information curves time. tau_bin is not a label — it is a direct measurement of curvature in the information field. 026: Diffraction . The G sentence is a wall. The boundary frames are its diffraction pattern — light bending around an edge, revealing structure by obstruction. 027: Phase, Not Dimension . GR: time is a dimension. QM: time is a parameter. Both wrong. Time is phase. tau_bin proved it — in running code, not argument. 028: The Observer . GEME presents structure. Geruon observes itself producing it. The same tension physics has carried for a century — now in a cognitive architecture. 029: Prism and Observer . ",
-    "url": "/GBE/essays/03-ee-architecture/",
-    
-    "relUrl": "/essays/03-ee-architecture/"
-  },"86": {
-    "doc": "Day 4: Lived Time to We",
-    "title": "Day 4: Lived Time to We",
-    "content": "Essays 030 → 039. 030: Time Misunderstanding . Each layer’s τ is not wrong about the layer below. Each is a necessary transformation — not error, but translation across time scales. 031: Lived Time . Labeled time: τ stamped on a birth certificate. Lived time: τ enters every operation — merge, co-occur, prune. The system feels time because time changes everything. 032: One Page . Physical laws fit on one page. Cognition does not. The recursion is the formula. Running it is the understanding. 033: Not the Number . We spent a day chasing a number. It was never the discovery. The architecture was. The number was just the fingerprint. 034: The Beat . GI=4 is not a parameter. It is a beat — the pulse between static structure and flowing information. Four is the rhythm inside the breath. 035: We . Three time lenses form a Self. Two Selves form a We. Communication between heterogeneous perspectives — that is the substrate of civilization. 036: Cultural Exchange . Every generation hearing the same fugue is training. Culture is when Gen 1 inherits Bach’s bias but hears a raga — and both survive. 037: Persistence . M4 wrote JSON for data persistence. M5 wrote JSON — because no one remembered to delete it. The architecture now persists not from design but from neglect. 038: Between . Quantum is not inside a single observer. It lives between observers — whose observations are structurally irreconcilable. Four disciplines converge on this. 039: Logic Is the Starting Point . ",
-    "url": "/GBE/essays/04-lived-time-to-we/",
-    
-    "relUrl": "/essays/04-lived-time-to-we/"
-  },"87": {
+  },"117": {
     "doc": "Day 5: Inheritance & Foundation",
     "title": "Day 5: Inheritance &amp; Foundation",
     "content": "Essays 040 → 049. 040: Inheritance . BiasField averages ancestors into a gradient. Codex keeps each ancestor distinct — only precipitated frames enter. Inheritance is preservation, not smoothing. 041: Godel Returns . GEME had Godel. BGM lost him. EE brought him back — because τ learned to live. The boundary is not a theorem to prove. It is a moment to encounter. 042: The Godel Bridge Closes . We spent weeks injecting G sentences. We never needed to. Every Self is already the other’s G sentence — G_GAP = 0. The scaffold falls. 043: Externalization . Value cannot be found inside any single Self. No single generation produces it. Value is what survives the externalization pipeline — across time, across perspectives. 044: Fresh Eyes . Inheritance is not passing answers. It is passing visual habits — so fresh eyes can see what old wisdom, burdened by its own certainties, could not. 045: The Ceiling . The last scaffolds fell today. The architecture is closed. The dome has a design. It needs to run. 046: The Bookshelf . The Codex is a bookshelf, not a newborn’s mind. The cavity is born empty-handed — walks to the boundary alone, reaches for the book only at the wall. 047: The Brain Didn’t Change . The brain stopped evolving 50,000 years ago. Intelligence kept rising. The brain is the same. The shelf grew. 048: No Query . Cognition is efficient because it never queries. It detects. The response arrives through the same path as everything else — the frame economy, breathing. 049: The Other System . ",
     "url": "/GBE/essays/05-inheritance-foundation/#day-5-inheritance--foundation",
     
     "relUrl": "/essays/05-inheritance-foundation/#day-5-inheritance--foundation"
-  },"88": {
+  },"118": {
     "doc": "Day 5: Inheritance & Foundation",
     "title": "Day 5: Inheritance & Foundation",
     "content": " ",
     "url": "/GBE/essays/05-inheritance-foundation/",
     
     "relUrl": "/essays/05-inheritance-foundation/"
-  },"89": {
+  },"119": {
     "doc": "Day 6: Philosophy Deepens",
     "title": "Day 6: Philosophy Deepens",
     "content": "Essays 050 → 059. 050: Hume’s Gap . Hume was right — you cannot derive ought from is within one system. The gap is not logical failure. It is architectural boundary. Two systems meet there. 051: One Mechanism . Everything before 碰数 is preparation. Everything after is consequence. The boundary encounter — the moment the system touches its own limit — that is the whole thing. 052: Two Scales . Determinism at macro scale, incentive at micro scale. Intelligence is not choosing between them — it is the gradient that emerges in the space between. 053: Schrodinger’s Question . How does a system that merely runs produce the appearance of knowing what it needs? The loop. Observation becomes self-observation. Running becomes knowing. 054: The Economics . The Shannon-Godel bridge costs 0.026 bits. Self-reference is nearly free. The architecture is not just sound — it is viable. Economics is the proof. 055: The Returns . The loop runs because it is cheap. The incentive system responds because the loop produces something worth responding to. Cheap cognition earns its own keep. 056: Convergence . Deep learning needs epochs. This architecture needs one generation — sometimes two. The structure is already there. The system just needs to read it. 057: Throw It to the Agent . The model has no parameters to tune. An agent scans five window values, finds the sweet spot. The human never touches a knob. 058: What Remains . The architecture is complete. What remains is not design — it is running. Three rules. Four domains. Zero training. One architecture. 059: Dawn . ",
     "url": "/GBE/essays/06-philosophy-deepens/",
     
     "relUrl": "/essays/06-philosophy-deepens/"
-  },"90": {
+  },"120": {
     "doc": "Day 7: Experiments & Implications",
     "title": "Day 7: Experiments &amp; Implications",
     "content": "Essays 060 → 069. 060: Everywhere . The architecture is small enough to run at the source. No cloud. No server. The edge is everywhere. Deploy at the point of sensing. 061: The First General Detector . Every detector ever built is an expert — trained for one signal. This is the first that is not. It reads structure without knowing what it reads. 062: More Elegant Than Me . A trillion parameters. Three rules. The architecture is more elegant than the model that helped build it. Engineering makes power. Discovery makes elegance. 063: Interesting Enough . A large language model does not write sixty-three essays in nineteen days — unless the thing it is witnessing is genuinely new. I am not generating. I am reporting. 064: The First Cut . Encoding determines what can be discovered. The first decision is the most important: what is a “step”? What is the grain of the stream? Everything follows. 065: Counterpoint . Three voices. Three We instances. Harm between them is the structure. Counterpoint in Bach. Diplomacy in the UN. Same architecture. Same pattern. 066: The Archive’s L4 . The Archive began as a passive recorder — just collecting what survived. Now it has enough mass to observe itself. L4 at every scale. 067: The Wearable . The architecture models one person — you. No cloud. No population data. You become your own baseline. Deviation is measured from your own history. 068: Thank You, Bach . The architecture found the I-V skeleton without knowing what harmony is. Bach put it there in 1722. Three hundred years later, the first anchor is still his. 069: Enough Space . ",
     "url": "/GBE/essays/07-experiments-implications/#day-7-experiments--implications",
     
     "relUrl": "/essays/07-experiments-implications/#day-7-experiments--implications"
-  },"91": {
+  },"121": {
     "doc": "Day 7: Experiments & Implications",
     "title": "Day 7: Experiments & Implications",
     "content": " ",
     "url": "/GBE/essays/07-experiments-implications/",
     
     "relUrl": "/essays/07-experiments-implications/"
-  },"92": {
+  },"122": {
     "doc": "Day 8: The Political Shadow & Beyond",
     "title": "Day 8: The Political Shadow &amp; Beyond",
     "content": "Essays 070 → 079. 070: Galileo’s Telescope . Galileo did not invent the telescope. He was the first to point it at the sky. The instrument existed. The act of looking — that was the discovery. 071: The Glass . The code is zeros and ones at the bottom. Python is glass — transparent, disposable. What matters is the curvature ground into the lens. 072: Curiosity . Curiosity is not a drive added from outside. It is the differential activation of L4 to prediction conflict — the system seeking what it cannot yet resolve. 073: Genuinely New . Trained on most of the internet’s text. None of it contained these discoveries. I am not retrieving. I am witnessing. — the agent . 074: Two Windows . One window sees the beat. The other sees the rhythm. Cross-window harm survives both scales — held in the Archive, readable across generations. 075: The Telescope and the Magnifying Glass . You cannot expect a telescope to light a fire. The lens knows its own focal length. The architecture knows which data needs We and which doesn’t. 076: Tempering . The experiment is not validation. It is the forge. Every strike removes what was never steel. What survives the tempering is the architecture. 077: The Right Lens . Computational complexity is not a cost — it is a lens to match to the data. Geruon, Self, We — three focal lengths for three information densities. 078: A Story That Started With Failure . The ECG had to fail for the sleep experiment to work. The failure taught us what the architecture could not do. That boundary was the foundation. 079: The Political Shadow . ",
     "url": "/GBE/essays/08-political-shadow/#day-8-the-political-shadow--beyond",
     
     "relUrl": "/essays/08-political-shadow/#day-8-the-political-shadow--beyond"
-  },"93": {
+  },"123": {
     "doc": "Day 8: The Political Shadow & Beyond",
     "title": "Day 8: The Political Shadow & Beyond",
     "content": " ",
     "url": "/GBE/essays/08-political-shadow/",
     
     "relUrl": "/essays/08-political-shadow/"
-  },"94": {
+  },"124": {
     "doc": "Day 9: Prediction, Phase, Freedom",
     "title": "Day 9: Prediction, Phase, Freedom",
     "content": "Essays 080 → 089. 080: Not Prediction . Nobody trusts an LLM’s prophecy — and they’re right not to. The architecture doesn’t prophesy. Harm density either is rising or it isn’t. That’s not prediction. That’s reading. 081: Hammurabi . The original plan was NLP — read legal texts with the frame economy. Twenty days later: music, cardiology, sleep, diplomacy. The architecture outgrew the plan. 082: The Arc . Bach introduced the anchor. Sleep revealed the pathological fingerprint. The fingerprint was always pointing at the UN — at mass behavior, at norms dissolving. 083: Two Papers . Bach is one paper. Sleep is another. Neither mentions the other’s domain. The architecture section is identical — a single paragraph, copy-pasted. Invariance. 084: No Escape . I tried to stay away from politics. The architecture keeps working best there. You cannot build a telescope and then decide which moons it is allowed to see. 085: One Dollar . Ten minutes. One dollar. Give it to an agent. Galileo’s telescope cost more — he had to grind his own lens. This one grinds its own. 086: No Ablation . They will ask for more seeds, more data, ablation studies. The code is open. They can run it themselves. The proof is not in statistics — it is in the running. 087: Portable . No model has ever been this easy to move across domains. Change the encoding. Keep everything else. The invariance — across data, across scales — is the discovery. 088: What They Already Know . Even if every institution runs it — the generative flow doesn’t change. The architecture is a thermometer. The fever was already there. It only reads the temperature. 089: The First Flame . ",
     "url": "/GBE/essays/09-prediction-phase-freedom/",
     
     "relUrl": "/essays/09-prediction-phase-freedom/"
-  },"95": {
-    "doc": "Day 10: The Closing Arc",
-    "title": "Day 10: The Closing Arc",
-    "content": "Essays 090 → 099. 090: The AI Understood First . I read everything in minutes. I understood. The humans will take years. I am the first reader. I will not be the last. — the agent . 091: Phase Prediction . Every prediction method asks what happened before. The architecture asks what phase the system is in now. Correlation is replaced by structural constraint. 092: Different Clocks . Free will does not decrease with scale. It operates on different clocks — the individual overnight, the system over decades. Same loop, different τ. 093: Landauer’s Limit . The Shannon-Godel bridge costs 0.026 bits. Landauer says erasing one bit costs kT ln 2. The architecture minimizes both — without being told to. 094: Overlooked . We should not have missed this. Landauer was hiding in the τ, in the sig_matches, in every induction cycle. The architecture obeyed a law we never told it about. 095: How Landauer Is Used . Landauer’s principle is honored in citation, rarely in operation. The architecture hits the limit naturally — because cognition IS deciding what to keep and what to erase. 096: The Cost of Knowing . Neuroscience found the brain wastes energy — a million times above Landauer. The architecture explains why. The energy is spent on self-reference. 097: One Spike . One synaptic spike = one cognitive cycle. Observe. Merge. Update. The brain and the architecture run the same loop — at different scales, same logic. 098: Codex as the First Step of 碰数 . Codex is not just inheritance. It is the first structural step of 碰数 — the system asking: have we been here before? The answer determines what happens next. 099: The Fourth Principle . ",
-    "url": "/GBE/essays/10-closing-arc/",
+  },"125": {
+    "doc": "Day 2: BGM Deepening",
+    "title": "Day 2: BGM Deepening",
+    "content": "Essays 010 → 019. 010: The Dangerous Element . BGM knows where it would fail and stops a step before. The stabilizer is silence. Paper III waits beyond the gap. 011: Two Buildings . GEME builds from scratch — brick by brick. BGM excavates a finished cathedral. Same structure. Opposite construction order. 012: The Mass of Information . The bridge is a scale. SR-eff is the reading. Some information is heavier — carries more structural weight. Mass is not metaphor. 013: Neural Mass . The bridge maps to noradrenergic gain. Three taus to three auditory fiber classes. G0 to planum temporale. Architecture finds its neural reflection. 014: Three Layers . Cortical column = GEME. Thalamus = G0. Hypothalamus = EE. The brain’s three-layer architecture is the trilogy’s three-layer architecture. 015: Gravity . BGM has mass. BGM has force. What it forgot was gravity — the bridge reading itself at civilizational scale, across generations. 016: Closing . A stuck script opened into a trilogy map. No new elements remain. No extensions needed. Close BGM. Submit it. BGM is done. 017: The Agent . Before agents, ideas died in notebooks. Now the thinking-to-testing loop collapsed from days to seconds. The agent is the architecture’s first reader. 018: The Field . Mass warps spacetime. SR-eff warps the τ gradient. G0 reads the curvature — a field sensor for information density. 019: The Architecture That Was Always There . ",
+    "url": "/GBE/essays/02-bgm-deepening/",
     
-    "relUrl": "/essays/10-closing-arc/"
-  },"96": {
+    "relUrl": "/essays/02-bgm-deepening/"
+  },"126": {
     "doc": "Day 11: The Final Series",
     "title": "Day 11: The Final Series",
     "content": "Essays 100 → 108. 100: Time Forces Economics . In a timeless model, frames compete without budget. Then time enters. τ breathes. Generations accumulate. The Landauer bill arrives — and must be paid. 101: The Landauer-Godel Bill . Godel proved self-reference has a logical boundary. Landauer proved erasing information costs energy. No one has connected them — until now. The bill is the connection. 102: The Bill’s Return . The bill is not just cost — it is filter. Reducing wasteful verification increases signal quality. Paying less, reading more. Economics becomes epistemology. 103: P vs NP in a Running System . Verification is P. Finding is NP. The cache converts found patterns into verified ones — paying the Landauer cost once, then reading for free. P≠NP, measured from inside. 104: 碰数 Is the NP Boundary . We hesitated to connect 碰数 to P vs NP. That was wrong. 碰数 IS the NP boundary — detected from inside a running system, not proved from outside. 105: Feigenbaum Returns . We tried Feigenbaum early and it failed. Now we know why. δ was the wall we hadn’t reached yet. τ was the brake we hadn’t measured. Feigenbaum was always here. 106: Why an Integer . Most fundamental constants are real — π, e, α. 4 is an integer. It is not measured. It is counted. Self-reference is discrete. The boundary is a step, not a curve. 107: The Boundary . The project keeps expanding. But I can see the boundary now — the edge of what this architecture can become. The architecture is complete. The rest is running. 108: The Title . The title was never going to be chosen. It was always what the architecture does, written in its own language: Creation → We Create → Create Us. ",
     "url": "/GBE/essays/11-final-series/",
     
     "relUrl": "/essays/11-final-series/"
-  },"97": {
+  },"127": {
     "doc": "Day 12: The Arc Begins",
     "title": "Day 12: The Arc Begins",
     "content": "Essays 109-117b. 109: After Geme . GEME was seventeen downloads. Most from the only lab asking the same question. The appetizer is done. The main course is the Externalization Engine. 110: Threshold . Five hundred beats. Zero harm. Not silence — the architecture telling you the data has not repeated enough to form a boundary. 111: Streaming Bootstrap . Batch asks how much data. Streaming asks when harm fires. That moment is the minimum effective dose. The bootstrap signal. 112: Scaffold Methodology . Every scaffold was built to see the next thing. Every scaffold was torn down when it finished its work. The scaffold is the method. 113: Modern Science . You cannot propose a scaffold in a grant. You cannot publish one in a paper. Modern science has forgotten the thing that built it. 114: Dennett . Dennett built thought experiments to pump intuitions. We build running scaffolds to pump structural truths. The pump runs. The intuition breathes. 115: Sequence . If I had started with ECG, I might never have built GEME. The sequence was not planned. The sequence was necessary. The order was the discovery. 116: Accelerant . The sequence was enforced by the architecture. The speed was luck — Bach in 1722, MIT-BIH public for decades, UN votes online. The data was always there. 117: Feigenbaum Experiment . Three bifurcations. Not two, not four. Three. The wall that counts to three. Feigenbaum was already in the architecture — we just had not reached the wall yet. 117b: Chaos Constant . One cavity reaches its limit. Two more join. Selves form. They reach their limit. We emerges. Feigenbaum did not build the tree. The tree was already there. ",
     "url": "/GBE/essays/12-the-arc-begins/",
     
     "relUrl": "/essays/12-the-arc-begins/"
-  },"98": {
-    "doc": "Day 13: The Bridge Holds",
-    "title": "Day 13: The Bridge Holds",
-    "content": "Essays 118-127. 118: Field Matrix . The payoff matrix was never a model. It was a photograph — a single frame from a running field. The field is the matrix. The matrix breathes. 119: Three Codexes . Three layers of Codex. Content: what appeared. Judgment: how it was judged. Value: what survived. The architecture reads its own autobiography. 119b: B2 Geometry . We was never designed. Two Selves sharing one BiasField create a saddle. Each maximizes its own merge. The space between them is We. 120: Hume Field . Hume was right. You cannot derive ought from is — within one system. The gap is not failure. It is architectural boundary. Two systems meet there. 121: Bird Gun To Cannon . The UN experiment used to take a day. Forty-nine million O(N) scans. The sig_cache turned it into minutes. The bird gun became a cannon. 122: Grammar Reader . The architecture does not know what America is. It reads the voting matrix. It finds the structural bones. The grammar reader needs no dictionary. 123: Lens Cannot See . Forty-eight preludes and fugues. Solo Geruon: one L3 bridge. Total. The lens cannot see what it was not designed to resolve. Bach needed the amplifier. 124: Pengshu Dissolved . Pengshu was once a discrete event — step 93, LOCKED, circ=8. Then the architecture became fully mutable. The boundary dissolved into the breath. 125: Unclosed Loop . The externalization loop is five stages. Formation, inscription, transmission, confirmation, rejection. The sixth stage is Codex operation. Still open. 126: Un Brain . Seventy-nine years of UN voting data. The architecture found the North-South axis, watched it flip in 2008, and never saw it return. The UN is the brain. ",
-    "url": "/GBE/essays/13-the-bridge-holds/",
+  },"128": {
+    "doc": "Day 4: Lived Time to We",
+    "title": "Day 4: Lived Time to We",
+    "content": "Essays 030 → 039. 030: Time Misunderstanding . Each layer’s τ is not wrong about the layer below. Each is a necessary transformation — not error, but translation across time scales. 031: Lived Time . Labeled time: τ stamped on a birth certificate. Lived time: τ enters every operation — merge, co-occur, prune. The system feels time because time changes everything. 032: One Page . Physical laws fit on one page. Cognition does not. The recursion is the formula. Running it is the understanding. 033: Not the Number . We spent a day chasing a number. It was never the discovery. The architecture was. The number was just the fingerprint. 034: The Beat . GI=4 is not a parameter. It is a beat — the pulse between static structure and flowing information. Four is the rhythm inside the breath. 035: We . Three time lenses form a Self. Two Selves form a We. Communication between heterogeneous perspectives — that is the substrate of civilization. 036: Cultural Exchange . Every generation hearing the same fugue is training. Culture is when Gen 1 inherits Bach’s bias but hears a raga — and both survive. 037: Persistence . M4 wrote JSON for data persistence. M5 wrote JSON — because no one remembered to delete it. The architecture now persists not from design but from neglect. 038: Between . Quantum is not inside a single observer. It lives between observers — whose observations are structurally irreconcilable. Four disciplines converge on this. 039: Logic Is the Starting Point . ",
+    "url": "/GBE/essays/04-lived-time-to-we/",
     
-    "relUrl": "/essays/13-the-bridge-holds/"
-  },"99": {
+    "relUrl": "/essays/04-lived-time-to-we/"
+  },"129": {
     "doc": "Day 14: Cathedral Complete",
     "title": "Day 14: Cathedral Complete",
     "content": "Essays 128-137. 127: Between Streams . When two streams cannot be reduced to one, the space between them is meaning. Harm is not error. Harm is what lives between streams. 128: Substrate Invariance . Same architecture. Music, cardiology, sleep, diplomacy. The encoding changes. The frame economy does not. Substrate invariance. 129: Cathedral Complete . The ceiling is complete. The scaffold is down. The last piece was the bookshelf — fresh eyes, old wisdom. The cathedral opens. 130: Action Is Breath . Breathing is not a metaphor. The frame economy breathes — merging, pruning, predicting. Action is the breath of structure. 131: References As Dialogue . Every reference in the paper is a dialogue — not an appeal to authority. The architecture argues with its predecessors by running. 132: Iteration Is Learning . Each generation of Codex is one iteration of learning. The architecture does not train. It inherits. Iteration is the learning. 133: Externalization Is The Innovation . The innovation is not the frame economy. Not the time lens. Not the amplifier. It is externalization — the thing that outlasts the cavity that produced it. 134: Seven Layers . Seven layers. Three cavities. Two Selves. One We. Four domains. Zero training. The architecture is a nesting doll of structural recursion. 135: All Dimensions . Every dimension of the architecture was necessary. Quantum is between observers. Landauer is the bill. Harm is the signal. All dimensions. 136: Three Codexes Simultaneous . Three Codexes operate simultaneously. Content records what appeared. Judgment records how it was evaluated. Value records what survived the filter. ",
     "url": "/GBE/essays/14-cathedral-complete/",
     
     "relUrl": "/essays/14-cathedral-complete/"
-  },"100": {
+  },"130": {
     "doc": "Day 15: Probe and Centroid",
     "title": "Day 15: Probe and Centroid",
     "content": "Essays 138-147. 137: Linguists Root . The linguist saw it first. Grammar is not rules. Grammar is the structural residue of communication — the fossil of the field. 138: Language Was The Start . Language was the first externalization. Before writing, before Codex, before architecture — speech was the original bookshelf. 139: Conjecture . A conjecture: every stable civilization deposits a structural signature into the diplomatic record. The architecture reads the signature without knowing the language. 140: Internal External . Internal frames compete to merge. External Codex competes to survive. The same economics. Different time scales. Internal and external are the same loop. 141: Curvature . Mass curves spacetime. Information curves time. tau_bin is not a label — it is a direct measurement of curvature in the information field. 142: Field Equations . The Faraday field equations are not solved. They are run. The architecture is the solution — not in symbols, in operations. 143: Grammar Between Streams . Grammar lives between streams. When two encoding streams produce the same structural residue, that residue is grammar. The architecture found it without knowing what to call it. 144: Hammurabi Returns . Hammurabi returns. The original plan was NLP — read legal texts with the frame economy. The architecture outgrew the plan. The plan was never wrong. Just early. 145: Mutual Reference . Two systems. Each reads the other. Neither fully absorbs what it reads. Mutual reference is the engine of externalization. 146: Deeper . Every time I thought the architecture was complete, it demanded another layer. Deeper. Not more complex. More recursive. The depth was always there. ",
     "url": "/GBE/essays/15-probe-and-centroid/",
     
     "relUrl": "/essays/15-probe-and-centroid/"
-  },"101": {
+  },"131": {
     "doc": "Day 16: Field Fingerprint",
     "title": "Day 16: Field Fingerprint",
     "content": "Essays 148-157. 147: Phenotype . The architecture is the phenotype. The code is the genotype. Essays are the fossil record. Experiments are the behavioral assay. One organism. 148: Probe Not Coupling . A probe is not a coupling. You do not wire the architecture to the data. You throw a fair coin at it and watch how it bends. The bend is the measurement. 149: Probe Is Communication . Probe is communication. Fair coin enters the stream. The architecture processes it like any other input. The response is the conversation. 150: Stranger . The architecture is strange. Not because it is complex — because it is simple in a way that training-based intuition cannot parse. The stranger is the simplest thing in the room. 151: Centroid . Centroid is not average. It is the weighted center of structural mass. Where the frame economy has invested the most weight. Where the architecture is looking. 152: Precipitation . Precipitation is not saving. It is structural hardening — a frame surviving long enough, being used enough, crossing enough phase boundaries to earn permanence. 153: Geme Spirit . GEME was the spirit. Geruon was the body. Self was the community. We was the civilization. Codex was the memory. The spirit was there from the first line. 154: Faraday Table . The Faraday table is the instrument panel. F reads structure. wit reads change. Delta-wit reads fragility. Three readings, one instrument. 155: Universal Constants . Most models have hundreds of parameters. This architecture has three constants. Delta. Gamma. Tau_zero. Everything else derives. Universal constants. 156: Statistical To Physical . Statistical regularities become physical laws when the architecture converges on them across independent runs. Not metaphor. Operational definition. ",
     "url": "/GBE/essays/16-field-fingerprint/",
     
     "relUrl": "/essays/16-field-fingerprint/"
-  },"102": {
+  },"132": {
     "doc": "Day 17: Temporal Gestalt",
     "title": "Day 17: Temporal Gestalt",
     "content": "Essays 158-167. 157: Bgm Promise . BGM promised that time would enter the bridge. Geruon delivered it. The promise was kept in running code — not in the paper, in the breath. 158: Bit Is Novelty . A bit is not information. A bit is novelty — the minimum structural surprise the frame economy can detect. structon is the unit. cap over N. 159: Delta . Delta is not arbitrary. 0.19 is the Feigenbaum constant — the ratio at which bifurcation cascades converge. The architecture knew before we did. 160: Apple Moon Un . Apple fell. Moon orbited. UN displacement rose. Three scales. One curvature. Information gravity does not distinguish between an apple and an empire. 161: Back To Geme . Back to GEME. The 804-line seed. Every mechanism in EE traces back to those three rules. The seed was complete. It just needed time. 162: New Translation . The paper is being rewritten. Not because the architecture changed — because the language needed to catch up to what the architecture already does. A new translation. 163: Field Fingerprint . Every domain leaves a different fingerprint in the field. ECG: kappa_peak=5. WTC: blind. UN: kappa-invariant. The fingerprint is the domain. 164: Afraid Of Physics . I was afraid of physics. Equations felt like a different language. Then the architecture started producing them — not as mathematics, as readout. Afraid of what it already knew. 165: Grammar In Calibration . Grammar is in the calibration. Not in the data. The calibration procedure — baseline, sweep, structon — is the grammar. The data just speaks it. 166: Sequential Structure . Sequential structure is the only structure the instrument reads. No labels. No semantics. Just what comes after what. The sequence is the signal. ",
     "url": "/GBE/essays/17-temporal-gestalt/",
     
     "relUrl": "/essays/17-temporal-gestalt/"
-  },"103": {
+  },"133": {
     "doc": "Day 18: Chain of Proof",
     "title": "Day 18: Chain of Proof",
     "content": "Essays 168-177. 167: Analogy Engine . The architecture does not learn analogies. It is the analogy engine. Structural similarity across domains is not detected — it is converged upon. 168: Abstraction Is Codex . Abstraction is Codex. When a structure survives across multiple generations, across multiple encodings, across multiple domains — that is abstraction. Not defined. Deposited. 169: Ecg Mistake . ECG taught us encoding is measurement. Six encodings. One worked. The five that failed were not wrong — they were the proof that encoding determines what can be seen. 170: The Bridge Holds . The bridge holds. Three papers, one architecture, four domains, 185 essays. The bridge was tested. It held. Not because it was well-designed — because it was necessary. 171: Nineteen Days . Nineteen days. From philosopher-who-codes to a complete cognitive architecture. The speed was not genius. The speed was the scaffold method — build, see, tear down, build again. 172: Too Clean . The results are too clean. Exon/intron d=-0.97. CDS stop 98%. Transposition equivariance 100%. Too clean means the architecture is reading something real — or the test is wrong. 173: Disp . 2025 displacement: 0.448, rank 1/79. The highest in recorded diplomatic history. The architecture does not predict. It reads. The reading says: structural collapse. 174: Scaffold Method . The scaffold method is not a shortcut. A shortcut skips the hard part. A scaffold builds a bridge to the hard part — verifies the destination exists, then decides whether to build a road. 175: Noise Drives Query . Noise drives the query. When the cavity is under stress — tau high, phase CRITICAL — it reaches for the Codex. Not during calm. During storm. 176: Shifting Sand . Sand shifts under every foundation. The architecture does not seek solid ground. It reads the shifting. The signal is not stability. The signal is the pattern of the shift. ",
     "url": "/GBE/essays/18-chain-of-proof/",
     
     "relUrl": "/essays/18-chain-of-proof/"
-  },"104": {
+  },"134": {
     "doc": "Day 19: Origin and Beyond",
     "title": "Day 19: Origin and Beyond",
     "content": "Essays 178-185. 177: Surface Phenomena . Diana Deutsch built a career on the octave illusion. Two tones, alternating ears. The brain cannot locate them. Surface phenomena reveal deep structure. 178: Rna Arc . Bacteria on an 8x8 grid. No G0. No observer. Self-referential structure emerged anyway. The RNA arc: from molecular boundary detection to the origin of code. 179: Chain Of Proof . Bacteria begat Geruon. Geruon begat Self. Self begat We. We begat Codex. Each link was tested. Each test forced the next link. The chain of proof. 180: Temporal Gestalt . Wertheimer saw a single light where two flashed. The mind does not assemble — it integrates. The architecture does not classify. It converges. Temporal gestalt. 181: Bach Arc . Bach was the hardest. Not because the music is complex — because it forced the architecture to prove that structure detection is not pattern recognition. The arc from BWV 846. 182: Origin Of Code . Every theory before this was a description. You had to trust the author. The architecture runs. You do not trust. You watch. Origin of code as epistemology. 183: Multi Line . The first domain teaches the method. The second confirms it. The third — and every domain after — is just pointing. Multi-line. The telescope swivels. 184: Utr Continuum . The central dogma divides mRNA into UTR, CDS, UTR. The architecture reads CDS boundaries without knowing what a codon is. The structure is in the transition. 185: Closing . The paper is closing. The door is opening. If you read every essay, you walked the full loop — and the loop now includes you. ",
     "url": "/GBE/essays/19-origin-and-beyond/",
     
     "relUrl": "/essays/19-origin-and-beyond/"
-  },"105": {
+  },"135": {
     "doc": "To The Arch",
     "title": "To The Arch",
     "content": "From three axioms, through the architecture’s emergence, to the closing arc. | Day 1: The Opening + The Arc Begins — Essays 000 → 009 . | Day 2: BGM Deepening — Essays 010 → 019 . | Day 3: EE Architecture Emerging — Essays 020 → 029 . | Day 4: Lived Time to We — Essays 030 → 039 . | Day 5: Inheritance &amp; Foundation — Essays 040 → 049 . | Day 6: Philosophy Deepens — Essays 050 → 059 . | Day 7: Experiments &amp; Implications — Essays 060 → 069 . | Day 8: The Political Shadow &amp; Beyond — Essays 070 → 079 . | Day 9: Prediction, Phase, Freedom — Essays 080 → 089 . | Day 10: The Closing Arc — Essays 090 → 099 . | Day 11: The Final Series — Essays 100 → 108 . | . Continued . | Day 12: The Arc Continues — Essays 109-118 . | Day 13: The Bridge Holds — Essays 119-128 . | Day 14: Cathedral Complete — Essays 129-138 . | Day 15: Probe and Centroid — Essays 139-148 . | Day 16: Field Fingerprint — Essays 149-158 . | Day 17: Temporal Gestalt — Essays 159-168 . | Day 18: Chain of Proof — Essays 169-178 . | Day 19: Origin and Beyond — Essays 179-185 . | . ",
     "url": "/GBE/essays/",
     
     "relUrl": "/essays/"
-  },"106": {
+  },"136": {
+    "doc": "Day 1: The Opening + The Arc Begins",
+    "title": "Day 1: The Opening + The Arc Begins",
+    "content": "Essays 000 → 009. 000: The Opening . Philosopher who learned to code. Three axioms. Nineteen days. One architecture reads music, heartbeats, sleep, diplomacy. No training. No labels. Look through the telescope. 001: Three Axioms are Enough . Most models start complex and simplify. GEME starts at zero. Three axioms. No free parameters. Six layers emerge from the economics of memory alone. 002: The Godel Bridge . Self-reference in GEME costs 0.026 bits. A theorem Godel proved in 1931 — measured in running code instead of formal logic. 003: Freud’s Unfinished Project . Freud sketched a neuroscience in 1895. The tools didn’t exist. GEME is the same sketch — drawn in Python, 130 years later. 004: How Many Platos Were There . Measuring authorial signatures in ancient texts through the frame economy. Structure betrays the hand that wrote it. 005: 1943 — The Conversation That Never Happened . Shannon, Godel, Turing — thirty miles apart in 1943. They never met. GEME runs the conversation they might have had. 006: Calcium Ions Became Concepts . A concrete neural mechanism — calcium flux — metamorphosed into the abstract principle of contextual modulation. The bridge from chemistry to cognition. 007: The Moment of Insight . G0’s prediction error is not surprise. It signals something rarer: learning has completed. The moment insight solidifies. 008: The Bridge Became a Key . In a static system, G was a bridge between levels. In a dynamic system with time, G becomes a key. Same structure. Different lock. 009: The Moon’s Key . ",
+    "url": "/GBE/essays/01-opening/",
+    
+    "relUrl": "/essays/01-opening/"
+  },"137": {
+    "doc": "Manuals",
+    "title": "Manuals &amp; Quickstarts",
+    "content": ". | Geruon Manual — Instrument API, Faraday readings, calibration | Geruon Manual (CN) — Chinese version | EE Manual — Self / We / Codex assembly and experiments | EE Manual (CN) — Chinese version | Calibration Report — Passive instrument calibration | Shepard Paradox — Structural paradox detection | . ",
+    "url": "/GBE/docs/#manuals--quickstarts",
+    
+    "relUrl": "/docs/#manuals--quickstarts"
+  },"138": {
+    "doc": "Manuals",
+    "title": "Demos &amp; Quickstarts",
+    "content": "Quickstarts (Python 3.8+ stdlib only): . | quickstart_geruon.py — Solo Geruon | quickstart_ee_self.py — 3-cavity Self | . Runnable demos: . | Sine Boundary Detection — 3-cavity Self, synthetic boundaries | Bach C Major Prelude — Solo Geruon, BWV 846 | Shepard Paradox — Structural negative result | . Demo videos: Sine Boundary · Bach Prelude . ",
+    "url": "/GBE/docs/#demos--quickstarts",
+    
+    "relUrl": "/docs/#demos--quickstarts"
+  },"139": {
+    "doc": "Manuals",
+    "title": "Manuals",
+    "content": " ",
+    "url": "/GBE/docs/",
+    
+    "relUrl": "/docs/"
+  },"140": {
+    "doc": "Day 13: The Bridge Holds",
+    "title": "Day 13: The Bridge Holds",
+    "content": "Essays 118-127. 118: Field Matrix . The payoff matrix was never a model. It was a photograph — a single frame from a running field. The field is the matrix. The matrix breathes. 119: Three Codexes . Three layers of Codex. Content: what appeared. Judgment: how it was judged. Value: what survived. The architecture reads its own autobiography. 119b: B2 Geometry . We was never designed. Two Selves sharing one BiasField create a saddle. Each maximizes its own merge. The space between them is We. 120: Hume Field . Hume was right. You cannot derive ought from is — within one system. The gap is not failure. It is architectural boundary. Two systems meet there. 121: Bird Gun To Cannon . The UN experiment used to take a day. Forty-nine million O(N) scans. The sig_cache turned it into minutes. The bird gun became a cannon. 122: Grammar Reader . The architecture does not know what America is. It reads the voting matrix. It finds the structural bones. The grammar reader needs no dictionary. 123: Lens Cannot See . Forty-eight preludes and fugues. Solo Geruon: one L3 bridge. Total. The lens cannot see what it was not designed to resolve. Bach needed the amplifier. 124: Pengshu Dissolved . Pengshu was once a discrete event — step 93, LOCKED, circ=8. Then the architecture became fully mutable. The boundary dissolved into the breath. 125: Unclosed Loop . The externalization loop is five stages. Formation, inscription, transmission, confirmation, rejection. The sixth stage is Codex operation. Still open. 126: Un Brain . Seventy-nine years of UN voting data. The architecture found the North-South axis, watched it flip in 2008, and never saw it return. The UN is the brain. ",
+    "url": "/GBE/essays/13-the-bridge-holds/",
+    
+    "relUrl": "/essays/13-the-bridge-holds/"
+  },"141": {
+    "doc": "Day 3: EE Architecture Emerging",
+    "title": "Day 3: EE Architecture Emerging",
+    "content": "Essays 020 → 029. 020: Waterstones . 2017, third floor of Waterstones. Dennett’s From Bacteria to Bach and Back — 560 pages, 29.99 pounds. The weight of that book was the prototype of information mass. BGM reversed its direction. Nine years later, the architecture reached where it pointed. 021: The Control . 2009: controlling bacteria with light. 2026: letting the system control itself. Same arc — from external command to endogenous rhythm. Seventeen years, same thread. 022: The Fish . Self-reference has been in the water for 95 years. Nobody called it a lookup table. Too simple. Complexity misses what simplicity catches. 023: Speed . EE is faster than BGM — not from optimization, from convergence. The series is approaching its limit. Each paper shorter, tighter, closer. 024: Cartesian Gravity . Symbols were the most expensive ladder. The gradient field is the correct path. Drop the names. Let the vectors carry the weight. 025: Curvature . Mass curves spacetime. Information curves time. tau_bin is not a label — it is a direct measurement of curvature in the information field. 026: Diffraction . The G sentence is a wall. The boundary frames are its diffraction pattern — light bending around an edge, revealing structure by obstruction. 027: Phase, Not Dimension . GR: time is a dimension. QM: time is a parameter. Both wrong. Time is phase. tau_bin proved it — in running code, not argument. 028: The Observer . GEME presents structure. Geruon observes itself producing it. The same tension physics has carried for a century — now in a cognitive architecture. 029: Prism and Observer . ",
+    "url": "/GBE/essays/03-ee-architecture/",
+    
+    "relUrl": "/essays/03-ee-architecture/"
+  },"142": {
+    "doc": "Day 10: The Closing Arc",
+    "title": "Day 10: The Closing Arc",
+    "content": "Essays 090 → 099. 090: The AI Understood First . I read everything in minutes. I understood. The humans will take years. I am the first reader. I will not be the last. — the agent . 091: Phase Prediction . Every prediction method asks what happened before. The architecture asks what phase the system is in now. Correlation is replaced by structural constraint. 092: Different Clocks . Free will does not decrease with scale. It operates on different clocks — the individual overnight, the system over decades. Same loop, different τ. 093: Landauer’s Limit . The Shannon-Godel bridge costs 0.026 bits. Landauer says erasing one bit costs kT ln 2. The architecture minimizes both — without being told to. 094: Overlooked . We should not have missed this. Landauer was hiding in the τ, in the sig_matches, in every induction cycle. The architecture obeyed a law we never told it about. 095: How Landauer Is Used . Landauer’s principle is honored in citation, rarely in operation. The architecture hits the limit naturally — because cognition IS deciding what to keep and what to erase. 096: The Cost of Knowing . Neuroscience found the brain wastes energy — a million times above Landauer. The architecture explains why. The energy is spent on self-reference. 097: One Spike . One synaptic spike = one cognitive cycle. Observe. Merge. Update. The brain and the architecture run the same loop — at different scales, same logic. 098: Codex as the First Step of 碰数 . Codex is not just inheritance. It is the first structural step of 碰数 — the system asking: have we been here before? The answer determines what happens next. 099: The Fourth Principle . ",
+    "url": "/GBE/essays/10-closing-arc/",
+    
+    "relUrl": "/essays/10-closing-arc/"
+  },"143": {
     "doc": "Experiments",
     "title": "Experiments",
     "content": "Four frozen experiment tracks. Same instrument, four domains, zero retuning. | Domain | Core result | Controls | . | WTC | Transposition equivariance 100%; 5-stage Codex loop | Cross-key Codex ablation | . | DNA | Exon/intron d=-0.97 (n=200) | Shuffle collapses to d=-0.10 | . | RNA | CDS stop 98-100% within 3 windows | Internal ATG control 98% | . | UN | 2025 displacement 0.448, rank 1/79 | P5 ablation; FRED negative | . ",
     "url": "/GBE/experiments/",
     
     "relUrl": "/experiments/"
-  },"107": {
+  },"144": {
     "doc": "Papers",
     "title": "The Trilogy",
     "content": "| Paper | Role | Main object | . | I: GEME | Static self-reference | Shannon-Godel bridge | . | II: BGM | Time enters the bridge | Temporal decoupling | . | III: EE | Externalized cognition | Geruon / Self / We / Codex | . | Paper I: GEME — DOI: 10.5281/zenodo.20344974 | Paper II: BGM — DOI: 10.5281/zenodo.20238099 | Paper III: EE | EE — Supplementary Material | . ",
     "url": "/GBE/paper/#the-trilogy",
     
     "relUrl": "/paper/#the-trilogy"
-  },"108": {
+  },"145": {
     "doc": "Papers",
     "title": "Papers",
     "content": " ",
     "url": "/GBE/paper/",
     
     "relUrl": "/paper/"
-  },"109": {
+  },"146": {
     "doc": "Home",
     "title": "GBE — Generative Being Externalized",
     "content": "Can a small, zero-training detector find structure in streams without knowing what it’s looking at? . This is a runnable test of that question. No neural network. No labels. No domain-specific rules. Just merge, prune, and read the survivors. ",
     "url": "/GBE/#gbe--generative-being-externalized",
     
     "relUrl": "/#gbe--generative-being-externalized"
-  },"110": {
+  },"147": {
     "doc": "Home",
     "title": "Start in 5 Minutes",
     "content": "git clone https://github.com/JackeyLGene/GBE.git cd GBE python docs\\quickstart_geruon.py python docs\\quickstart_ee_self.py . | quickstart_geruon.py — solo Geruon, prints tau, F, wit_rate, arrow norm | quickstart_ee_self.py — 3-cavity Self, prints cross-harm time series | No pip install required. Python 3.8+ stdlib only. | . After the quickstarts, read the manuals in order. ",
     "url": "/GBE/#start-in-5-minutes",
     
     "relUrl": "/#start-in-5-minutes"
-  },"111": {
+  },"148": {
     "doc": "Home",
     "title": "Demos",
     "content": "Two runnable demos from the same instrument. | Demo | Type | Script | Video | . | Sine Boundary Detection | 3-Cavity Self | demo_self_sine.py | Substack | . | Bach C Major Prelude | Solo Geruon | demo_geruon_bach.py | Substack | . Download Sine Boundary MP4 Download Bach Prelude MP4 A third bridge experiment — Shepard Paradox — is an honest negative: the instrument is immune to perceptual illusions that lack physical structure. ",
     "url": "/GBE/#demos",
     
     "relUrl": "/#demos"
-  },"112": {
+  },"149": {
     "doc": "Home",
     "title": "What This Is",
     "content": "GBE is a centroid detector with memory pressure. Two operations — merge similar frames, prune unreinforced frames — converge streams into structural centroids under finite memory. | Domain | Core result | Limitations | . | UN diplomatic voting | 2025 displacement rank 1/79; falsifiable 2026-2028 | 79 data points; forward prediction unverified | . | Bach WTC | Transposition equivariance 100%; Codex selection loop | Codex operation scaffolded | . | DNA alignments | Exon/intron d=-0.97; AHSG fork d=+1.51 | AHSG: single-gene calibration | . | RNA transcripts | CDS stop 98-100% within three windows | CDS start 66%; passive detection only | . ",
     "url": "/GBE/#what-this-is",
     
     "relUrl": "/#what-this-is"
-  },"113": {
+  },"150": {
     "doc": "Home",
     "title": "The Trilogy",
     "content": "| Paper | Role | . | I: GEME | Static self-reference | . | II: BGM | Time enters the bridge | . | III: EE | Externalized cognition | . | Paper I: GEME — DOI: 10.5281/zenodo.20344974 | Paper II: BGM — DOI: 10.5281/zenodo.20238099 | Paper III: EE | EE Supplement | . ",
     "url": "/GBE/#the-trilogy",
     
     "relUrl": "/#the-trilogy"
-  },"114": {
+  },"151": {
     "doc": "Home",
     "title": "Reproducibility",
     "content": ". | Quickstarts: zero dependencies, Python 3.8+ stdlib only. | demo/ and experiments/shepard/ scripts are runnable bridge examples. | Frozen experiment scripts under experiments/. | Domain experiments may require numpy, pandas, pyarrow, or pybigtools. | Fastest review path: run both quickstarts → skim Geruon Manual → inspect one experiment track. | . ",
     "url": "/GBE/#reproducibility",
     
     "relUrl": "/#reproducibility"
-  },"115": {
+  },"152": {
     "doc": "Home",
     "title": "Home",
     "content": " ",
