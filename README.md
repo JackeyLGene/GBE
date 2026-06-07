@@ -86,6 +86,13 @@ The same core instrument is used across four domains:
 | DNA alignments | Evolutionary archive readability | Exon/intron `d≈-0.97`; AHSG fork-column `d=+1.51` |
 | RNA transcripts | Molecular operation boundary | Blind CDS stop boundary 98-100% within three windows; start boundary weaker but positive |
 
+Newer applied extensions are being separated from the original EE proof arc:
+
+| Extension | Role | Current result |
+|-----------|------|----------------|
+| [GeneGrammar / SHP](experiments/genegrammar/) | Calibrated genomic structural spectroscopy | Human CDS/UTR SHP matrix across 19,491 genes and 224,518 isoforms |
+| NoHarm | Transcript isoform and region triage | Warm-start corrected v0.2 scanner; SHP `--dual` planned for v0.3 |
+
 ---
 
 ## The Trilogy
@@ -134,6 +141,7 @@ GBE/
 │   ├── wtc/
 │   ├── dna/
 │   ├── rna/
+│   ├── genegrammar/
 │   └── shepard/
 └── paper/
     ├── gEME.pdf
